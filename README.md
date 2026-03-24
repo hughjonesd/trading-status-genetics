@@ -5,7 +5,7 @@ This is the git repository for the paper "Trading social status for genetics
 in marriage markets: evidence from Great Britain and Norway" by Abdel Abdellaoui, Oana
 Borcan, Pierre-André Chiappori, David Hugh-Jones, Fartein Ask Torvik and Eivind Ystrøm.
 
-The current version of the paper is at https://github.com/hughjonesd/trading-genetics/blob/master/trading-genetics.pdf.
+The current version of the paper is at https://github.com/hughjonesd/trading-status-genetics/blob/main/trading-genetics.pdf.
 
 You can also look at previous versions, to check for specification searches,
 p-hacking and the Garden of Forking Paths. (But what if we hid them from github? 

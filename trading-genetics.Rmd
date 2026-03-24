@@ -2210,7 +2210,7 @@ AA is supported by the Foundation Volksbond Rotterdam and by ZonMw grant
 Development.
 
 Code to reproduce is available at
-<https://github.com/hughjonesd/trading-genetics>.
+<https://github.com/hughjonesd/trading-status-genetics>.
 
 \FloatBarrier
 

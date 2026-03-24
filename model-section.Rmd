@@ -704,7 +704,7 @@ if different individuals have varying matching preferences
 agreed-upon ranking of men and women, but computations using the
 Gale-Shapley matching algorithm shows that the basic insights of SGAM still hold.[^gale-shapley] 
 
-[^gale-shapley]: See https://github.com/hughjonesd/trading-genetics/blob/master/gale-shapley-multiple-a.R.
+[^gale-shapley]: See https://github.com/hughjonesd/trading-status-genetics/blob/main/gale-shapley-multiple-a.R.
 
 ## Discussion
 
@@ -757,5 +757,4 @@ Conversely, reforms that increase meritocracy ($\gamma$, Proposition
 \ref{prop-gamma}) may strengthen the genes-SES gradient. This poses the problem 
 raised by @young1958rise and more recently @markovits2019meritocracy: meritocracy 
 may be self-limiting or even self-undermining.
-
 
