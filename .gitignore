@@ -1,0 +1,21 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.log
+*~
+.DS_Store
+model-section.pdf
+model-section_cache/
+model-section_files
+response-to-EJ-reviewers_cache/
+response-to-EJ-reviewers.Rmd
+response-to-EJ-reviewers.pdf
+response-to-EJ-reviewers.log
+trading-genetics_cache/
+Pierre theory pdfs
+tmp*
+papers/*
+trading-genetics.log
+
+UKBSelectionWeights.tab

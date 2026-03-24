@@ -1,0 +1,1071 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+]{article}
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{subfig}
+\usepackage{setspace}\onehalfspacing
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{mitpress}
+\newtheorem{prop}{Proposition}
+\newtheorem{claim}{Claim}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Model proofs},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Model proofs}
+\author{}
+\date{\vspace{-2.5em}}
+
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{proposition}{Proposition}
+\newtheorem{conjecture}{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\theoremstyle{definition}
+\newtheorem{example}{Example}
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}
+\theoremstyle{definition}
+\newtheorem{hypothesis}{Hypothesis}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{solution}{Solution}
+\begin{document}
+\maketitle
+
+\begin{proof}[Proof of Proposition \ref{prop-couples-SGAM}]
+
+By a change of variable, rewrite:
+
+\[
+\left( 
+\begin{array}{c}
+x_{1} \\ 
+x_{2}%
+\end{array}%
+\right) \rightarrow \left( 
+\begin{array}{c}
+x_{1} \\ 
+u%
+\end{array}%
+\right) \text{ where }u=\frac{ax_{1}+\left( 1-a\right) x_{2}}{\sqrt{%
+a^{2}s^{2}+\left( 1-a\right) ^{2}S^{2}+2a\left( 1-a\right) \sigma }}=
+\frac{ax_{1}+\left( 1-a\right) x_{2}}{\sigma_I}
+\]
+is the attractiveness rescaled to $\mathcal{N}(0, 1)$. Thus,
+\[
+\left( 
+\begin{array}{c}
+x_{1} \\ 
+u
+\end{array}
+\right) = \left( 
+\begin{array}{cc}
+1 & 0 \\ 
+a/\sigma_I & (1-a)/\sigma_I%
+\end{array}%
+\right) \left( 
+\begin{array}{c}
+x_{1} \\ 
+x_{2}%
+\end{array}%
+\right). 
+\]
+
+
+Note that the means are still zero, but the covariance of $(x_1,u)$ is:
+
+\begin{eqnarray*}
+\mathbb{C}\left( 
+\begin{array}{c}
+x_{1} \\ 
+u
+\end{array}
+\right) &=&\left( 
+\begin{array}{cc}
+1 & 0 \\ 
+a/\sigma_I & \left( 1-a\right)/\sigma_I%
+\end{array}%
+\right) \left( 
+\begin{array}{cc}
+s^{2} & \sigma \\ 
+\sigma & S^{2}%
+\end{array}%
+\right) \left( 
+\begin{array}{cc}
+1 & a/\sigma_I \\ 
+0 & \left( 1-a\right)/\sigma_I%
+\end{array}%
+\right) \\
+&=&\left( 
+\begin{array}{cc}
+s^{2} &  A \\ 
+A & 1 
+\end{array}%
+\right) \allowbreak 
+\end{eqnarray*}
+where
+\[
+A=\frac{
+as^{2}+\left( 1-a\right) \sigma 
+}{
+\sqrt{
+a^{2}s^{2} + (1-a)^2S^{2}
++ 2a\left(1-a\right)\sigma 
+}} = 
+\frac{as^{2}+\left( 1-a\right) \sigma }{\sigma_I}.
+\]
+
+Under SGAM, individual $\left( 
+\begin{array}{c}
+x_{1} \\ 
+u
+\end{array} 
+\right)$ is matched with $\left( 
+\begin{array}{c}
+y_{1} \\ 
+v%
+\end{array}%
+\right)$ such that $u = v = t$.
+
+The distribution of $t$ is 
+$\mathcal{N}\left( 0,1\right)$. Therefore the vector $\left( 
+\begin{array}{c}
+x_{1} \\ 
+y_{1} \\ 
+t%
+\end{array}%
+\right)$ is normally distributed, with mean 0, and covariance
+\[
+\Sigma =\left( 
+\begin{array}{ccc}
+s^{2} & A^{2} & A \\ 
+A^{2} & s^{2} & A \\ 
+A & A & 1
+\end{array}%
+\right) \allowbreak 
+\]
+
+Finally, we are interested in 
+\[
+\left( 
+\begin{array}{c}
+x_{1} \\ 
+x_{2} \\ 
+y_{1} \\ 
+y_{2}%
+\end{array}%
+\right) =\left( 
+\begin{array}{ccc}
+1 & 0 & 0 \\ 
+-\frac{a}{1-a} & 0 & \frac{\sigma_I}{1-a} \\ 
+0 & 1 & 0 \\ 
+0 & -\frac{a}{1-a} & \frac{\sigma_I}{1-a}%
+\end{array}%
+\right) \left( 
+\begin{array}{c}
+x_{1} \\ 
+y_{1} \\ 
+t%
+\end{array}%
+\right) 
+\]%
+therefore again the means are 0 and 
+\begin{eqnarray*}
+\mathbb{C}\left( 
+\begin{array}{c}
+x_{1} \\ 
+x_{2} \\ 
+y_{1} \\ 
+y_{2}%
+\end{array}%
+\right) &=&\left( 
+\begin{array}{ccc}
+1 & 0 & 0 \\ 
+-\frac{a}{1-a} & 0 & \frac{\sigma_I}{1-a} \\ 
+0 & 1 & 0 \\ 
+0 & -\frac{a}{1-a} & \frac{\sigma_I}{1-a}%
+\end{array}%
+\right) \Sigma \left( 
+\begin{array}{ccc}
+1 & 0 & 0 \\ 
+-\frac{a}{1-a} & 0 & \frac{\sigma_I}{1-a} \\ 
+0 & 1 & 0 \\ 
+0 & -\frac{a}{1-a} & \frac{\sigma_I}{1-a}%
+\end{array}%
+\right) ^{T} \\
+&=&\allowbreak \left( 
+\begin{array}{cccc}
+s^{2} & \sigma & A^{2} & AC \\ 
+\sigma & S^{2} & AC & C^{2} \\ 
+A^{2} & AC & s^{2} & \sigma \\ 
+AC & C^{2} & \sigma & S^{2}%
+\end{array}%
+\right) \allowbreak
+\end{eqnarray*}%
+where:%
+\begin{eqnarray*}
+A &=&\frac{as^{2}+\left( 1-a\right) \sigma }{\sigma_I}\text{ \ and} \\
+C &=&\frac{a\sigma +\left( 1-a\right) S^{2}}{\sigma_I}.
+\end{eqnarray*}
+
+\end{proof}
+
+\begin{lemma}\label{C2}
+ $C^2 \le S^2$, with strict inequality if $a > 0$ and $\sigma < 1$.
+
+\end{lemma}
+\begin{proof}
+Write
+\begin{align*}
+C^{2}   &= \frac{
+            a^{2}\sigma^{2}+(1-a)^{2}S^{4}+2a(1-a)\sigma S^{2}
+         }{
+           a^{2}s^{2}+(1-a)^{2}S^{2}+2a(1-a)\sigma
+         } \\
+    &\le \frac{
+        a^{2}s^{2}S^{2}+(1-a)^{2}S^{4}+2a(1-a)\sigma S^{2}
+      }{
+        a^{2}s^{2}+(1-a)^{2}S^{2}+2a(1-a)\sigma
+      }
+      \textrm{, since }\sigma/sS = Corr(x_1,x_2) \le 1 \\
+    &= S^{2}
+\end{align*}
+and observe that the inequality is strict if $a > 0$ and $\sigma < sS$.
+\end{proof}
+
+\begin{proof}[Proof of Claim \ref{claim-E-children-RM}]
+
+Under random matching, the joint distribution of $\left( \frac{\tau }{2}\left(
+x_{1}+y_{1}\right) +\varepsilon ,x_{2},y_{2}\right) $ is normal with mean 
+$( 0,0,0)$ and covariance
+\[
+\mathbb{C}=\left( 
+\begin{array}{lcr}
+\frac{\tau ^{2}}{2}\left( s^{2}+\sigma \right) +1 & \frac{\tau }{2}\sigma  & 
+\frac{\tau }{2}\sigma  \\ 
+\frac{\tau }{2}\sigma  & S^{2} & 0 \\ 
+\frac{\tau }{2}\sigma  & 0 & S^{2}%
+\end{array}%
+\right) 
+\]%
+Using the matrix formula for the conditional mean of normal variables,
+\begin{eqnarray*}
+\mathbb{E}\left[ \frac{\tau }{2}\left( x_{1}+y_{1}\right) +\varepsilon \mid
+x_{2}=v,y_{2}=w\right]  &=&\left( 
+\begin{array}{rr}
+\frac{\tau }{2}\sigma  & \frac{\tau }{2}\sigma 
+\end{array}%
+\right) \left( 
+\begin{array}{rr}
+S^{2} & 0 \\ 
+0 & S^{2}%
+\end{array}%
+\right) ^{-1}\left( 
+\begin{array}{r}
+v \\ 
+w%
+\end{array}%
+\right)  \\
+&=&\frac{\sigma \tau }{2S^{2}}\left( v+w\right) 
+\end{eqnarray*}
+
+In particular, if $\sigma =0$, this expectation is equal to 0.
+\end{proof}
+
+\begin{proof}[Proof of Claim \ref{claim-E-children-SGAM}]
+
+From \eqref{cov-children-SGAM}, the joint distribution of $\left( \frac{\tau }{2}\left(
+x_{1}+y_{1}\right) +\varepsilon ,x_{2},y_{2}\right) $ is normal with mean $%
+\left( 0,0,0\right) $ and covariance$\allowbreak $%
+\[
+\Sigma =\left( 
+\begin{array}{rrr}
+\frac{1}{2}\tau ^{2}\left( A^{2}+s^{2}\right) +1 & \frac{\tau }{2}\left(
+\sigma +AC\right)  & \frac{\tau }{2}\left( \sigma +AC\right)  \\ 
+\frac{\tau }{2}\left( \sigma +AC\right)  & S^{2} & C^{2} \\ 
+\frac{\tau }{2}\left( \sigma +AC\right)  & C^{2} & S^{2}%
+\end{array}%
+\right) 
+\]%
+Therefore
+\begin{eqnarray}
+\mathbb{E}\left[ \frac{\tau }{2}\left( x_{1}+y_{1}\right) +\varepsilon \mid
+x_{2}=v,y_{2}=w\right]  &=&\left( 
+\begin{array}{rr}
+\frac{\tau }{2}\left( \sigma +AC\right)  & \frac{\tau }{2}\left( \sigma
++AC\right) 
+\end{array}%
+\right) \left( 
+\begin{array}{rr}
+S^{2} & C^{2} \\ 
+C^{2} & S^{2}%
+\end{array}%
+\right) ^{-1}\left( 
+\begin{array}{r}
+v \\ 
+w%
+\end{array}%
+\right)   \nonumber \\
+&=&\frac{1}{2}\tau \frac{\sigma +AC}{C^{2}+S^{2}}\left( v+w\right) 
+\label{P1}
+\end{eqnarray}%
+In particular, if $\sigma =0$, we have%
+\begin{eqnarray*}
+A &=&\frac{as^{2}}{\sqrt{a^{2}s^{2}+\left( 1-a\right) ^{2}S^{2}}}\textrm{ \ and%
+} \\
+C &=&\frac{\left( 1-a\right) S^{2}}{\sqrt{a^{2}s^{2}+\left( 1-a\right)
+^{2}S^{2}}},
+\end{eqnarray*}%
+and (\ref{P1}) becomes 
+\begin{eqnarray*}
+\mathbb{E}\left[ \frac{\tau }{2}\left( x_{1}+y_{1}\right) +\varepsilon \mid
+x_{2}=v,y_{2}=w\right]  &=&\frac{1}{2}\tau \frac{a\left( 1-a\right) s^{2}}{%
+a^{2}s^{2}+2\left( 1-a\right) ^{2}S^{2}}\left( v+w\right)  \\
+&=&\frac{1}{2}\tau \frac{a\left( 1-a\right) \lambda }{a^{2}\lambda +2\left(
+1-a\right) ^{2}}\left( v+w\right) 
+\end{eqnarray*}
+where $\lambda =s^{2}/S^{2}$ is the ratio of genetic variance to wealth variance.
+The coefficient $\frac{a\left( 1-a\right) \lambda }{a^{2}\lambda +2\left(
+1-a\right) ^{2}}$ is increasing, then decreasing in $a$ and is 0 for $a =  0$ or $a = 1$.
+\end{proof}
+
+\begin{proof}[Proof of Claim \ref{claim-corr-children-RM}]
+
+Under random matching, the covariance matrix for children's characteristics is:%
+\begin{eqnarray*}
+\mathbb{C} &=&\left( 
+\begin{array}{cc}
+1 & 0 \\ 
+0 & 1%
+\end{array}%
+\right) +\left( 
+\begin{array}{cccc}
+\frac{\tau }{2} & 0 & \frac{\tau }{2} & 0 \\ 
+0 & \frac{\theta }{2} & 0 & \frac{\theta }{2}%
+\end{array}%
+\right) \allowbreak \left( 
+\begin{array}{cccc}
+s^{2} & \sigma & 0 & 0 \\ 
+\sigma & S^{2} & 0 & 0 \\ 
+0 & 0 & s^{2} & \sigma \\ 
+0 & 0 & \sigma & S^{2}%
+\end{array}%
+\right) \allowbreak \left( 
+\begin{array}{cc}
+\frac{1}{2}\tau & 0 \\ 
+0 & \frac{1}{2}\theta \\ 
+\frac{1}{2}\tau & 0 \\ 
+0 & \frac{1}{2}\theta%
+\end{array}%
+\right) \\
+&=&\left( 
+\begin{array}{cc}
+\frac{1}{2}s^{2}\tau ^{2}+1 & \frac{1}{2}\theta \sigma \tau \\ 
+\frac{1}{2}\theta \sigma \tau & \frac{1}{2}S^{2}\theta ^{2}+1%
+\end{array}%
+\right)
+\end{eqnarray*}%
+so that the correlation between characteristics for children is: 
+\[
+Corr\left( x_{1}^{\prime },x_{2}^{\prime }\right) =\frac{\frac{1}{2}\theta
+\sigma \tau }{\sqrt{\frac{1}{2}\tau ^{2}s^{2}+1}\sqrt{\frac{1}{2}\theta
+^{2}S^{2}+1}} 
+\]
+
+Note that $\sigma =0$ gives a zero correlation for children as well. 
+Also, because $\theta < 1$ and $\tau < 1$, the correlation is less than the 
+parents' correlation of $\sigma/sS$.
+
+\end{proof}
+
+\begin{proof}[Proof of Claim \ref{claim-corr-children-SGAM}]
+
+Again applying \eqref{cov-children-SGAM}, under SGAM, the correlation between 
+children's traits is:
+\[
+Corr\left( x_{1}^{\prime },x_{2}^{\prime }\right) =\frac{\frac{1}{2}\theta
+\tau \left( \sigma +AC\right) }{\sqrt{\frac{1}{2}\tau ^{2}\left(
+A^{2}+s^{2}\right) +1}\sqrt{\frac{1}{2}\theta ^{2}\left( C^{2}+S^{2}\right)
++1}} 
+\]
+This is positive if $\sigma = 0$ so long as $AC > 0$ i.e. $0 < a < 1$. To show
+it is increasing in $\theta$, strip out constant terms and take the derivative of
+\[
+\frac{\theta}{\sqrt{\frac{1}{2}\theta^2(C^2+S^2) + 1}}
+\]
+The derivative is signed by
+\begin{align*}
+& \left(\frac{1}{2}\theta^2(C^2+S^2) + 1\right)^{0.5} -
+\frac{1}{2}\theta^2(C^2+S^2)\left(\frac{1}{2}\theta^2(C^2+S^2) + 1\right)^{-0.5} \\
+>& \left(\frac{1}{2}\theta^2(C^2+S^2) + 1\right)^{0.5} - 
+\left(\frac{1}{2}\theta^2(C^2+S^2)  + 1\right)\left(\frac{1}{2}\theta^2(C^2+S^2) + 1\right)^{-0.5} \\
+=&\ 0.
+\end{align*}
+\end{proof}
+
+\begin{proof}[Proof of Proposition \ref{prop-asymptotics-RM}]
+
+The fixed point condition on the covariance matrix is
+\[
+\left( 
+\begin{array}{cc}
+s^{2} & \sigma  \\ 
+\sigma  & S^{2}%
+\end{array}%
+\right) =\left( 
+\begin{array}{cc}
+\frac{1}{2}s^{2}\tau ^{2}+1 & \frac{1}{2}\theta \sigma \tau  \\ 
+\frac{1}{2}\theta \sigma \tau  & \frac{1}{2}S^{2}\theta ^{2}+1%
+\end{array}%
+\right) 
+\]
+which gives
+\[
+s^{2}=\frac{2}{2-\tau ^{2}},S^{2}=\frac{2}{2-\theta ^{2}},\sigma =0.
+\]
+
+The asymptotic conditional expectation of children's genetics given parental SES is:
+
+\[
+\mathbb{E}\left[ \frac{\tau }{2}\left( x_{1}+y_{1}\right) +\varepsilon \mid
+x_{2}=v,y_{2}=w\right] =0
+\]%
+
+since the traits $x_1,x_2,y_1,y_2$ are uncorrelated.
+
+\end{proof}
+
+\begin{proof}[Proof of Proposition \ref{prop-asymptotics-SGAM}]
+Start by characterizing the invariant distribution. This must satisfy:%
+\[
+\left( 
+\begin{array}{cc}
+s^{2} & \sigma \\ 
+\sigma & S^{2}%
+\end{array}%
+\right) =\left( 
+\begin{array}{cc}
+\frac{1}{2}\tau ^{2}\left( A^{2}+s^{2}\right) +1 & \frac{1}{2}%
+\theta \tau \left( \sigma+AC\right)  \\ 
+\frac{1}{2}\theta \tau \left( \sigma+AC\right)  & \frac{1}{%
+2}\theta ^{2}\left( C^{2}+S^{2}\right) +1%
+\end{array}%
+\right) \allowbreak 
+\]%
+where%
+\begin{eqnarray*}
+A &=&\frac{as^{2}+\left( 1-a\right) \sigma}{\sqrt{a^{2}%
+s^{2}+\left( 1-a\right) ^{2}S^{2}+2a\left( 1-a\right) \sigma%
+}}\textrm{ \ and} \\
+C &=&\frac{a\sigma+\left( 1-a\right) S^{2}}{\sqrt{a^{2}%
+s^{2}+\left( 1-a\right) ^{2}S^{2}+2a\left( 1-a\right) \sigma%
+}},
+\end{eqnarray*}%
+
+Note that if the distribution converges, $s^{2}$ and $S^{2}$
+must be above 1. Also, for $A$ and $C$ to have a real-valued
+solution, it must be that $a^{2}s^{2}+(1-a)^{2}S^{2}+2a(1-a)\sigma>0$;
+using this,
+
+\[
+AC=\frac{a^{2}s^{2}\sigma+(1-a)^{2}S^{2}\sigma+a(1-a)(\sigma^{2}+S^{2}s^{2})}{a^{2}s^{2}+(1-a)^{2}S^{2}+2a(1-a)\sigma}>\sigma\textrm{, by }\sigma^{2}<S^{2}s^{2}.
+\]
+
+Since $AC>\sigma$, $\frac{\theta\tau}{2}(\sigma+AC)>\theta\tau\sigma$.
+If $\sigma<0$ then $\sigma=\frac{\theta\tau}{2}(\sigma+AC)>\theta\tau\sigma>\sigma$,
+a contradiction. Thus $\sigma\ge0$. Also if $\sigma=0$
+then 
+\[
+\sigma=\frac{\theta\tau}{2}\left(\frac{a(1-a)(S^{2}s^{2})}{a^{2}s^{2}+(1-a)^{2}S^{2}}\right)
+\]
+which implies $a=0$ or $a=1$. This proves that $\sigma$ is
+non-negative, and positive if $a\in(0,1)$, so long as the distribution
+converges.
+
+From the invariant distribution, first:
+
+\[
+\sigma\left(1-\frac{1}{2}\theta\tau\right)=\frac{\theta\tau}{2}\frac{\left(as^{2}+\left(1-a\right)\sigma\right)\left(a\sigma+\left(1-a\right)S^{2}\right)}{a^{2}s^{2}+\left(1-a\right)^{2}S^{2}+2a\left(1-a\right)\sigma}
+\]
+or
+\[
+\mu\left(1-\frac{1}{2}\theta\tau\right)=\frac{\theta\tau}{2}\frac{\left(a\lambda+\left(1-a\right)\mu\right)\left(a\mu+\left(1-a\right)\right)}{a^{2}\lambda+\left(1-a\right)^{2}+2a\left(1-a\right)\mu}
+\]
+where
+\[
+\lambda=s^{2}/S^{2}\text{ and }\mu=\sigma/S^{2}.
+\]
+Solving for $\lambda$ gives
+\begin{equation}
+\lambda=\frac{1-a}{a}\mu\frac{\left(-2a+4a\mu-2\theta\tau+2a\theta\tau-3a\theta\tau\mu+2\right)\allowbreak}{\left(1-a\right)\theta\tau-2a\mu\left(1-\theta\tau\right)}\label{L}
+\end{equation}
+
+Then
+\begin{align*}
+s^{2}\left(1-\frac{1}{2}\tau^{2}\right) & =\frac{1}{2}A^{2}\tau^{2}+1\\
+S^{2}\left(1-\frac{1}{2}\theta^{2}\right) & =\frac{1}{2}C^{2}\theta^{2}+1
+\end{align*}
+give
+\begin{align*}
+s^{2}\left(1-\frac{1}{2}\tau^{2}\right)-\frac{1}{2}A^{2}\tau^{2} & =S^{2}\left(1-\frac{1}{2}\theta^{2}\right)-\frac{1}{2}C^{2}\theta^{2}\text{, therefore}\\
+\lambda\left(1-\frac{1}{2}\tau^{2}\right)-\frac{1}{2}\frac{A^{2}}{S^{2}}\tau^{2} & =\left(1-\frac{1}{2}\theta^{2}\right)-\frac{1}{2}\frac{C^{2}}{S^{2}}\theta^{2}
+\end{align*}
+
+Here
+\begin{align*}
+\frac{A^{2}}{S^{2}} & =\frac{\left(a\lambda+\left(1-a\right)\mu\right)^{2}}{D}\text{ \ and}\\
+\frac{C^{2}}{S^{2}} & =\frac{\left(a\mu+\left(1-a\right)\right)^{2}}{D},\\
+D & =a^{2}\lambda+\left(1-a\right)^{2}+2a\left(1-a\right)\mu
+\end{align*}
+which give a quadratic equation in $\mu$:
+\[
+\lambda\left(1-\frac{1}{2}\tau^{2}\right)D-\frac{1}{2}\left(a\lambda+\left(1-a\right)\mu\right)^{2}\tau^{2}-\left(1-\frac{1}{2}\theta^{2}\right)D+\frac{1}{2}\left(a\mu+\left(1-a\right)\right)^{2}\theta^{2}=0
+\]
+Plugging in $\lambda$ given by (\ref{L}), this can be rewritten
+to
+\[
+F\left(\mu\right)=\frac{\left(1-a+a\mu\right)^{2}}{a}\frac{N\left(\mu\right)}{D\left(\mu\right)}=0
+\]
+where
+\[
+N\left(\mu\right)=X\mu^{2}+Y\mu+Z,\textrm{ with }X,Y,Z\textrm{ polynomials in }a,\theta,\tau
+\]
+and
+\[
+D\left(\mu\right)=\left(\theta\tau\left(1-a\right)-2a\mu\left(1-\theta\tau\right)\right)^{2}
+\]
+
+One can check that the discriminant is always positive. Therefore
+this has two solutions (not shown), of which only one is acceptable
+(it goes to the exact solution when the coefficient of $\mu^{2}$
+goes to 0). Writing 
+\[
+\mu=\phi_{1}(a,\theta,\tau)
+\]
+ for this solution:
+\[
+\lambda=\psi\left(a,\theta,\tau\right)=\frac{1-a}{a}\phi_{1}\left(a,\theta,\tau\right)\allowbreak\frac{\left(-2a+4a\phi_{1}\left(a,\theta,\tau\right)-2\theta\tau+2a\theta\tau-3a\theta\tau\phi_{1}\left(a,\theta,\tau\right)+2\right)}{\left(1-a\right)\theta\tau-2a\phi_{1}\left(a,\theta,\tau\right)\left(1-\theta\tau\right)}.
+\]
+
+Finally
+\begin{align*}
+S^{2} & =\frac{1}{1-\frac{1}{2}\theta^{2}-\frac{1}{2}\frac{C^{2}}{S^{2}}\theta^{2}}\text{ where}\\
+\frac{C^{2}}{S^{2}} & =\frac{\left(a\phi_{1}\left(a,\theta,\tau\right)+\left(1-a\right)\right)^{2}}{a^{2}\psi\left(a,\theta,\tau\right)+\left(1-a\right)^{2}+2a\left(1-a\right)\phi_{1}\left(a,\theta,\tau\right)}
+\end{align*}
+and
+\begin{align*}
+s^{2} & =\lambda S^{2}=\frac{\psi\left(a,\theta,\tau\right)}{1-\frac{1}{2}\theta^{2}-\frac{1}{2}\frac{C^{2}}{S^{2}}\theta^{2}};\\
+\sigma & =\mu S^{2}=\frac{\phi_{1}\left(a,\theta,\tau\right)}{1-\frac{1}{2}\theta^{2}-\frac{1}{2}\frac{C^{2}}{S^{2}}\theta^{2}}.
+\end{align*}
+
+Conditional expectations of children's genetics given parents' wealth under SGAM
+are calculated using the same formula as before, plugging in moments of the 
+asymptotic distribution:
+
+\[
+\mathbb{E}\left[ \frac{\tau }{2}\left( x_{1}+y_{1}\right) +\varepsilon \mid
+x_{2}=v,y_{2}=w\right]  = \frac{1}{2}\tau \frac{\sigma+AC%
+}{C^{2}+S^{2}}\left( v+w\right)  
+\]
+
+\end{proof}
+
+\begin{proof}[Proof of Claim \ref{claim-men-women-different}]
+
+Since men and women have different distributions of attractiveness,
+we have to match them by quantiles of their respective distributions. 
+Men's and women's attractiveness are distributed
+\begin{align*}
+N(0,\sigma_{I}^{2})\textrm{ where }\sigma_{I} & =\sqrt{a^{2}s^{2}+(1-a)^{2}S^{2}+2a(1-a)\sigma};\\
+N(0,\sigma_{J}^{2})\textrm{ where }\sigma_{J} & =\sqrt{b^{2}s^{2}+(1-b)^{2}S^{2}+2b(1-b)\sigma}.
+\end{align*}
+Thus, men with normalized attractiveness $i(x)/\sigma_{I}$ match
+women with normalized attractiveness $j(y)/\sigma_{J}$.
+
+Change variables so that 
+\begin{align*}
+\left(\begin{array}{c}
+x_{1}\\
+x_{2}
+\end{array}\right) & \rightarrow\left(\begin{array}{c}
+x_{1}\\
+u
+\end{array}\right)\textrm{ where }u=\frac{ax_{1}+(1-a)x_{2}}{\sigma_{I}};\\
+\left(\begin{array}{c}
+y_{1}\\
+y_{2}
+\end{array}\right) & \rightarrow\left(\begin{array}{c}
+y_{1}\\
+v
+\end{array}\right)\textrm{ where }v=\frac{by_{1}+(1-b)y_{2}}{\sigma_{J}}.
+\end{align*}
+
+Thus 
+\begin{align*}
+\left(\begin{array}{c}
+x_{1}\\
+u
+\end{array}\right) & =\left(\begin{array}{cc}
+1 & 0\\
+a/\sigma_{I} & (1-a)/\sigma_{I}
+\end{array}\right)\left(\begin{array}{c}
+x_{1}\\
+x_{2}
+\end{array}\right);\\
+\left(\begin{array}{c}
+y_{1}\\
+v
+\end{array}\right) & =\left(\begin{array}{cc}
+1 & 0\\
+b/\sigma_{J} & (1-b)/\sigma_{J}
+\end{array}\right)\left(\begin{array}{c}
+y_{1}\\
+y_{2}
+\end{array}\right).
+\end{align*}
+
+and their respective covariance matrices are
+\begin{align*}
+\mathbb{C}\left(\begin{array}{c}
+x_{1}\\
+u
+\end{array}\right) & =\left(\begin{array}{cc}
+1 & 0\\
+a/\sigma_{I} & (1-a)/\sigma_{I}
+\end{array}\right)\left(\begin{array}{cc}
+s^{2} & \sigma\\
+\sigma & S^{2}
+\end{array}\right)\left(\begin{array}{cc}
+1 & a/\sigma_{I}\\
+0 & (1-a)/\sigma_{I}
+\end{array}\right)\\
+ & =\left(\begin{array}{cc}
+s^{2} & A \\
+A & 1
+\end{array}\right), \textrm{ where } A=\frac{as^{2}+(1-a)\sigma}{\sigma_{I}};
+\end{align*}
+
+similarly
+\[
+\mathbb{C}\left(\begin{array}{c}
+y_{1}\\
+v
+\end{array}\right)=\left(\begin{array}{cc}
+s^{2} & B \\
+B & 1
+\end{array}\right), \textrm{ where } B=\frac{bs^{2}+(1-b)\sigma}{\sigma_{J}}.
+\]
+
+Under SGAM, couples have characteristics $\left(\begin{array}{c}
+x_{1}\\
+t\\
+y_{1}\\
+t
+\end{array}\right),$ where $\left(\begin{array}{c}
+x_{1}\\
+y_{1}\\
+t
+\end{array}\right)$ is trivariate normal with mean 0 and covariance matrix
+\[
+\Sigma=\left(\begin{array}{ccc}
+s^{2} & AB & A\\
+AB & s^{2} & B\\
+A & B & 1
+\end{array}\right)
+% XXX do I need to expand Pierre's "just note" proof in Computations5short?
+\]
+
+
+Lastly, we calculate the covariance matrix of couples' original characteristics.
+Since
+\[
+\left(\begin{array}{c}
+x_{1}\\
+x_{2}\\
+y_{1}\\
+y_{2}
+\end{array}\right)=\left(\begin{array}{ccc}
+1 & 0 & 0\\
+\frac{-a}{1-a} & 0 & \frac{\sigma_{I}}{1-a}\\
+0 & 1 & 0\\
+0 & \frac{-b}{1-b} & \frac{\sigma_{J}}{1-b}
+\end{array}\right)\left(\begin{array}{c}
+x_{1}\\
+y_{1}\\
+t
+\end{array}\right)
+\]
+we have that the mean is again 0 and the covariance matrix is 
+\begin{align*}
+\mathbb{C}\left(\begin{array}{c}
+x_{1}\\
+x_{2}\\
+y_{1}\\
+y_{2}
+\end{array}\right) & =\left(\begin{array}{ccc}
+1 & 0 & 0\\
+\frac{-a}{1-a} & 0 & \frac{\sigma_{I}}{1-a}\\
+0 & 1 & 0\\
+0 & \frac{-b}{1-b} & \frac{\sigma_{J}}{1-b}
+\end{array}\right)\Sigma\left(\begin{array}{cccc}
+1 & \frac{-a}{1-a} & 0 & 0\\
+0 & 0 & 1 & \frac{-b}{1-b}\\
+0 & \frac{\sigma_{I}}{1-a} & 0 & \frac{\sigma_{J}}{1-b}
+\end{array}\right)\\
+ & =\left(\begin{array}{cccc}
+s^{2} & \sigma & AB & AD\\
+\sigma & S^{2} & BC & CD\\
+AB & BC & s^{2} & \sigma\\
+AD & CD & \sigma & S^{2}
+\end{array}\right)
+\end{align*}
+where
+\[
+C=\frac{a\sigma+(1-a)S^{2}}{\sigma_{I}};D=\frac{b\sigma+(1-b)S^{2}}{\sigma_{J}}.
+\]
+
+From the above and \eqref{Chil} we can calculate the
+covariance matrix of children's characteristics as
+\begin{align*}
+\mathbb{C}\left(\begin{array}{c}
+x_{1}^{\prime}\\
+x_{2}^{\prime}
+\end{array}\right) & =\left(\begin{array}{cc}
+1 & 0\\
+0 & 1
+\end{array}\right)+\left(\begin{array}{cccc}
+\frac{\tau}{2} & 0 & \frac{\tau}{2} & 0\\
+0 & \frac{\theta}{2} & 0 & \frac{\theta}{2}
+\end{array}\right)\left(\begin{array}{cccc}
+s^{2} & \sigma & AB & AD\\
+\sigma & S^{2} & BC & CD\\
+AB & BC & s^{2} & \sigma\\
+AD & CD & \sigma & S^{2}
+\end{array}\right)\left(\begin{array}{cc}
+\frac{\tau}{2} & 0\\
+0 & \frac{\theta}{2}\\
+\frac{\tau}{2} & 0\\
+0 & \frac{\theta}{2}
+\end{array}\right)\\
+ & =\left(\begin{array}{cc}
+\frac{\tau^{2}}{2}(s^{2}+AB)+1 & \frac{\tau\theta}{4}(2\sigma+AD+BC)\\
+\frac{\tau\theta}{4}(2\sigma+AD+BC) & \frac{\theta^{2}}{2}(S^{2}+CD)+1
+\end{array}\right).
+\end{align*}
+
+Thus $x_{1}^{\prime}$ and $x_{2}^{\prime}$ will be positively correlated
+if $2\sigma+AD+BC>0$. This is always positive if $\sigma>0$; if $\sigma=0$ 
+it reduces to
+\[
+\frac{(a+b-2ab)s^{2}S^{2}}{\sigma_{I}\sigma_{J}}
+\]
+which is positive unless $a=b=0$ or $a=b=1$. The correlation is
+\[
+\frac{
+\frac{\tau\theta}{4}(2\sigma+AD+BC)
+}{
+\sqrt{\frac{\tau^{2}}{2}(s^{2}+AB)+1}
+\sqrt{\frac{\theta^{2}}{2}(S^{2}+CD)+1}
+}
+\]
+and taking the derivative shows it is increasing in $\theta$, as in the proof 
+for Claim \ref{claim-corr-children-SGAM}.
+\end{proof}
+
+\begin{proof}[Proof of Proposition \ref{prop-gamma}]
+Write
+\begin{align*}
+x_{1}^{\prime}  &=\tau\frac{x_{1}+y_{1}}{2}+\varepsilon \\
+x_{2}^{\prime}  &=\gamma x_{1}^{\prime}+\theta\frac{x_{2}+y_{2}}{2}+\eta \\
+                  &=\gamma\tau \frac{x_{1}+y_{1}}{2} + \theta \frac{x_{2}+y_{2}}{2} 
+                    + \eta + \gamma\varepsilon
+\end{align*}
+
+Since
+\[
+\left(\begin{array}{c}
+\tau\frac{x_{1}+y_{1}}{2}\\
+\gamma\tau\frac{x_{1}+y_{1}}{2}+\theta\frac{x_{2}+y_{2}}{2}
+\end{array}\right)=\left(\begin{array}{cccc}
+\frac{\tau}{2} & 0 & \frac{\tau}{2} & 0\\
+\frac{\gamma\tau}{2} & \frac{\theta}{2} & \frac{\gamma\tau}{2} & \frac{\theta}{2}
+\end{array}\right)\left(\begin{array}{c}
+x_{1}\\
+x_{2}\\
+y_{1}\\
+y_{2}
+\end{array}\right)
+\]
+we can use \eqref{cov-couples-SGAM} to derive the covariance matrix for children:
+
+\begin{align*}
+\mathbb{C}  &= \left(\begin{array}{cc}
+1 & \gamma\\
+\gamma & \ 1+\gamma^{2}
+\end{array}\right)+\left(\begin{array}{cccc}
+\frac{\tau}{2} & 0 & \frac{\tau}{2} & 0\\
+\frac{\gamma\tau}{2} & \frac{\theta}{2} & \frac{\gamma\tau}{2} & \frac{\theta}{2}
+\end{array}\right)\left(\begin{array}{cccc}
+s^{2} & \sigma & A^{2} & AC\\
+\sigma & S^{2} & AC & C^{2}\\
+A^{2} & AC & s^{2} & \sigma\\
+AC & C^{2} & \sigma & S^{2}
+\end{array}\right)\left(\begin{array}{cc}
+\frac{\tau}{2} & \frac{\gamma\tau}{2}\\
+0 & \frac{\theta}{2}\\
+\frac{\tau}{2} & \frac{\gamma\tau}{2}\\
+0 & \frac{\theta}{2}
+\end{array}\right) \\
+    &=\left(\begin{array}{cc}
+\frac{\tau^{2}}{2}(s^{2}+A^{2})+1 & \frac{\gamma\tau^{2}}{2}(s^{2}+A^{2})+\frac{\tau\theta}{2}(\sigma+AC)+\gamma\\
+\frac{\gamma\tau^{2}}{2}(s^{2}+A^{2})+\frac{\tau\theta}{2}(\sigma+AC)+\gamma & \ \ \frac{\gamma^{2}\tau^{2}}{2}(s^{2}+A^{2})+\gamma\tau\theta(\sigma+AC)+\frac{\theta^{2}}{2}(S^{2}+C^{2})+1+\gamma^{2}
+\end{array}\right)
+\end{align*}
+
+The first claim in the proof follows from the covariance:
+\[
+\frac{\gamma\tau^{2}}{2}(s^{2}+A^{2})+\frac{\tau\theta}{2}(\sigma+AC)+\gamma
+\]
+This is increasing in $\gamma$, and positive if any of $\sigma > 0$, 
+$\gamma > 0$,  or $AC > 0$ (which holds if $0 < a < 1$ when $\sigma = 0$).
+
+The correlation $Cov(x_{1}^{\prime},x_{2}^{\prime})/\sqrt{Var(x_{1}^{\prime})Var(x_{2}^{\prime})}$
+is proportional to
+\[
+\frac{\gamma p+q}{\sqrt{\gamma^{2}p+\gamma2q+r}}
+\]
+where 
+\begin{align*}
+p & =\tau^{2}(s^{2}+A^{2})+2;\\
+q & =\tau\theta(\sigma+AC);\\
+r & =\theta^{2}(S^{2}+C^{2})+2.
+\end{align*}
+The derivative of this with respect to $\gamma$ is signed by $pr-q^{2}$, 
+which equals
+\begin{align*}
+ & [\tau^{2}(s^{2}+A^{2})+2][\theta^{2}(S^{2}+C^{2})+2]-[\tau\theta(\sigma+AC)]^{2}\\
+= & \tau^{2}\theta^{2}(s^{2}S^{2}+A^{2}S^{2}+s^{2}C^{2}-2\sigma AC-\sigma^{2})+2[\theta^{2}(S^{2}+C^{2})+\tau^{2}(s^{2}+A^{2})]+4
+\end{align*}
+The last two terms are positive. In the first term, $\sigma^{2}<s^{2}S^{2}$,
+and
+\begin{align*}
+0 & <(AS-Cs)^{2}\\
+ & =A^{2}S^{2}+C^{2}s^{2}-2ACSs\\
+ & <A^{2}S^{2}+C^{2}s^{2}-2\sigma AC\textrm{ , again using }\sigma<sS.\\
+\end{align*}
+
+Hence the whole sum is positive.
+
+
+Now we can calculate
+\[
+\mathbb{E}[x_{2}^{\prime}|x_{2}+y_{2}]
+\]
+
+using
+\[
+\left(\begin{array}{c}
+\gamma\tau\frac{x_{1}+y_{1}}{2}+\theta\frac{x_{2}+y_{2}}{2}\\
+x_{2}\\
+y_{2}
+\end{array}\right)=\left(\begin{array}{cccc}
+\frac{\gamma\tau}{2}0 & \frac{\theta}{2}1 & \frac{\gamma\tau}{2}0 & \frac{\theta}{2}0\\
+0 & 1 & 0 & 0\\
+0 & 0 & 0 & 1
+\end{array}\right)\left(\begin{array}{c}
+x_{1}\\
+x_{2}\\
+y_{1}\\
+y_{2}
+\end{array}\right)
+\]
+to give
+{\small\begin{align*}
+\mathbb{C}\left(\begin{array}{c}
+x_{2}^{\prime}\\
+x_{2}\\
+y_{2}
+\end{array}\right) & =\left(\begin{array}{cccc}
+\frac{\gamma\tau}{2} & \frac{\theta}{2} & \frac{\gamma\tau}{2} & \frac{\theta}{2}\\
+0 & 1 & 0 & 0\\
+0 & 0 & 0 & 1
+\end{array}\right)\left(\begin{array}{cccc}
+s^{2} & \sigma & A^{2} & AC\\
+\sigma & S^{2} & AC & C^{2}\\
+A^{2} & AC & s^{2} & \sigma\\
+AC & C^{2} & \sigma & S^{2}
+\end{array}\right)\left(\begin{array}{ccc}
+\frac{\gamma\tau}{2} & 0 & 0\\
+\frac{\theta}{2} & 1 & 0\\
+\frac{\gamma\tau}{2} & 0 & 0\\
+\frac{\theta}{2} & 0 & 1
+\end{array}\right)+\left(\begin{array}{ccc}
+1+\gamma^{2} & 0 & 0\\
+0 & 0 & 0\\
+0 & 0 & 0
+\end{array}\right)\\
+ & =\left(\begin{array}{ccc}
+\ldots & \frac{\gamma\tau}{2}(\sigma+AC)+\frac{\theta}{2}(S^{2}+C^{2}) & \frac{\gamma\tau}{2}(\sigma+AC)+\frac{\theta}{2}(S^{2}+C^{2})\\
+\frac{\gamma\tau}{2}(\sigma+AC)+\frac{\theta}{2}(S^{2}+C^{2}) & S^{2} & C^{2}\\
+\frac{\gamma\tau}{2}(\sigma+AC)+\frac{\theta}{2}(S^{2}+C^{2}) & C^{2} & S^{2}
+\end{array}\right).
+\end{align*}}%
+
+Next
+\begin{align*}
+\mathbb{E}[x_{2}^{\prime}|x_{2},y_{2}] & =\left(\begin{array}{cc}
+\frac{\gamma\tau}{2}(\sigma+AC)+\frac{\theta}{2}(S^{2}+C^{2}) & \frac{\gamma\tau}{2}(\sigma+AC)+\frac{\theta}{2}(S^{2}+C^{2})\end{array}\right)\left(\begin{array}{cc}
+S^{2} & C^{2}\\
+C^{2} & S^{2}
+\end{array}\right)^{-1}\left(\begin{array}{c}
+x_{2}\\
+y_{2}
+\end{array}\right)\\
+ & =\left(\gamma\tau\frac{\sigma+AC}{S^{2}+C^{2}}+\theta\right)\frac{x_{2}+y_{2}}{2}
+\end{align*}
+
+So long as $0<a<1$ or $\sigma>0$, the coefficient on parents' wealth is thus 
+higher than $\theta$.
+
+\end{proof}
+
+\begin{proof}[Proof of Proposition \ref{prop-non-normal}]
+Without loss of generality let $Ex_1 = Ex_2 = 0$. The correlation is signed by
+the covariance. Write $K$ for the set of couples in the parents' generation with
+typical member $k = (x,y)$. Without loss of generality let $x_1 \ge y_1$. Then,
+since the iso-attractiveness curves defined by $f$ are downward-sloping, 
+$x_2 \le y_2$. (If $a = 1$ then $x_1 = y_1$; pick $x$ so that $x_2 \le y_2$.) Also,
+for $a \in (0,1)$, if $x_1 > y_1$ then $x_2 < y_2$.
+
+Since $Ex_1 = Ex_2 = 0$, the covariance among the parents' generation is
+
+\[
+\int_K (x_1x_2 + y_1y_2)/2 \ dk
+\]
+
+Write
+
+\begin{align*}
+x^\prime_1 =& \tau x^*_1 + \varepsilon & \textrm{where } x^*_1 =& (x_1+y_1)/2  \\
+x^\prime_2 =& \theta x^*_2 + \eta & \textrm{where } x^*_2 =& (x_2+y_2)/2  
+\end{align*}
+
+and write the children's covariance as
+\[
+Cov(x^\prime_1, x^\prime_2) = Cov(\tau x^*_1, \theta x^*_2) + Cov(\tau x^*_1, \eta) + 
+  Cov(\varepsilon, \theta x^*_2) + Cov(\varepsilon, \eta).
+\]
+By independence of the shocks, the last 3 terms are zero. So we need to
+show that
+\[
+Cov(\tau x^*_1, \theta x^*_2) = \tau\theta Cov(x^*_1, x^*_2) > 0
+\]
+
+Write
+\[
+Cov(x^*_1, x^*_2) = \int_K x^*_1 x^*_2 \ dk
+\]
+using that $Ex^*_1 = Ex^*_2 = 0$. 
+
+Take a typical parent, and write
+\begin{align*}
+x_1x_2 = (x^*_1 - \Delta_1)(x^*_2 - \Delta_2) \\
+y_1y_2 = (x^*_1 + \Delta_1)(x^*_2 + \Delta_2)
+\end{align*}
+where 
+\[
+\Delta_1 = (x_1 - y_1)/2;\ \Delta_2 = (x_2 - y_2)/2.
+\]
+By assumption $\Delta_1 \ge 0$ and $\Delta_2 \le 0$. Furthermore, if $a \in (0,1)$, then
+for a set of positive measure, $\Delta_1 > 0$ and $\Delta_2 < 0$, by our assumption 
+that not all matching couples are identical.
+
+Taking the average of the parents gives
+\[
+(x_1x_2 + y_1y_2)/2 = x^*_1x^*_2 + \Delta_1\Delta_2
+\]
+and if $a \in (0,1)$, this is strictly less than $x^*_1x^*_2$ for a set of 
+positive measure. Plugging this into the integral gives
+
+\[
+Cov(x_1,x_2) \le Cov(x^*_1, x^*_2) = \int_K x^*_1 x^*_2 \ dk
+\]
+with strict inequality if $a \in (0,1)$. Since the parental covariance was 0
+by assumption, this completes the proof.
+
+\end{proof}
+
+\end{document}
