@@ -38,6 +38,7 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
@@ -416,7 +417,7 @@ $\tau = 1$, the dynamics diverges and $\bar{s}^{2}$ goes to $+\infty$.
 
 \begin{figure}
 
-{\centering \includegraphics[width=6in]{model-section_files/figure-latex/pic-asymptotic-corr-1.-rgl} 
+{\centering \includegraphics[width=6in]{model-section_files/figure-latex/pic-asymptotic-corr-1} 
 
 }
 
@@ -457,9 +458,9 @@ long as $\gamma > 0$ and either $0 < a < 1$ or $\sigma > 0$, the coefficient
 of parents' wealth on children's wealth exceeds $\theta$.
 \end{proposition}
 
-Using this extension, we can examine how intergenerational transmission
+With this extension, we can examine how intergenerational transmission
 of inequality responds to policy shocks under different models of assortative
-mating. Figure (\textbf{ref?})(fig:pic-simulate-mao) simulates different generations of
+mating. Figure \ref{fig:pic-simulate-mao} simulates different generations of
 families under a policy shock which reduces \(\theta\) and \(\gamma\) to 0 for
 one generation. We group families into quartiles by their SES on the eve of the
 shock, and track the quartiles' mean SES over generations. The left panel shows
@@ -467,13 +468,13 @@ pure genetic assortative mating (\(a = 1\)). Since couples only match on genetic
 although the shock temporarily reduces SES differences to zero, afterwards
 families return to where they would have been without the shock
 (dashed lines). The right panel shows SGAM with \(a = 0.3\). Here, the shock
-reduces the mating value of previously high-SES individuals. As a result, their
-SES never recovers to its no-shock value.
+reduces the mating value of previously high-SES individuals, and as a result,
+their SES never recovers to its no-shock value.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio]{model-section_files/figure-latex/pic-simulate-mao-1.pdf}}
-\caption{\label{fig:pic-simulate-mao}A simulated policy shock under GAM (\(a\) = 1) and SGAM (\(a\) = 0.3). Lines show mean SES in each quartile of families, grouped by SES in the generation before the shock. In generation 0 , \(\theta\) and \(\gamma\) are reduced to zero. Thereafter they return to their previous values. Under GAM, family SES swiftly returns to the no-shock counterfactual (dashed lines). Under SGAM it never does so.}
+\pandocbounded{\includegraphics[keepaspectratio,alt={\label{fig:pic-simulate-mao}A simulated policy shock under GAM (a = 1) and SGAM (a = 0.3). Lines show mean SES in each quartile of families, grouped by SES in the generation before the shock. In generation 0 , \textbackslash theta and \textbackslash gamma are reduced to zero. Thereafter they return to their previous values (\textbackslash theta = 0.8, \textbackslash gamma = 0.1. Under GAM, family SES returns to the no-shock counterfactual (dashed lines). Under SGAM it never does so.}]{model-section_files/model-section_files/figure-latex/pic-simulate-mao-1.pdf}}
+\caption{\label{fig:pic-simulate-mao}A simulated policy shock under GAM (\(a\) = 1) and SGAM (\(a\) = 0.3). Lines show mean SES in each quartile of families, grouped by SES in the generation before the shock. In generation 0 , \(\theta\) and \(\gamma\) are reduced to zero. Thereafter they return to their previous values (\(\theta = 0.8, \gamma = 0.1\). Under GAM, family SES returns to the no-shock counterfactual (dashed lines). Under SGAM it never does so.}
 \end{figure}
 
 In the Appendix we consider further extensions. We allow men
@@ -493,7 +494,7 @@ income is valued differently in Norwegian and British marriage markets. Finally,
 if different individuals have varying matching preferences
 (values of \(a\)), the model becomes hard to work with because there is no
 agreed-upon ranking of men and women, but computations using the
-Gale-Shapley matching algorithm shows that the basic insights of SGAM still hold.\footnote{See \url{https://github.com/hughjonesd/trading-genetics/blob/master/gale-shapley-multiple-a.R}.}
+Gale-Shapley matching algorithm shows that the basic insights of SGAM still hold.\footnote{See \url{https://github.com/hughjonesd/trading-status-genetics/blob/main/gale-shapley-multiple-a.R}.}
 
 \subsection{Discussion}\label{discussion}
 
@@ -527,10 +528,10 @@ with the effects of correlated socio-economic status. Recent work in genetics
 has shown this. Polygenic scores for educational attainment have smaller effects
 in between-sibling regressions, where between-family variation in SES is
 partialled out and where genetic variants are guaranteed to be randomly
-allocated, than in regressions which pool the whole sample (Howe et al. 2022).
+allocated, than in regressions which pool the whole sample ({Howe et al.} 2022).
 Parents' genetic variants which are \emph{not} passed on to children predict
 children's characteristics, partly due to social stratification in the geneticists'
-sense of non-random mating (Kong et al. 2018; Young 2023).
+sense of non-random mating ({Kong et al.} 2018; Young 2023).
 
 The model predicts variation in the effects of SGAM. In particular, in
 ``caste societies'' where there is complete endogamy within social status
@@ -542,10 +543,12 @@ effects on biosocial structure: reducing \(\theta\) not only increases
 intergenerational mobility, but reduces the correlation of genes with SES, and
 hence the bias of what Harden (2021) calls the ``genetic lottery''.
 Conversely, reforms that increase meritocracy (\(\gamma\), Proposition
-\ref{prop-gamma}) may strengthen the genes-SES gradient.
+\ref{prop-gamma}) may strengthen the genes-SES gradient. This poses the problem
+raised by Young (1958) and more recently Markovits (2019): meritocracy
+may be self-limiting or even self-undermining.
 
-\phantomsection\label{refs}
-\begin{CSLReferences}{1}{0}
+\protect\phantomsection\label{refs}
+\begin{CSLReferences}{1}{1}
 \bibitem[\citeproctext]{ref-clark2023inheritance}
 Clark, Gregory. 2023. {``The Inheritance of Social Status: England, 1600 to 2022.''} \emph{Proceedings of the National Academy of Sciences} 120 (27): e2300926120.
 
@@ -553,19 +556,25 @@ Clark, Gregory. 2023. {``The Inheritance of Social Status: England, 1600 to 2022
 Harden, Kathryn Paige. 2021. \emph{The Genetic Lottery: Why DNA Matters for Social Equality}. Princeton University Press.
 
 \bibitem[\citeproctext]{ref-howe2022within}
-Howe, Laurence J, Michel G Nivard, Tim T Morris, Ailin F Hansen, Humaira Rasheed, Yoonsu Cho, Geetha Chittoor, et al. 2022. {``Within-Sibship Genome-Wide Association Analyses Decrease Bias in Estimates of Direct Genetic Effects.''} \emph{Nature Genetics} 54 (5): 581--92.
+{Howe, Laurence J, Michel G Nivard, Tim T Morris, et al.} 2022. {``Within-Sibship Genome-Wide Association Analyses Decrease Bias in Estimates of Direct Genetic Effects.''} \emph{Nature Genetics} 54 (5): 581--92.
 
 \bibitem[\citeproctext]{ref-kong2018nature}
-Kong, Augustine, Gudmar Thorleifsson, Michael L Frigge, Bjarni J Vilhjalmsson, Alexander I Young, Thorgeir E Thorgeirsson, Stefania Benonisdottir, et al. 2018. {``The Nature of Nurture: Effects of Parental Genotypes.''} \emph{Science} 359 (6374): 424--28.
+{Kong, Augustine, Gudmar Thorleifsson, Michael L Frigge, et al.} 2018. {``The Nature of Nurture: Effects of Parental Genotypes.''} \emph{Science} 359 (6374): 424--28.
+
+\bibitem[\citeproctext]{ref-markovits2019meritocracy}
+Markovits, Daniel. 2019. \emph{The Meritocracy Trap}. Penguin UK.
 
 \bibitem[\citeproctext]{ref-sanjak2018evidence}
 Sanjak, Jaleal S, Julia Sidorenko, Matthew R Robinson, Kevin R Thornton, and Peter M Visscher. 2018. {``Evidence of Directional and Stabilizing Selection in Contemporary Humans.''} \emph{Proceedings of the National Academy of Sciences} 115 (1): 151--56.
 
 \bibitem[\citeproctext]{ref-schmalhausen1949factors}
-Schmalhausen, Ivan Ivanovich. 1949. {``Factors of Evolution: The Theory of Stabilizing Selection.''}
+Schmalhausen, Ivan Ivanovich. 1949. \emph{Factors of Evolution: The Theory of Stabilizing Selection.}
 
 \bibitem[\citeproctext]{ref-young2023estimation}
 Young, Alexander Strudwick. 2023. {``Estimation of Indirect Genetic Effects and Heritability Under Assortative Mating.''} \emph{bioRxiv}, 2023--07.
+
+\bibitem[\citeproctext]{ref-young1958rise}
+Young, M. 1958. \emph{The Rise of the Meritocracy}. Thames; Hudson.
 
 \end{CSLReferences}
 

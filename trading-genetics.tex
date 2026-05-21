@@ -41,6 +41,7 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
@@ -150,7 +151,7 @@ Fartein Ask Torvik\thanks{Norwegian Institute of Public Health, Oslo.
   Email: f.a.torvik@psykologi.uio.no} \&
 Eivind Ystrøm\thanks{Norwegian Institute of Public Health, Oslo. 
   Email: eivind.ystrom@psykologi.uio.no}}
-\date{2026-03-16}
+\date{2026-05-21}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}
@@ -200,7 +201,7 @@ families (Breen and Salazar 2011; Greenwood et al. 2014) and contribute to
 its persistence across generations, which is surprisingly high
 (Clark and Cummins 2015; Solon 2018). Wealthy families pass on
 advantages to their children through both genetic inheritance and
-environmental influence (Rimfeld et al. 2018; Björklund, Lindahl, and Plug 2006; Sacerdote 2011).
+environmental influence (Rimfeld et al. 2018; Björklund et al. 2006; Sacerdote 2011).
 
 This paper examines a plausible aspect of marriage markets: both social
 status and genetics contribute to a person's attractiveness, and as a
@@ -231,7 +232,7 @@ variants. We show that social-genetic assortative mating in one
 generation increases the correlation between SES and genetic variants in
 the offspring generation. This result provides a new explanation of
 \emph{genes-SES gradients} -- systematic genetic differences between high-
-and low-SES people (Belsky et al. 2018; Rimfeld et al. 2018; Björklund, Lindahl, and Plug 2006). The dominant existing explanation for these
+and low-SES people ({Belsky et al.} 2018; Rimfeld et al. 2018; Björklund et al. 2006). The dominant existing explanation for these
 gradients is meritocratic social mobility: if a genetic variant predicts
 success in the labour market, then it will become associated with high
 SES and will be inherited in high-SES families. While under meritocracy,
@@ -248,12 +249,12 @@ surveys in Great Britain and Norway, we test the hypothesis that a
 person's higher social status attracts spouses with genetic variants
 predicting greater educational attainment. Our genetic measure, the
 polygenic score for educational attainment (PSEA), derives from
-large-scale genome-wide association studies (Lee et al. 2018; Okbay et al. 2022). PSEA reflects a bundle of polygenic effects on
+large-scale genome-wide association studies ({Lee et al.} 2018; {Okbay et al.} 2022). PSEA reflects a bundle of polygenic effects on
 underlying traits, including intelligence, personality, and physical and
-mental health (Demange et al. 2021). PSEA predicts, and causes,
+mental health ({Demange et al.} 2021). PSEA predicts, and causes,
 educational attainment itself, as well as intelligence and labour market
 outcomes. It is already known that humans mate assortatively on PSEA
-(Hugh-Jones et al. 2016; Robinson et al. 2017; Torvik et al. 2022), which
+(Hugh-Jones et al. 2016; {Robinson et al.} 2017; {Torvik et al.} 2022), which
 makes it a likely candidate for detecting SGAM.
 
 The endogeneity of socio-economic status is the main challenge in
@@ -262,18 +263,18 @@ instance, people with high educational qualifications tend to also have
 high PSEA, and as mentioned above, they may take partners based on
 genetic similarity. Indeed, recent studies show strong assortative
 mating on PSEA, much more than we would expect if spouses matched only
-on observed measures of educational attainment (Okbay et al. 2022). To
+on observed measures of educational attainment ({Okbay et al.} 2022). To
 isolate the causal link from own SES to partner's genes, we use a shock
 to SES which is independent of own genetics. Specifically, we use a
 person's \emph{birth order}. Earlier-born children receive higher parental
 investment and have better life outcomes, including measures of SES such
-as educational attainment and occupational status (Black, Devereux, and Salvanes 2011; Booth and Kee 2009; Lindahl 2008). At the same time, the facts of biology,
+as educational attainment and occupational status (Black et al. 2011; Booth and Kee 2009; Lindahl 2008). At the same time, the facts of biology,
 in particular the so-called ``lottery of meiosis'', guarantee that
 siblings' birth order is independent of their genetic endowments.\footnote{Although Muslimova et al. (2020) find that PSEA and birth order
   \emph{interact} to produce human capital.}
 Because birth order could affect partner choice through both SES and
 non-SES mechanisms, we run a mediation analysis similar to
-Heckman, Pinto, and Savelyev (2013), decomposing the treatment effect into effects
+Heckman et al. (2013), decomposing the treatment effect into effects
 of measured and unmeasured mediating variables. Specifically, we
 estimate a reduced-form model with spouse polygenic scores for
 educational attainment (PSEA) as the dependent variable, and own birth
@@ -304,16 +305,16 @@ marriage market, with long-run implications for genes-SES gradients.
 \section{Literature review}\label{literature-review}
 
 Both economists and geneticists study assortative mating. The economics
-literature has typically focused on educational similarities (e.g. Pencavel 1998; Chiappori, Salanié, and Weiss 2017) or social class or
-caste (e.g. Abramitzky, Delavande, and Vasconcelos 2011; Banerjee et al. 2013), but also
+literature has typically focused on educational similarities (e.g. Pencavel 1998; Chiappori et al. 2017) or social class or
+caste (e.g. Abramitzky et al. 2011; Banerjee et al. 2013), but also
 sorting based on age, physical traits and ethnicity
-(Hitsch, Hortaçsu, and Ariely 2010). Some papers have studied substitution between
+(Hitsch et al. 2010). Some papers have studied substitution between
 different traits.\footnote{Oreffice and Quintana-Domeque (2010) show that height and BMI are associated
   with spouse earnings. Dupuy and Galichon (2014) find spouse matching on
   multiple independent dimensions, including education, height, BMI
-  and personality. Chiappori, Ciscato, and Guerriero (2021) analyse matching on
+  and personality. Chiappori et al. (2021) analyse matching on
   multiple characteristics and show that a three-dimensional matching
-  model fits their data.} For instance, Chiappori, Oreffice, and Quintana-Domeque (2012) showed that
+  model fits their data.} For instance, Chiappori et al. (2012) showed that
 individuals trade off BMI for partners' income or education.
 
 Only a few papers have examined assortative mating between socially and
@@ -321,13 +322,13 @@ genetically inherited traits. Halsey (1958) showed that social
 mobility combined with assortative mating might increase the association
 between genetics and social class. Subsequently, some papers in genetics
 examine cultural transmission, without focusing specifically on
-inherited social status. Cloninger, Rice, and Reich (1979) model genetic and
+inherited social status. Cloninger et al. (1979) model genetic and
 cultural transmission, where assortative mating is based directly on
 phenotype and culture is transmitted from parents. Assortative mating,
 modeled simply as a correlation coefficient, leads culture and genetics
 to be associated in offspring. Heath and Eaves (1985), following earlier
-papers (Rao, Morton, and Yee 1976; Rao, Morton, and Cloninger 1979), introduce ``social homogamy'',
-i.e.~assortative mating by social background. Otto, Christiansen, and Feldman (1995) allow
+papers (Rao et al. 1976, 1979), introduce ``social homogamy'',
+i.e.~assortative mating by social background. Otto et al. (1995) allow
 assortative mating to include both phenotypic and social homogamy.
 
 Most recently Rustichini et al. (2023) model intergenerational
@@ -351,15 +352,15 @@ proportion of variance explained by genetic differences between
 individuals, is around 50\% (Tambs et al. 1989). The family socio-economic
 status of 2-year-old children can be predicted from their genes
 (Trzaskowski et al. 2014). Children born into higher-income families have more
-genetic variants predicting educational attainment (Belsky et al. 2018).
+genetic variants predicting educational attainment ({Belsky et al.} 2018).
 Adoption studies show that both post-birth environment and pre-birth
 conditions (genetics and prenatal environment) contribute to the
-transmission of wealth and human capital (e.g. Björklund, Lindahl, and Plug 2006).
+transmission of wealth and human capital (e.g. Björklund et al. 2006).
 There is also a genes-SES gradient in genetic predictors of health.
 DNA-derived scores predicting several health outcomes are associated
-with regional economic deprivation (Abdellaoui et al. 2019). The
+with regional economic deprivation ({Abdellaoui et al.} 2019). The
 correlation between education and health may be mediated by shared
-genetic causes (Amin, Behrman, and Kohler 2015; Boardman, Domingue, and Daw 2015). Family SES
+genetic causes (Amin et al. 2015; Boardman et al. 2015). Family SES
 correlates with several health-related polygenic scores
 (Selzam et al. 2019), and genetic variants associated with SES may
 explain the genetic correlations between many mental health outcomes
@@ -371,9 +372,9 @@ Geneticists call this phenomenon social stratification. An alternative
 explanation is returns to human capital in labour markets.
 Higher-ability parents reap higher market returns, and they may then
 pass both higher socio-economic status and their genes to their children
-(Belsky et al. 2018).\footnote{Belsky et al. (2018) offer three reasons for the association between
+({Belsky et al.} 2018).\footnote{{Belsky et al.} (2018) offer three reasons for the association between
   education-linked genetic variants and SES, but do not mention SGAM.} This mechanism depends on meritocractic social
-institutions (Branigan, McCallum, and Freese 2013; Heath et al. 1985): in a society where
+institutions (Branigan et al. 2013; Heath et al. 1985): in a society where
 social status was ascribed rather than earned, it could not take effect.
 Indeed, after the fall of communism in Estonia, the heritability of SES
 increased, presumably because post-communist society allowed higher
@@ -386,7 +387,7 @@ Regarding long-run mobility: long-run estimates of intergenerational
 persistence of wealth and status are surprisingly higher than would be
 predicted from parent-child correlations (Clark and Cummins 2015; Barone and Mocetti 2021; Solon 2018), and distant relatives in
 the same generation are also more similar than parent-child and spousal
-correlations would predict (Collado, Ortuño-Ortı́n, and Stuhler 2023).
+correlations would predict (Collado et al. 2023).
 Clark (2023) argues that unobserved genetic variation
 determines social status, and mating is purely on this unobserved
 ``social competence''. This is a model of pure genetic assortative mating
@@ -397,7 +398,7 @@ and to cross-sectional gene-SES gradients. However, their predictions of
 the effects of policy are quite different. Under GAM, families continue
 to mate on social competence, irrespective of its relationship to
 status. So, temporary policy shocks don't have long-lasting effects. For
-example, Alesina et al. (2020) show that elite households lost their
+example, {Alesina et al.} (2020) show that elite households lost their
 status during the Chinese Communist revolution, but regained it after
 the rise of Deng Xiaoping. This is compatible with
 genetically-transmitted social competence (but also with culturally
@@ -408,15 +409,15 @@ long-lasting effects (see Figure \ref{fig:pic-simulate-mao} below).
 
 Because quite different models can lead to similar observable
 correlations, it can be hard to pin the true model down from the data.
-As Okbay et al. (2022) put it: ``Because the parameters of a general
+As {Okbay et al.} (2022) put it: ``Because the parameters of a general
 biometric model cannot be separately identified from a small number of
 phenotypic correlations among different types of relatives, researchers
 typically have to assume that some of the parameters equal zero in order
-to estimate other parameters.'' For example, Collado, Ortuño-Ortı́n, and Stuhler (2023)
+to estimate other parameters.'' For example, Collado et al. (2023)
 derive extremely low estimates for heritability of education, within a
 model in which all genetic similarity between spouses is driven by
 matching either on the measured phenotype, or on a shared cultural
-factor; Torvik et al. (2022) estimate partner correlation between ``true''
+factor; {Torvik et al.} (2022) estimate partner correlation between ``true''
 polygenic scores for education of 0.37, and heritability above 50\%, in a
 model where environment is shared between siblings but not across
 generations; while Clark (2023) argue for a purely genetic
@@ -710,7 +711,7 @@ $\tau = 1$, the dynamics diverges and $\bar{s}^{2}$ goes to $+\infty$.
 
 \begin{figure}
 
-{\centering \includegraphics[width=6in]{trading-genetics_files/figure-latex/pic-asymptotic-corr-1.-rgl} 
+{\centering \includegraphics[width=6in]{trading-genetics_files/figure-latex/pic-asymptotic-corr-1} 
 
 }
 
@@ -766,7 +767,7 @@ their SES never recovers to its no-shock value.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio]{trading-genetics_files/figure-latex/pic-simulate-mao-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio,alt={\label{fig:pic-simulate-mao}A simulated policy shock under GAM (a = 1) and SGAM (a = 0.3). Lines show mean SES in each quartile of families, grouped by SES in the generation before the shock. In generation 0 , \textbackslash theta and \textbackslash gamma are reduced to zero. Thereafter they return to their previous values (\textbackslash theta = 0.8, \textbackslash gamma = 0.1. Under GAM, family SES returns to the no-shock counterfactual (dashed lines). Under SGAM it never does so.}]{trading-genetics_files/trading-genetics_files/figure-latex/pic-simulate-mao-1.pdf}}
 \caption{\label{fig:pic-simulate-mao}A simulated policy shock under GAM (\(a\) = 1) and SGAM (\(a\) = 0.3). Lines show mean SES in each quartile of families, grouped by SES in the generation before the shock. In generation 0 , \(\theta\) and \(\gamma\) are reduced to zero. Thereafter they return to their previous values (\(\theta = 0.8, \gamma = 0.1\). Under GAM, family SES returns to the no-shock counterfactual (dashed lines). Under SGAM it never does so.}
 \end{figure}
 
@@ -787,7 +788,7 @@ income is valued differently in Norwegian and British marriage markets. Finally,
 if different individuals have varying matching preferences
 (values of \(a\)), the model becomes hard to work with because there is no
 agreed-upon ranking of men and women, but computations using the
-Gale-Shapley matching algorithm shows that the basic insights of SGAM still hold.\footnote{See \url{https://github.com/hughjonesd/trading-genetics/blob/master/gale-shapley-multiple-a.R}.}
+Gale-Shapley matching algorithm shows that the basic insights of SGAM still hold.\footnote{See \url{https://github.com/hughjonesd/trading-status-genetics/blob/main/gale-shapley-multiple-a.R}.}
 
 \subsection{Discussion}\label{discussion}
 
@@ -821,10 +822,10 @@ with the effects of correlated socio-economic status. Recent work in genetics
 has shown this. Polygenic scores for educational attainment have smaller effects
 in between-sibling regressions, where between-family variation in SES is
 partialled out and where genetic variants are guaranteed to be randomly
-allocated, than in regressions which pool the whole sample (Howe et al. 2022).
+allocated, than in regressions which pool the whole sample ({Howe et al.} 2022).
 Parents' genetic variants which are \emph{not} passed on to children predict
 children's characteristics, partly due to social stratification in the geneticists'
-sense of non-random mating (Kong et al. 2018; A. S. Young 2023).
+sense of non-random mating ({Kong et al.} 2018; Young 2023).
 
 The model predicts variation in the effects of SGAM. In particular, in
 ``caste societies'' where there is complete endogamy within social status
@@ -837,20 +838,20 @@ intergenerational mobility, but reduces the correlation of genes with SES, and
 hence the bias of what Harden (2021) calls the ``genetic lottery''.
 Conversely, reforms that increase meritocracy (\(\gamma\), Proposition
 \ref{prop-gamma}) may strengthen the genes-SES gradient. This poses the problem
-raised by M. Young (1958) and more recently Markovits (2019): meritocracy
+raised by Young (1958) and more recently Markovits (2019): meritocracy
 may be self-limiting or even self-undermining.
 
 \section{Data and methods}\label{data-and-methods}
 
 The central insight in our model is that higher SES and good genes
 assort in the marriage market. We wish to test this directly, i.e.~to
-test whether \(0 < a < 1\) in the attractiveness equation \[
-i(x) = a x_1 + (1-a) x_2
-\] where \(x_2\) is social status and \(x_1\) is genetic endowment. Consider
-the effect of a change in \(x_2\) holding \(x_1\) constant. If \(a = 1\) then
-this will not change \(i(x)\) and therefore will not change the expected
-characteristics of the spouse. So, if we regress spouse's \(x_1\) on own
-\(x_2\), and reject the null of no effect, we can reject \(a = 1\).\footnote{Conceivably, if \(a = 0\) but there is a pre-existing correlation
+test whether \(0 < a < 1\) in the attractiveness equation
+\[i(x) = a x_1 + (1-a) x_2\] where \(x_2\) is social status and \(x_1\) is
+genetic endowment. Consider the effect of a change in \(x_2\) holding
+\(x_1\) constant. If \(a = 1\) then this will not change \(i(x)\) and
+therefore will not change the expected characteristics of the spouse.
+So, if we regress spouse's \(x_1\) on own \(x_2\), and reject the null of no
+effect, we can reject \(a = 1\).\footnote{Conceivably, if \(a = 0\) but there is a pre-existing correlation
   between \(x_1\) and \(x_2\) in the population, then an increase in own
   \(x_2\) will increase spouse's expected \(x_2\) and therefore spouse's
   expected \(x_1\), even though the latter does not enter the
@@ -858,17 +859,16 @@ characteristics of the spouse. So, if we regress spouse's \(x_1\) on own
   \(a = 0\) by regressing spouse's \(x_2\) on own \(x_1\), holding own \(x_2\)
   constant. Existing work has already linked own genetics to spouse's
   SES, e.g.~education, so we focus on the other direction and treat
-  this direction as a robustness check below.} In
-other words, we set out to test the central assumption in our model that
-marriage markets weigh both SES and genetics, by testing its
-implication, i.e., that individuals with higher SES have spouses with
-higher genetic scores (PSEA).
+  this direction as a robustness check below.} In other words, we set out to test
+the central assumption in our model that marriage markets weigh both SES
+and genetics, by testing its implication, i.e., that individuals with
+higher SES have spouses with higher genetic scores (PSEA).
 
 We use data from two sources: Great Britain and Norway. This allows us
 to check our basic result in two different societies, and also to make
 (tentative) comparisons between them. Our Great Britain data comes from
 the UK Biobank, a study of about 500,000 individuals born between 1935
-and 1970 (Bycroft et al. 2018). The Biobank contains information on
+and 1970 ({Bycroft et al.} 2018). The Biobank contains information on
 respondents' genetics, derived from DNA microarrays, along with
 questionnaire data on health and social outcomes. The Biobank does not
 contain explicit information on spouse pairs. We categorize respondents
@@ -887,7 +887,7 @@ more than once in the data. This leaves a total of
 
 Our Norway data comes from the Norway Mother, Father and Child Cohort
 Study (MoBa), a population-based study of pregnant women and their
-partners and children (Magnus et al. 2016; Paltiel et al. 2014).
+partners and children ({Magnus et al.} 2016; Paltiel et al. 2014).
 Participants were recruited from all over Norway from 1999-2008. 41\% of
 women consented to participation. In this paper, we use about 100,000
 genotyped individuals and about 45,000 genotyped spouse pairs. The
@@ -905,22 +905,22 @@ polygenic scores for two reasons. First, educational attainment plays a
 key role in human mate search. People are attracted to educated
 potential partners (Buss and Barnes 1986; Belot and Francesconi 2013); spouse
 pairs often have similar levels of educational attainment, as well as
-similar PSEA (Vandenberg 1972; Schwartz and Mare 2005; Greenwood et al. 2014; Hugh-Jones et al. 2016; Torvik et al. 2022). Second,
+similar PSEA (Vandenberg 1972; Schwartz and Mare 2005; Greenwood et al. 2014; Hugh-Jones et al. 2016; {Torvik et al.} 2022). Second,
 PSEA predicts a set of important socioeconomic variables, including not
 only education but also social and geographic mobility, IQ, future
-income and wealth (Belsky et al. 2016; Barth, Papageorge, and Thom 2020; Papageorge and Thom 2020).\footnote{See Papageorge and Thom (2020) for a detailed discussion of polygenic
+income and wealth ({Belsky et al.} 2016; Barth et al. 2020; Papageorge and Thom 2020).\footnote{See Papageorge and Thom (2020) for a detailed discussion of polygenic
   scores aimed at economists.}
 
 PSEA in the UK was calculated using per-SNP summary statistics from
-Lee et al. (2018), re-estimated excluding UK Biobank participants; in Norway,
-using statistics from Okbay et al. (2022). The score was normalized to
+{Lee et al.} (2018), re-estimated excluding UK Biobank participants; in Norway,
+using statistics from {Okbay et al.} (2022). The score was normalized to
 have mean 0 and variance 1. Because polygenic scores are created from
 estimates of many small effects, they contain a large amount of noise
 relative to the true best estimator that could be derived from genetic
 data. For instance, PSEA explains only 11--13\% of variance in educational
-attainment (Lee et al. 2018), whereas the true proportion explained by
+attainment ({Lee et al.} 2018), whereas the true proportion explained by
 genetic variation -- the heritability -- is estimated from twin studies
-to be about 40\% (Branigan, McCallum, and Freese 2013). Also, polygenic scores are no
+to be about 40\% (Branigan et al. 2013). Also, polygenic scores are no
 more guaranteed to be causal than any other independent variable. For
 example, social stratification by ancestry may lead genes to be
 associated with educational attainment even if they play no causal role
@@ -930,7 +930,7 @@ Despite these points, PSEA has non-trivial estimated effects on
 educational attainment. PSEA correlates with measures of education,
 including university attendance and years of full-time education. Effect
 sizes are smaller but still non-trivial in within-siblings regressions
-(Lee et al. 2018), where they can be interpreted as causal, since genetic
+({Lee et al.} 2018), where they can be interpreted as causal, since genetic
 variation across siblings is guaranteed to be random by the biological
 mechanism involved -- the ``lottery of meiosis'' (see below). We recheck
 these facts within the UK Biobank sample. In a simple linear regression
@@ -939,14 +939,14 @@ one-standard-deviation increase in PSEA was associated with a
 9.2 percentage point increase in the
 probability of university attendance (\(p < 2 \times 10^{-16}\)). In a
 within-siblings regression among genetic full siblings (N =
-36,748), the increase was
+35,879), the increase was
 4.5 percentage points (\(p < 2 \times
 10^{-16}\)). This suggests that about half of the raw correlation of PSEA
 with university attendance is down to environmental confounds like
-parental nurture, while the remainder is causal (cf. Lee et al. 2018).
+parental nurture, while the remainder is causal (cf. {Lee et al.} 2018).
 Still, the causal effect remains substantial: for a rough comparison,
 the (ITT) effect on college attendance of the Moving To Opportunity
-experiment in the US was 2.5 percentage points (Chetty, Hendren, and Katz 2016).
+experiment in the US was 2.5 percentage points (Chetty et al. 2016).
 
 We use two measures of socio-economic status: income, and university
 attendance. Income is a direct measure of SES. University attendance is
@@ -984,7 +984,7 @@ individual's own PSEA correlates with both their educational attainment,
 and their income, both figures could be a result of genetic assortative
 mating (GAM) alone (Hugh-Jones et al. 2016). Indeed, recent studies show
 much higher levels of GAM than could be explained by matching on the
-observed education phenotype alone (Okbay et al. 2022). So, to
+observed education phenotype alone ({Okbay et al.} 2022). So, to
 demonstrate SGAM, we need a source of social status which is exogenous
 to genetics. Also, the link between social status and spouse genetics is
 likely to be noisy, for three reasons: first, polygenic scores contain a
@@ -998,16 +998,16 @@ age (Davies et al. 2018).
 We use \emph{birth order}. It is known that earlier-born children receive
 more parental care and have better life outcomes, including measures of
 SES such as educational attainment and occupational status
-(Lindahl 2008; Booth and Kee 2009; Black, Devereux, and Salvanes 2011).\footnote{Earlier work was ambiguous on the effects of birth order (e.g. Hauser and Sewell 1985; Hanushek 1992). However, this work often used
+(Lindahl 2008; Booth and Kee 2009; Black et al. 2011).\footnote{Earlier work was ambiguous on the effects of birth order (e.g. Hauser and Sewell 1985; Hanushek 1992). However, this work often used
   unrepresentative samples and/or did not control for family size or
   parental age. More recent work improves on this and shows clear
   birth order effects. Kantarevic and Mechoulan (2006) show that parental age is
-  an important confound for birth order. Black, Devereux, and Salvanes (2005) show
+  an important confound for birth order. Black et al. (2005) show
   substantial birth order effects in the whole Norwegian population,
   even in a family fixed-effects specification, and after controlling
   for mother's age. Booth and Kee (2009) examine UK families, controlling
   for family size and for parental age at birth, and show significant
-  and substantial birth order effects on education. Some studies (e.g. Black, Devereux, and Salvanes 2005; De Haan 2010) use twin births or the gender mix of
+  and substantial birth order effects on education. Some studies (e.g. Black et al. 2005; De Haan 2010) use twin births or the gender mix of
   children as instruments for family size. They too typically find
   that birth order has large negative effects.} On the other
 hand, all full siblings have the same \emph{ex ante} expected genetic
@@ -1035,7 +1035,7 @@ because e.g.~third-born children must be in a family of at least three
 siblings. It also correlates with parental age, which may affect the
 income and maturity of the parents. There are also potential genetic
 effects from parental age, though recent research has rejected these in
-favour of ``social'' explanations (Kristensen and Bjerkedal 2007; Black, Devereux, and Salvanes 2011). Cochran and Harpending (2013) report that mutational load is
+favour of ``social'' explanations (Kristensen and Bjerkedal 2007; Black et al. 2011). Cochran and Harpending (2013) report that mutational load is
 approximately linear in father's age, while it is constant in mother's
 age. To control for family size, we use dummies for each possible value
 of family size. In most regressions, we use only respondents with
@@ -1062,7 +1062,7 @@ unmeasured aspects of SES. So, an instrumental variables approach would
 fall foul of the exclusion restriction.
 
 Instead, we conduct a mediation analysis, following the strategy of
-Heckman, Pinto, and Savelyev (2013). We first confirm that birth order affects our
+Heckman et al. (2013). We first confirm that birth order affects our
 measures of respondents' SES (income and education). Then, we regress
 spouse's PSEA on birth order, with and without controlling for SES.
 Under the assumption that birth order is exogenous to own genetics,
@@ -1072,7 +1072,7 @@ spouse's genetics. Most importantly, if the estimated effect of birth
 order on spouse's PSEA changes when SES is controlled for, that is
 evidence that SES mediates the effect of birth order.
 
-We follow Heckman, Pinto, and Savelyev (2013) to decompose the aggregate treatment
+We follow Heckman et al. (2013) to decompose the aggregate treatment
 effect into components due to observed and unobserved proximate channels
 affected by the treatment. Our aim is to estimate the effect of SES (as
 an effect of birth order) on spouse PSEA.
@@ -1111,7 +1111,7 @@ differ by birth order.\footnote{Under the assumption that measured and unmeasure
   interact the measured mediators and controls with the treatment \(B\),
   and test the significance of the coefficients on the interaction
   terms (\(\symbf{\alpha_b}=0\) and \(\symbf{\beta_b}=0\)). See
-  Heckman, Pinto, and Savelyev (2013) and Fagereng, Mogstad, and Rønning (2021) for details and
+  Heckman et al. (2013) and Fagereng et al. (2021) for details and
   different applications. When we run the model with interactions,
   only one interaction is significant after Bonferroni correction at
   \(p < 0.05/34\): the interaction of income in first job with the dummy
@@ -1335,7 +1335,7 @@ now apply this framework to each of our two samples.
 
 \multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.142857142857143\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.142857142857143\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright {\fontsize{10pt}{12pt}\selectfont N}\huxbpad{6pt}}} &
 \multicolumn{1}{p{0.142857142857143\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.142857142857143\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont 10220\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{6pt}}} &
-\multicolumn{1}{p{0.142857142857143\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.142857142857143\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont 3412\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.142857142857143\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.142857142857143\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont 3411\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{6pt}}} &
 \multicolumn{1}{p{0.142857142857143\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.142857142857143\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont 10220\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{6pt}}} &
 \multicolumn{1}{p{0.142857142857143\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.142857142857143\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont 10220\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{6pt}}} &
 \multicolumn{1}{p{0.142857142857143\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.142857142857143\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont 10220\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{6pt}}} &
@@ -1347,7 +1347,7 @@ now apply this framework to each of our two samples.
 
 \multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.142857142857143\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.142857142857143\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright {\fontsize{10pt}{12pt}\selectfont $R^2$}\huxbpad{6pt}}} &
 \multicolumn{1}{p{0.142857142857143\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.142857142857143\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont 0.074\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{6pt}}} &
-\multicolumn{1}{p{0.142857142857143\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.142857142857143\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont 0.027\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.142857142857143\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.142857142857143\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont 0.026\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{6pt}}} &
 \multicolumn{1}{p{0.142857142857143\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.142857142857143\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont 0.058\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{6pt}}} &
 \multicolumn{1}{p{0.142857142857143\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.142857142857143\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont 0.017\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{6pt}}} &
 \multicolumn{1}{p{0.142857142857143\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.142857142857143\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont 0.023\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{6pt}}} &
@@ -1357,7 +1357,7 @@ now apply this framework to each of our two samples.
 \hhline{>{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}-}
 \arrayrulecolor{black}
 
-\multicolumn{7}{!{\huxvb{0, 0, 0}{0}}p{1\textwidth+12\tabcolsep}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{1\textwidth+12\tabcolsep-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright {\fontsize{10pt}{12pt}\selectfont Estimates from OLS regressions with the  mediators (university attendance, income, fluid IQ, height, BMI, self-reported health) as dependent variables, and own birth order as the main independent variable. PSEA is the polygenic score for educational attainment, which is normalized with mean 0 and standard deviation 1. We include parents' age at birth (the mean of parents' ages) and further controls to ensure the balance of covariates across birth order. All data is from the UK Biobank for a sample of UK individuals born between 1935 and 1970.  *** p $<$ 0.001;  ** p $<$ 0.01;  * p $<$ 0.05;  + p $<$ 0.1. Standard errors clustered by spouse pair in parentheses.}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+\multicolumn{7}{!{\huxvb{0, 0, 0}{0}}p{1\textwidth+12\tabcolsep}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{1\textwidth+12\tabcolsep-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright {\fontsize{10pt}{12pt}\selectfont Estimates from OLS regressions with the  mediators (university attendance, income, fluid IQ, height, BMI, self-reported health) as dependent variables, and own birth order as the main independent variable. PSEA is the polygenic score for educational attainment, which is normalized with mean 0 and standard deviation 1. We include parents' age at birth (the mean of parents' ages) and further controls to ensure the balance of covariates across birth order. All data is from the UK Biobank for a sample of UK individuals born between 1935 and 1970. *** p $<$ 0.001; ** p $<$ 0.01; * p $<$ 0.05; + p $<$ 0.1. Standard errors clustered by spouse pair in parentheses.}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
 
 
 \hhline{}
@@ -1540,7 +1540,7 @@ effects: having older parents versus being later in birth order.
 \hhline{>{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}-}
 \arrayrulecolor{black}
 
-\multicolumn{4}{!{\huxvb{0, 0, 0}{0}}p{0.9\textwidth+6\tabcolsep}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.9\textwidth+6\tabcolsep-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright {\fontsize{10pt}{12pt}\selectfont Estimates from OLS regressions with spouse PSEA as dependent variable, and own birth order as the main independent variable. PSEA is the polygenic score for educational attainment, which is normalized with mean 0 and standard deviation 1. We include own PSEA, parents' age at birth (the mean of parents' ages), and further controls (family size, birth year, and birth month dummies) in columns 2$-$3 to ensure the balance of covariates across birth order. All data is from the UK Biobank for a sample of UK individuals born between 1935 and 1970.  *** p $<$ 0.001;  ** p $<$ 0.01;  * p $<$ 0.05;  + p $<$ 0.1. Standard errors clustered by spouse pair in parentheses.}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+\multicolumn{4}{!{\huxvb{0, 0, 0}{0}}p{0.9\textwidth+6\tabcolsep}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.9\textwidth+6\tabcolsep-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright {\fontsize{10pt}{12pt}\selectfont Estimates from OLS regressions with spouse PSEA as dependent variable, and own birth order as the main independent variable. PSEA is the polygenic score for educational attainment, which is normalized with mean 0 and standard deviation 1. We include own PSEA, parents' age at birth (the mean of parents' ages), and further controls (family size, birth year, and birth month dummies) in columns 2$-$3 to ensure the balance of covariates across birth order. All data is from the UK Biobank for a sample of UK individuals born between 1935 and 1970. *** p $<$ 0.001; ** p $<$ 0.01; * p $<$ 0.05; + p $<$ 0.1. Standard errors clustered by spouse pair in parentheses.}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
 
 
 \hhline{}
@@ -1799,8 +1799,8 @@ which would bias our results towards zero.\footnote{Table \ref{tab:tbl-bo-psea-n
 \multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{2pt + 1em}\raggedright {\fontsize{10pt}{12pt}\selectfont N}\huxbpad{2pt}}} &
 \multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{2pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont 10206\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{2pt}}} &
 \multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{2pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont 10206\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{2pt}}} &
-\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{2pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont 3407\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{2pt}}} &
-\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{2pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont 3407\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{2pt}}} \tabularnewline[-0.5pt]
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{2pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont 3406\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{2pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{2pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont 3406\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{2pt}}} \tabularnewline[-0.5pt]
 
 
 \hhline{}
@@ -1817,7 +1817,7 @@ which would bias our results towards zero.\footnote{Table \ref{tab:tbl-bo-psea-n
 \arrayrulecolor{black}
 
 \multicolumn{5}{!{\huxvb{0, 0, 0}{0}}p{1\textwidth+8\tabcolsep}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{1\textwidth+8\tabcolsep-6pt-6pt}{\huxtpad{2pt + 1em}\raggedright {\fontsize{10pt}{12pt}\selectfont Estimates from OLS regressions with spouse PSEA as dependent variable, and own birth order and mediators (university attendance and income) as the main independent variables. Columns 2$-$4 correspond to model
-(\ref{eq:model-to-estimate}). PSEA is the polygenic score for educational attainment, which is normalized with mean 0 and standard deviation 1. We include own PSEA, mean of parents’ ages at birth, potential non-SES mediators (fluid IQ, height, BMI, self-reported health) and further controls (family size, birth year, and birth month dummies) to ensure the balance of covariates across birth order. All data is from the UK Biobank for a sample of UK individuals born between 1935 and 1970.  *** p < 0.001;  ** p < 0.01;  * p < 0.05;  + p < 0.1. Standard errors clustered by spouse pair in parentheses.}\huxbpad{2pt}}} \tabularnewline[-0.5pt]
+(\ref{eq:model-to-estimate}). PSEA is the polygenic score for educational attainment, which is normalized with mean 0 and standard deviation 1. We include own PSEA, mean of parents’ ages at birth, potential non-SES mediators (fluid IQ, height, BMI, self-reported health) and further controls (family size, birth year, and birth month dummies) to ensure the balance of covariates across birth order. All data is from the UK Biobank for a sample of UK individuals born between 1935 and 1970. *** p < 0.001; ** p < 0.01; * p < 0.05; + p < 0.1. Standard errors clustered by spouse pair in parentheses.}\huxbpad{2pt}}} \tabularnewline[-0.5pt]
 
 
 \hhline{}
@@ -2251,8 +2251,8 @@ attendance still seems to mediate the birth order effect.
 \multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.142857142857143\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{3pt}\parbox[b]{0.142857142857143\textwidth-3pt-3pt}{\huxtpad{3pt + 1em}\raggedright {\fontsize{10pt}{12pt}\selectfont N}\huxbpad{3pt}}} &
 \multicolumn{1}{p{0.142857142857143\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{3pt}\parbox[b]{0.142857142857143\textwidth-3pt-3pt}{\huxtpad{3pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont 4675\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{3pt}}} &
 \multicolumn{1}{p{0.142857142857143\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{3pt}\parbox[b]{0.142857142857143\textwidth-3pt-3pt}{\huxtpad{3pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont 4675\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{3pt}}} &
-\multicolumn{1}{p{0.142857142857143\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{3pt}\parbox[b]{0.142857142857143\textwidth-3pt-3pt}{\huxtpad{3pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont 5531\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{3pt}}} &
-\multicolumn{1}{p{0.142857142857143\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{3pt}\parbox[b]{0.142857142857143\textwidth-3pt-3pt}{\huxtpad{3pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont 5531\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{3pt}}} &
+\multicolumn{1}{p{0.142857142857143\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{3pt}\parbox[b]{0.142857142857143\textwidth-3pt-3pt}{\huxtpad{3pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont 5530\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{3pt}}} &
+\multicolumn{1}{p{0.142857142857143\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{3pt}\parbox[b]{0.142857142857143\textwidth-3pt-3pt}{\huxtpad{3pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont 5530\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{3pt}}} &
 \multicolumn{1}{p{0.142857142857143\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{3pt}\parbox[b]{0.142857142857143\textwidth-3pt-3pt}{\huxtpad{3pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont 9127\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{3pt}}} &
 \multicolumn{1}{p{0.142857142857143\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{3pt}\parbox[b]{0.142857142857143\textwidth-3pt-3pt}{\huxtpad{3pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont 9127\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{3pt}}} \tabularnewline[-0.5pt]
 
@@ -2272,7 +2272,7 @@ attendance still seems to mediate the birth order effect.
 \hhline{>{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}-}
 \arrayrulecolor{black}
 
-\multicolumn{7}{!{\huxvb{0, 0, 0}{0}}p{1\textwidth+12\tabcolsep}!{\huxvb{0, 0, 0}{0}}}{\hspace{3pt}\parbox[b]{1\textwidth+12\tabcolsep-3pt-3pt}{\huxtpad{3pt + 1em}\raggedright {\fontsize{10pt}{12pt}\selectfont Estimates from OLS regressions corresponding to columns 1 and 2 in Table \ref{tab:tbl-bo-psea}, separately for males, females and respondents with children. Spouse PSEA is the dependent variable, and own birth order and university attendance are the main independent variables. PSEA is the polygenic score for educational attainment, which is normalized with mean 0 and standard deviation 1. We include own PSEA, parents’ age at birth (the mean of parent’s ages) and further controls (family size, birth year, and birth month dummies) to ensure the balance of covariates across birth order. All data is from the UK Biobank for a sample of UK individuals born between 1935 and 1970.  *** p < 0.001;  ** p < 0.01;  * p < 0.05;  + p < 0.1. Standard errors clustered by spouse pair in parentheses.}\huxbpad{3pt}}} \tabularnewline[-0.5pt]
+\multicolumn{7}{!{\huxvb{0, 0, 0}{0}}p{1\textwidth+12\tabcolsep}!{\huxvb{0, 0, 0}{0}}}{\hspace{3pt}\parbox[b]{1\textwidth+12\tabcolsep-3pt-3pt}{\huxtpad{3pt + 1em}\raggedright {\fontsize{10pt}{12pt}\selectfont Estimates from OLS regressions corresponding to columns 1 and 2 in Table \ref{tab:tbl-bo-psea}, separately for males, females and respondents with children. Spouse PSEA is the dependent variable, and own birth order and university attendance are the main independent variables. PSEA is the polygenic score for educational attainment, which is normalized with mean 0 and standard deviation 1. We include own PSEA, parents’ age at birth (the mean of parent’s ages) and further controls (family size, birth year, and birth month dummies) to ensure the balance of covariates across birth order. All data is from the UK Biobank for a sample of UK individuals born between 1935 and 1970. *** p < 0.001; ** p < 0.01; * p < 0.05; + p < 0.1. Standard errors clustered by spouse pair in parentheses.}\huxbpad{3pt}}} \tabularnewline[-0.5pt]
 
 
 \hhline{}
@@ -2289,7 +2289,7 @@ attendance still seems to mediate the birth order effect.
 
 Now we turn to the results from MoBa in Norway. Some of the variables
 are different from those for UK Biobank. Spouse PSEA is calculated using
-summary statistics from Okbay et al. (2022), aka ``EA4'', rather than
+summary statistics from {Okbay et al.} (2022), aka ``EA4'', rather than
 ``EA3''.\footnote{The \(R^2\) on own university attendance is
   0.0814 for EA4 in MoBa, compared to
   0.04 for EA3 in UK Biobank.} Income is from all sources, reported at age 30, converted to
@@ -2575,7 +2575,7 @@ endogenous to economic institutions.
 \hhline{>{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}-}
 \arrayrulecolor{black}
 
-\multicolumn{5}{!{\huxvb{0, 0, 0}{0}}p{1\textwidth+8\tabcolsep}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{1\textwidth+8\tabcolsep-6pt-6pt}{\huxtpad{2pt + 1em}\raggedright {\fontsize{10pt}{12pt}\selectfont Estimates from OLS regressions with spouse PSEA as dependent variable, and own birth order and mediators (university attendance and income) as the main independent variables. Columns 2$-$4 correspond to model (\ref{eq:model-to-estimate}). PSEA is the polygenic score for educational attainment, which is normalized with mean 0 and standard deviation 1. We include own PSEA, mean of parents’ ages at birth, potential non-SES mediators (height and BMI) and further controls (family size, birth year, and birth month dummies) to ensure the balance of covariates across birth order. All data is from the MoBa dataset for a sample of spouse pairs with a child between 1999 and 2008.  *** p < 0.001;  ** p < 0.01;  * p < 0.05;  + p < 0.1. Standard errors clustered by spouse pair in parentheses.}\huxbpad{2pt}}} \tabularnewline[-0.5pt]
+\multicolumn{5}{!{\huxvb{0, 0, 0}{0}}p{1\textwidth+8\tabcolsep}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{1\textwidth+8\tabcolsep-6pt-6pt}{\huxtpad{2pt + 1em}\raggedright {\fontsize{10pt}{12pt}\selectfont Estimates from OLS regressions with spouse PSEA as dependent variable, and own birth order and mediators (university attendance and income) as the main independent variables. Columns 2$-$4 correspond to model (\ref{eq:model-to-estimate}). PSEA is the polygenic score for educational attainment, which is normalized with mean 0 and standard deviation 1. We include own PSEA, mean of parents’ ages at birth, potential non-SES mediators (height and BMI) and further controls (family size, birth year, and birth month dummies) to ensure the balance of covariates across birth order. All data is from the MoBa dataset for a sample of spouse pairs with a child between 1999 and 2008. *** p < 0.001; ** p < 0.01; * p < 0.05; + p < 0.1. Standard errors clustered by spouse pair in parentheses.}\huxbpad{2pt}}} \tabularnewline[-0.5pt]
 
 
 \hhline{}
@@ -2878,7 +2878,7 @@ endogenous to economic institutions.
 \hhline{>{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}-}
 \arrayrulecolor{black}
 
-\multicolumn{5}{!{\huxvb{0, 0, 0}{0}}p{1\textwidth+8\tabcolsep}!{\huxvb{0, 0, 0}{0}}}{\hspace{3pt}\parbox[b]{1\textwidth+8\tabcolsep-3pt-3pt}{\huxtpad{3pt + 1em}\raggedright {\fontsize{10pt}{12pt}\selectfont Estimates from OLS regressions corresponding to columns 1 and 2 in Table \ref{tab:tbl-bo-psea-moba}, separately for males and females. Spouse PSEA is the dependent variable, and own birth order and university attendance are the main independent variables. PSEA is the polygenic score for educational attainment, which is normalized with mean 0 and standard deviation 1. We include own PSEA, parents’ age at birth (the mean of parent’s ages) and further controls (family size, birth year, and birth month dummies) to ensure the balance of covariates across birth order. All data is from the MoBa dataset for a sample of spouse pairs with a child between 1999 and 2008.  *** p < 0.001;  ** p < 0.01;  * p < 0.05;  + p < 0.1. Standard errors clustered by spouse pair in parentheses.}\huxbpad{3pt}}} \tabularnewline[-0.5pt]
+\multicolumn{5}{!{\huxvb{0, 0, 0}{0}}p{1\textwidth+8\tabcolsep}!{\huxvb{0, 0, 0}{0}}}{\hspace{3pt}\parbox[b]{1\textwidth+8\tabcolsep-3pt-3pt}{\huxtpad{3pt + 1em}\raggedright {\fontsize{10pt}{12pt}\selectfont Estimates from OLS regressions corresponding to columns 1 and 2 in Table \ref{tab:tbl-bo-psea-moba}, separately for males and females. Spouse PSEA is the dependent variable, and own birth order and university attendance are the main independent variables. PSEA is the polygenic score for educational attainment, which is normalized with mean 0 and standard deviation 1. We include own PSEA, parents’ age at birth (the mean of parent’s ages) and further controls (family size, birth year, and birth month dummies) to ensure the balance of covariates across birth order. All data is from the MoBa dataset for a sample of spouse pairs with a child between 1999 and 2008. *** p < 0.001; ** p < 0.01; * p < 0.05; + p < 0.1. Standard errors clustered by spouse pair in parentheses.}\huxbpad{3pt}}} \tabularnewline[-0.5pt]
 
 
 \hhline{}
@@ -2897,7 +2897,7 @@ As noted earlier, our results could conceivably be explained by spouses
 \emph{only} mating on SES (\(a = 0\) in our model), but with a pre-existing
 correlation between SES and PSEA in the population. That said, existing
 work strongly suggests that own PSEA affects spouse's education
-(Robinson et al. 2017; Torvik et al. 2022). To confirm this we use a
+({Robinson et al.} 2017; {Torvik et al.} 2022). To confirm this we use a
 sample of siblings from the MoBa data\footnote{The UK Biobank sample has too few siblings with spouses for this
   analysis to be informative.}, and regress spouse's
 university attendance and income z-score on own PSEA, including sibling
@@ -2996,7 +2996,7 @@ meritocracy in equation \ref{eqn-gamma}).
 \hhline{>{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}-}
 \arrayrulecolor{black}
 
-\multicolumn{3}{!{\huxvb{0, 0, 0}{0}}p{0.75\textwidth+4\tabcolsep}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.75\textwidth+4\tabcolsep-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright Estimates from within-sibling-group regressions. PSEA is the polygenic score for educational attainment, which is normalized with mean 0 and standard deviation 1. Sibling group dummies are included to ensure exogeneity of PSEA.  *** p < 0.001;  ** p < 0.01;  * p < 0.05;  + p < 0.1. Standard errors in parentheses.\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+\multicolumn{3}{!{\huxvb{0, 0, 0}{0}}p{0.75\textwidth+4\tabcolsep}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.75\textwidth+4\tabcolsep-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright Estimates from within-sibling-group regressions. PSEA is the polygenic score for educational attainment, which is normalized with mean 0 and standard deviation 1. Sibling group dummies are included to ensure exogeneity of PSEA. *** p < 0.001; ** p < 0.01; * p < 0.05; + p < 0.1. Standard errors in parentheses.\huxbpad{6pt}}} \tabularnewline[-0.5pt]
 
 
 \hhline{}
@@ -3035,7 +3035,7 @@ different polygenic scores in the UK Biobank sample.\footnote{Polygenic scores w
   circumference, major depressive disorder, neuroticism, openness,
   smoking cessation, schizophrenia, smoking initiation, waist
   circumference, and waist-to-hip ratio. For full details of score
-  construction, see Abdellaoui et al. (2019). We also ran similar tests
+  construction, see {Abdellaoui et al.} (2019). We also ran similar tests
   on MoBa data, and found no significant associations between birth
   order and polygenic scores.} We regress
 each score on own birth order, controlling for family size.\\
@@ -3086,7 +3086,7 @@ include noise that correlates with social environment insofar as
 non-causal correlations of SNPs with social status are the same across
 different countries. Second, true causal effects of individual SNPs are
 highly correlated (r = 0.74) with their ``population effects'' including
-noise (A. Young et al. 2022). Third, it is hard to imagine an assortative
+noise (Young et al. 2022). Third, it is hard to imagine an assortative
 mating process by which people match spouses who have genetic variants
 that correlate with educational attainment, but not genetic variants
 that cause it. Lastly, our within-sibling regressions from Norway (Table
@@ -3172,7 +3172,7 @@ their effect on genetic inequality. On the other hand, while lowering
 the intergenerational transmission of wealth may eventually flatten the
 genes-SES gradient, increases in the level of meritocracy paradoxically
 make it steeper, suggesting a deep conflict between meritocracy and
-egalitarianism (M. Young 1958; Markovits 2019). Lastly, the
+egalitarianism (Young 1958; Markovits 2019). Lastly, the
 structure of marriage markets also affects the gradient. Our empirical
 analysis suggests that in relatively egalitarian Norway, income plays a
 less important role in assortative mating than it does in the UK.
@@ -3241,7 +3241,7 @@ AA is supported by the Foundation Volksbond Rotterdam and by ZonMw grant
 Development.
 
 Code to reproduce is available at
-\url{https://github.com/hughjonesd/trading-genetics}.
+\url{https://github.com/hughjonesd/trading-status-genetics}.
 
 \FloatBarrier
 
@@ -4291,7 +4291,7 @@ robustness, if we assume that measured control variables ought to be at
 least as important as unmeasured ones.
 
 In UK Biobank, we calculate the maximum \(R^2\) as 0.056.\footnote{In other regressions of spouse traits on PSEA, \(R^2\) are indeed
-  below this value (Hugh-Jones et al. 2016; Okbay et al. 2022).} For
+  below this value (Hugh-Jones et al. 2016; {Okbay et al.} 2022).} For
 university attendance, \(\delta^*\) is 0.941, and for income in
 first job \(\delta^*\) is 2.03. In MoBa, we calculate the maximum
 \(R^2\) as 0.131.\footnote{The MoBa number is larger because the \(R^2\) of EA4 on education
@@ -4452,7 +4452,7 @@ maximum possible \(R^2\) in spouse matching.
 \hhline{>{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}-}
 \arrayrulecolor{black}
 
-\multicolumn{5}{!{\huxvb{0, 0, 0}{0}}p{1\textwidth+8\tabcolsep}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{1\textwidth+8\tabcolsep-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright {\fontsize{10pt}{12pt}\selectfont Estimates from OLS regressions with the  mediators (university attendance, income, height, BMI)  as dependent variables, and own birth order as the main independent variable. PSEA is the polygenic score for educational attainment, which is normalized with mean 0 and standard deviation 1. We include parents' age at birth and further controls to ensure the balance of covariates across birth order. All data is from the MoBa dataset for a sample of spouse pairs with a child between 1999 and 2008.  *** p $<$ 0.001;  ** p $<$ 0.01;  * p $<$ 0.05;  + p $<$ 0.1. Standard errors clustered by spouse pair in parentheses.}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+\multicolumn{5}{!{\huxvb{0, 0, 0}{0}}p{1\textwidth+8\tabcolsep}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{1\textwidth+8\tabcolsep-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright {\fontsize{10pt}{12pt}\selectfont Estimates from OLS regressions with the  mediators (university attendance, income, height, BMI)  as dependent variables, and own birth order as the main independent variable. PSEA is the polygenic score for educational attainment, which is normalized with mean 0 and standard deviation 1. We include parents' age at birth and further controls to ensure the balance of covariates across birth order. All data is from the MoBa dataset for a sample of spouse pairs with a child between 1999 and 2008. *** p $<$ 0.001; ** p $<$ 0.01; * p $<$ 0.05; + p $<$ 0.1. Standard errors clustered by spouse pair in parentheses.}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
 
 
 \hhline{}
@@ -4589,7 +4589,7 @@ maximum possible \(R^2\) in spouse matching.
 \hhline{>{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}-}
 \arrayrulecolor{black}
 
-\multicolumn{4}{!{\huxvb{0, 0, 0}{0}}p{0.9\textwidth+6\tabcolsep}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.9\textwidth+6\tabcolsep-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright {\fontsize{10pt}{12pt}\selectfont Estimates from OLS regressions with spouse PSEA as dependent variable, and own birth order as the main independent variable. PSEA is the polygenic score for educational attainment, which is normalized with mean 0 and standard deviation 1. We include own PSEA, parents' age at birth (the mean of parents' ages), and further controls (family size, birth year, and birth month dummies) in columns 2$-$3 to ensure the balance of covariates across birth order. All data is from the MoBa dataset for a sample of spouse pairs with a child between 1999 and 2008.  *** p $<$ 0.001;  ** p $<$ 0.01;  * p $<$ 0.05;  + p $<$ 0.1. Standard errors clustered by spouse pair in parentheses.}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+\multicolumn{4}{!{\huxvb{0, 0, 0}{0}}p{0.9\textwidth+6\tabcolsep}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.9\textwidth+6\tabcolsep-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright {\fontsize{10pt}{12pt}\selectfont Estimates from OLS regressions with spouse PSEA as dependent variable, and own birth order as the main independent variable. PSEA is the polygenic score for educational attainment, which is normalized with mean 0 and standard deviation 1. We include own PSEA, parents' age at birth (the mean of parents' ages), and further controls (family size, birth year, and birth month dummies) in columns 2$-$3 to ensure the balance of covariates across birth order. All data is from the MoBa dataset for a sample of spouse pairs with a child between 1999 and 2008. *** p $<$ 0.001; ** p $<$ 0.01; * p $<$ 0.05; + p $<$ 0.1. Standard errors clustered by spouse pair in parentheses.}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
 
 
 \hhline{}
@@ -4726,7 +4726,7 @@ maximum possible \(R^2\) in spouse matching.
 \hhline{>{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}-}
 \arrayrulecolor{black}
 
-\multicolumn{4}{!{\huxvb{0, 0, 0}{0}}p{0.9\textwidth+6\tabcolsep}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.9\textwidth+6\tabcolsep-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright {\fontsize{10pt}{12pt}\selectfont Estimates from OLS regressions with spouse PSEA as dependent variable, and own birth order as the main independent variable. PSEA is the polygenic score for educational attainment, which is normalized with mean 0 and standard deviation 1. We include own PSEA, parents' age at birth (the mean of parents' ages), and further controls (family size, birth year, and birth month dummies) in columns 2$-$3 to ensure the balance of covariates across birth order. Sample is kept constant across specifications.  \newline All data is from the UK Biobank for a sample of UK individuals born between 1935 and 1970.  *** p $<$ 0.001;  ** p $<$ 0.01;  * p $<$ 0.05;  + p $<$ 0.1. Standard errors clustered by spouse pair in parentheses.}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+\multicolumn{4}{!{\huxvb{0, 0, 0}{0}}p{0.9\textwidth+6\tabcolsep}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.9\textwidth+6\tabcolsep-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright {\fontsize{10pt}{12pt}\selectfont Estimates from OLS regressions with spouse PSEA as dependent variable, and own birth order as the main independent variable. PSEA is the polygenic score for educational attainment, which is normalized with mean 0 and standard deviation 1. We include own PSEA, parents' age at birth (the mean of parents' ages), and further controls (family size, birth year, and birth month dummies) in columns 2$-$3 to ensure the balance of covariates across birth order. Sample is kept constant across specifications.  \newline All data is from the UK Biobank for a sample of UK individuals born between 1935 and 1970. *** p $<$ 0.001; ** p $<$ 0.01; * p $<$ 0.05; + p $<$ 0.1. Standard errors clustered by spouse pair in parentheses.}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
 
 
 \hhline{}
@@ -4995,7 +4995,7 @@ maximum possible \(R^2\) in spouse matching.
 \hhline{>{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}-}
 \arrayrulecolor{black}
 
-\multicolumn{5}{!{\huxvb{0, 0, 0}{0}}l!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedright \hspace{6pt} {\fontsize{11pt}{13.2pt}\selectfont  *** p $<$ 0.001;  ** p $<$ 0.01;  * p $<$ 0.05;  + p $<$ 0.1. Standard errors clustered by spouse pair in parentheses.} \hspace{6pt}\huxbpad{6pt}} \tabularnewline[-0.5pt]
+\multicolumn{5}{!{\huxvb{0, 0, 0}{0}}l!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedright \hspace{6pt} {\fontsize{11pt}{13.2pt}\selectfont *** p $<$ 0.001; ** p $<$ 0.01; * p $<$ 0.05; + p $<$ 0.1. Standard errors clustered by spouse pair in parentheses.} \hspace{6pt}\huxbpad{6pt}} \tabularnewline[-0.5pt]
 
 
 \hhline{}
@@ -5285,7 +5285,7 @@ maximum possible \(R^2\) in spouse matching.
 \hhline{>{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}-}
 \arrayrulecolor{black}
 
-\multicolumn{5}{!{\huxvb{0, 0, 0}{0}}l!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedright \hspace{6pt} {\fontsize{11pt}{13.2pt}\selectfont  *** p $<$ 0.001;  ** p $<$ 0.01;  * p $<$ 0.05;  + p $<$ 0.1. Standard errors clustered by spouse pair in parentheses.} \hspace{6pt}\huxbpad{6pt}} \tabularnewline[-0.5pt]
+\multicolumn{5}{!{\huxvb{0, 0, 0}{0}}l!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedright \hspace{6pt} {\fontsize{11pt}{13.2pt}\selectfont *** p $<$ 0.001; ** p $<$ 0.01; * p $<$ 0.05; + p $<$ 0.1. Standard errors clustered by spouse pair in parentheses.} \hspace{6pt}\huxbpad{6pt}} \tabularnewline[-0.5pt]
 
 
 \hhline{}
@@ -5427,8 +5427,8 @@ maximum possible \(R^2\) in spouse matching.
 \multicolumn{1}{!{\huxvb{0, 0, 0}{0}}l!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedright \hspace{6pt} {\fontsize{11pt}{13.2pt}\selectfont N} \hspace{6pt}\huxbpad{6pt}} &
 \multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{11pt}{13.2pt}\selectfont 10206.0000\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} &
 \multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{11pt}{13.2pt}\selectfont 10206.0000\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} &
-\multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{11pt}{13.2pt}\selectfont 3407.0000\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} &
-\multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{11pt}{13.2pt}\selectfont 3407.0000\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} \tabularnewline[-0.5pt]
+\multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{11pt}{13.2pt}\selectfont 3406.0000\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} &
+\multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{11pt}{13.2pt}\selectfont 3406.0000\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} \tabularnewline[-0.5pt]
 
 
 \hhline{}
@@ -5437,8 +5437,8 @@ maximum possible \(R^2\) in spouse matching.
 \multicolumn{1}{!{\huxvb{0, 0, 0}{0}}l!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedright \hspace{6pt} {\fontsize{11pt}{13.2pt}\selectfont R2} \hspace{6pt}\huxbpad{6pt}} &
 \multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{11pt}{13.2pt}\selectfont 0.0128\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} &
 \multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{11pt}{13.2pt}\selectfont 0.0279\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} &
-\multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{11pt}{13.2pt}\selectfont 0.0237\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} &
-\multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{11pt}{13.2pt}\selectfont 0.0300\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} \tabularnewline[-0.5pt]
+\multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{11pt}{13.2pt}\selectfont 0.0236\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} &
+\multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{11pt}{13.2pt}\selectfont 0.0299\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} \tabularnewline[-0.5pt]
 
 
 \hhline{}
@@ -5477,8 +5477,8 @@ maximum possible \(R^2\) in spouse matching.
 \multicolumn{1}{!{\huxvb{0, 0, 0}{0}}l!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedright \hspace{6pt} {\fontsize{11pt}{13.2pt}\selectfont logLik} \hspace{6pt}\huxbpad{6pt}} &
 \multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{11pt}{13.2pt}\selectfont $-$14297.465\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} &
 \multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{11pt}{13.2pt}\selectfont $-$14218.664\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} &
-\multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{11pt}{13.2pt}\selectfont $-$4821.248\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} &
-\multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{11pt}{13.2pt}\selectfont $-$4810.278\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} \tabularnewline[-0.5pt]
+\multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{11pt}{13.2pt}\selectfont $-$4820.333\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} &
+\multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{11pt}{13.2pt}\selectfont $-$4809.366\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} \tabularnewline[-0.5pt]
 
 
 \hhline{}
@@ -5487,14 +5487,14 @@ maximum possible \(R^2\) in spouse matching.
 \multicolumn{1}{!{\huxvb{0, 0, 0}{0}}l!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedright \hspace{6pt} {\fontsize{11pt}{13.2pt}\selectfont AIC} \hspace{6pt}\huxbpad{6pt}} &
 \multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{11pt}{13.2pt}\selectfont 28694.930\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} &
 \multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{11pt}{13.2pt}\selectfont 28541.329\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} &
-\multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{11pt}{13.2pt}\selectfont 9746.496\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} &
-\multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{11pt}{13.2pt}\selectfont 9726.555\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} \tabularnewline[-0.5pt]
+\multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{11pt}{13.2pt}\selectfont 9742.665\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} &
+\multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{11pt}{13.2pt}\selectfont 9722.731\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} \tabularnewline[-0.5pt]
 
 
 \hhline{>{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}-}
 \arrayrulecolor{black}
 
-\multicolumn{5}{!{\huxvb{0, 0, 0}{0}}l!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedright \hspace{6pt} {\fontsize{11pt}{13.2pt}\selectfont  *** p $<$ 0.001;  ** p $<$ 0.01;  * p $<$ 0.05;  + p $<$ 0.1. Standard errors clustered by spouse pair in parentheses.} \hspace{6pt}\huxbpad{6pt}} \tabularnewline[-0.5pt]
+\multicolumn{5}{!{\huxvb{0, 0, 0}{0}}l!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedright \hspace{6pt} {\fontsize{11pt}{13.2pt}\selectfont *** p $<$ 0.001; ** p $<$ 0.01; * p $<$ 0.05; + p $<$ 0.1. Standard errors clustered by spouse pair in parentheses.} \hspace{6pt}\huxbpad{6pt}} \tabularnewline[-0.5pt]
 
 
 \hhline{}
@@ -5803,7 +5803,7 @@ maximum possible \(R^2\) in spouse matching.
 \hhline{>{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}-}
 \arrayrulecolor{black}
 
-\multicolumn{5}{!{\huxvb{0, 0, 0}{0}}p{0.9\textwidth+8\tabcolsep}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.9\textwidth+8\tabcolsep-6pt-6pt}{\huxtpad{2pt + 1em}\raggedright {\fontsize{10pt}{12pt}\selectfont  *** p $<$ 0.001;  ** p $<$ 0.01;  * p $<$ 0.05;  + p $<$ 0.1. Standard errors clustered by spouse pair in parentheses. Grey background: coefficients are higher than column 1.}\huxbpad{2pt}}} \tabularnewline[-0.5pt]
+\multicolumn{5}{!{\huxvb{0, 0, 0}{0}}p{0.9\textwidth+8\tabcolsep}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.9\textwidth+8\tabcolsep-6pt-6pt}{\huxtpad{2pt + 1em}\raggedright {\fontsize{10pt}{12pt}\selectfont *** p $<$ 0.001; ** p $<$ 0.01; * p $<$ 0.05; + p $<$ 0.1. Standard errors clustered by spouse pair in parentheses. Grey background: coefficients are higher than column 1.}\huxbpad{2pt}}} \tabularnewline[-0.5pt]
 
 
 \hhline{}
@@ -6112,7 +6112,7 @@ maximum possible \(R^2\) in spouse matching.
 \hhline{>{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}-}
 \arrayrulecolor{black}
 
-\multicolumn{5}{!{\huxvb{0, 0, 0}{0}}p{1\textwidth+8\tabcolsep}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{1\textwidth+8\tabcolsep-6pt-6pt}{\huxtpad{2pt + 1em}\raggedright {\fontsize{10pt}{12pt}\selectfont  *** p $<$ 0.001;  ** p $<$ 0.01;  * p $<$ 0.05;  + p $<$ 0.1. Standard errors clustered by spouse pair in parentheses.  \newline Grey background: coefficients are higher than column 1.}\huxbpad{2pt}}} \tabularnewline[-0.5pt]
+\multicolumn{5}{!{\huxvb{0, 0, 0}{0}}p{1\textwidth+8\tabcolsep}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{1\textwidth+8\tabcolsep-6pt-6pt}{\huxtpad{2pt + 1em}\raggedright {\fontsize{10pt}{12pt}\selectfont *** p $<$ 0.001; ** p $<$ 0.01; * p $<$ 0.05; + p $<$ 0.1. Standard errors clustered by spouse pair in parentheses.  \newline Grey background: coefficients are higher than column 1.}\huxbpad{2pt}}} \tabularnewline[-0.5pt]
 
 
 \hhline{}
@@ -6374,8 +6374,8 @@ maximum possible \(R^2\) in spouse matching.
 \multicolumn{1}{!{\huxvb{0, 0, 0}{0}}l!{\huxvb{0, 0, 0}{0}}}{\huxtpad{2pt + 1em}\raggedright \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont N} \hspace{6pt}\huxbpad{2pt}} &
 \multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{2pt + 1em}\raggedleft \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont 10005\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{2pt}} &
 \multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{2pt + 1em}\raggedleft \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont 10005\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{2pt}} &
-\multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{2pt + 1em}\raggedleft \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont 3356\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{2pt}} &
-\multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{2pt + 1em}\raggedleft \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont 3356\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{2pt}} \tabularnewline[-0.5pt]
+\multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{2pt + 1em}\raggedleft \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont 3355\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{2pt}} &
+\multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{2pt + 1em}\raggedleft \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont 3355\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{2pt}} \tabularnewline[-0.5pt]
 
 
 \hhline{}
@@ -6394,8 +6394,8 @@ maximum possible \(R^2\) in spouse matching.
 \multicolumn{1}{!{\huxvb{0, 0, 0}{0}}l!{\huxvb{0, 0, 0}{0}}}{\huxtpad{2pt + 1em}\raggedright \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont logLik} \hspace{6pt}\huxbpad{2pt}} &
 \multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{2pt + 1em}\raggedleft \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont $-$14040.496\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{2pt}} &
 \multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{2pt + 1em}\raggedleft \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont $-$13942.942\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{2pt}} &
-\multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{2pt + 1em}\raggedleft \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont $-$4761.416\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{2pt}} &
-\multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{2pt + 1em}\raggedleft \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont $-$4754.938\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{2pt}} \tabularnewline[-0.5pt]
+\multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{2pt + 1em}\raggedleft \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont $-$4760.497\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{2pt}} &
+\multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{2pt + 1em}\raggedleft \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont $-$4754.021\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{2pt}} \tabularnewline[-0.5pt]
 
 
 \hhline{}
@@ -6404,14 +6404,14 @@ maximum possible \(R^2\) in spouse matching.
 \multicolumn{1}{!{\huxvb{0, 0, 0}{0}}l!{\huxvb{0, 0, 0}{0}}}{\huxtpad{2pt + 1em}\raggedright \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont AIC} \hspace{6pt}\huxbpad{2pt}} &
 \multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{2pt + 1em}\raggedleft \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont 28180.992\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{2pt}} &
 \multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{2pt + 1em}\raggedleft \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont 27995.884\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{2pt}} &
-\multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{2pt + 1em}\raggedleft \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont 9632.832\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{2pt}} &
-\multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{2pt + 1em}\raggedleft \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont 9621.875\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{2pt}} \tabularnewline[-0.5pt]
+\multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{2pt + 1em}\raggedleft \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont 9628.994\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{2pt}} &
+\multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{2pt + 1em}\raggedleft \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont 9618.042\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{2pt}} \tabularnewline[-0.5pt]
 
 
 \hhline{>{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}-}
 \arrayrulecolor{black}
 
-\multicolumn{5}{!{\huxvb{0, 0, 0}{0}}l!{\huxvb{0, 0, 0}{0}}}{\huxtpad{2pt + 1em}\raggedright \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont  *** p $<$ 0.001;  ** p $<$ 0.01;  * p $<$ 0.05;  + p $<$ 0.1. Standard errors clustered by spouse pair in parentheses.} \hspace{6pt}\huxbpad{2pt}} \tabularnewline[-0.5pt]
+\multicolumn{5}{!{\huxvb{0, 0, 0}{0}}l!{\huxvb{0, 0, 0}{0}}}{\huxtpad{2pt + 1em}\raggedright \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont *** p $<$ 0.001; ** p $<$ 0.01; * p $<$ 0.05; + p $<$ 0.1. Standard errors clustered by spouse pair in parentheses.} \hspace{6pt}\huxbpad{2pt}} \tabularnewline[-0.5pt]
 
 
 \hhline{}
@@ -6674,8 +6674,8 @@ maximum possible \(R^2\) in spouse matching.
 \multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{2pt + 1em}\raggedright {\fontsize{10pt}{12pt}\selectfont N}\huxbpad{2pt}}} &
 \multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{2pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont 10206\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{2pt}}} &
 \multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{2pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont 10206\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{2pt}}} &
-\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{2pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont 3407\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{2pt}}} &
-\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{2pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont 3407\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{2pt}}} \tabularnewline[-0.5pt]
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{2pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont 3406\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{2pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{2pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont 3406\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{2pt}}} \tabularnewline[-0.5pt]
 
 
 \hhline{}
@@ -6691,7 +6691,7 @@ maximum possible \(R^2\) in spouse matching.
 \hhline{>{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}-}
 \arrayrulecolor{black}
 
-\multicolumn{5}{!{\huxvb{0, 0, 0}{0}}p{1\textwidth+8\tabcolsep}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{1\textwidth+8\tabcolsep-6pt-6pt}{\huxtpad{2pt + 1em}\raggedright {\fontsize{10pt}{12pt}\selectfont  *** p $<$ 0.001;  ** p $<$ 0.01;  * p $<$ 0.05;  + p $<$ 0.1. Standard errors clustered by spouse pair in parentheses.  \newline Polygenic scores: alzheimer's, cognitive ability, neuroticism, substance use.}\huxbpad{2pt}}} \tabularnewline[-0.5pt]
+\multicolumn{5}{!{\huxvb{0, 0, 0}{0}}p{1\textwidth+8\tabcolsep}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{1\textwidth+8\tabcolsep-6pt-6pt}{\huxtpad{2pt + 1em}\raggedright {\fontsize{10pt}{12pt}\selectfont *** p $<$ 0.001; ** p $<$ 0.01; * p $<$ 0.05; + p $<$ 0.1. Standard errors clustered by spouse pair in parentheses.  \newline Polygenic scores: alzheimer's, cognitive ability, neuroticism, substance use.}\huxbpad{2pt}}} \tabularnewline[-0.5pt]
 
 
 \hhline{}
@@ -6922,7 +6922,7 @@ maximum possible \(R^2\) in spouse matching.
 \multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.225\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.225\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright {\fontsize{10pt}{12pt}\selectfont N}\huxbpad{6pt}}} &
 \multicolumn{1}{p{0.225\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.225\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont 10206\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{6pt}}} &
 \multicolumn{1}{p{0.225\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.225\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont 10156\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{6pt}}} &
-\multicolumn{1}{p{0.225\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.225\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont 3400\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+\multicolumn{1}{p{0.225\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.225\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont 3399\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
 
 
 \hhline{}
@@ -6940,7 +6940,7 @@ maximum possible \(R^2\) in spouse matching.
 \multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.225\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.225\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright {\fontsize{10pt}{12pt}\selectfont logLik}\huxbpad{6pt}}} &
 \multicolumn{1}{p{0.225\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.225\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont $-$14297.465\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{6pt}}} &
 \multicolumn{1}{p{0.225\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.225\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont $-$14116.670\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{6pt}}} &
-\multicolumn{1}{p{0.225\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.225\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont $-$4789.163\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+\multicolumn{1}{p{0.225\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.225\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont $-$4788.254\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
 
 
 \hhline{}
@@ -6949,13 +6949,13 @@ maximum possible \(R^2\) in spouse matching.
 \multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.225\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.225\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright {\fontsize{10pt}{12pt}\selectfont AIC}\huxbpad{6pt}}} &
 \multicolumn{1}{p{0.225\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.225\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont 28694.930\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{6pt}}} &
 \multicolumn{1}{p{0.225\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.225\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont 28343.341\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{6pt}}} &
-\multicolumn{1}{p{0.225\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.225\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont 9690.326\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+\multicolumn{1}{p{0.225\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.225\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft {\fontsize{10pt}{12pt}\selectfont 9686.508\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
 
 
 \hhline{>{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}-}
 \arrayrulecolor{black}
 
-\multicolumn{4}{!{\huxvb{0, 0, 0}{0}}p{0.9\textwidth+6\tabcolsep}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.9\textwidth+6\tabcolsep-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright {\fontsize{10pt}{12pt}\selectfont  *** p $<$ 0.001;  ** p $<$ 0.01;  * p $<$ 0.05;  + p $<$ 0.1. Standard errors clustered by spouse pair in parentheses.}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+\multicolumn{4}{!{\huxvb{0, 0, 0}{0}}p{0.9\textwidth+6\tabcolsep}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.9\textwidth+6\tabcolsep-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright {\fontsize{10pt}{12pt}\selectfont *** p $<$ 0.001; ** p $<$ 0.01; * p $<$ 0.05; + p $<$ 0.1. Standard errors clustered by spouse pair in parentheses.}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
 
 
 \hhline{}
@@ -7183,7 +7183,7 @@ maximum possible \(R^2\) in spouse matching.
 \hhline{>{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}-}
 \arrayrulecolor{black}
 
-\multicolumn{4}{!{\huxvb{0, 0, 0}{0}}p{0.9\textwidth+6\tabcolsep}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.9\textwidth+6\tabcolsep-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright {\fontsize{10pt}{12pt}\selectfont  *** p $<$ 0.001;  ** p $<$ 0.01;  * p $<$ 0.05;  + p $<$ 0.1. Standard errors clustered by spouse pair in parentheses.}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+\multicolumn{4}{!{\huxvb{0, 0, 0}{0}}p{0.9\textwidth+6\tabcolsep}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.9\textwidth+6\tabcolsep-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright {\fontsize{10pt}{12pt}\selectfont *** p $<$ 0.001; ** p $<$ 0.01; * p $<$ 0.05; + p $<$ 0.1. Standard errors clustered by spouse pair in parentheses.}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
 
 
 \hhline{}
@@ -7434,8 +7434,8 @@ maximum possible \(R^2\) in spouse matching.
 \arrayrulecolor{black}
 
 \multicolumn{1}{!{\huxvb{0, 0, 0}{0}}l!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedright \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont N} \hspace{6pt}\huxbpad{6pt}} &
-\multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont 6959\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} &
-\multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont 6959\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} &
+\multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont 6958\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} &
+\multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont 6958\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} &
 \multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont 2286\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} &
 \multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont 2286\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} \tabularnewline[-0.5pt]
 
@@ -7454,8 +7454,8 @@ maximum possible \(R^2\) in spouse matching.
 \arrayrulecolor{black}
 
 \multicolumn{1}{!{\huxvb{0, 0, 0}{0}}l!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedright \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont logLik} \hspace{6pt}\huxbpad{6pt}} &
-\multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont $-$9723.678\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} &
-\multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont $-$9656.955\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} &
+\multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont $-$9722.781\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} &
+\multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont $-$9656.067\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} &
 \multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont $-$3227.648\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} &
 \multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont $-$3221.403\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} \tabularnewline[-0.5pt]
 
@@ -7464,8 +7464,8 @@ maximum possible \(R^2\) in spouse matching.
 \arrayrulecolor{black}
 
 \multicolumn{1}{!{\huxvb{0, 0, 0}{0}}l!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedright \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont AIC} \hspace{6pt}\huxbpad{6pt}} &
-\multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont 19545.356\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} &
-\multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont 19421.909\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} &
+\multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont 19541.561\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} &
+\multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont 19418.134\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} &
 \multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont 6561.296\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} &
 \multicolumn{1}{r!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedleft \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont 6550.807\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}} \hspace{6pt}\huxbpad{6pt}} \tabularnewline[-0.5pt]
 
@@ -7473,7 +7473,7 @@ maximum possible \(R^2\) in spouse matching.
 \hhline{>{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}-}
 \arrayrulecolor{black}
 
-\multicolumn{5}{!{\huxvb{0, 0, 0}{0}}l!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedright \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont  *** p $<$ 0.001;  ** p $<$ 0.01;  * p $<$ 0.05;  + p $<$ 0.1. Standard errors clustered by spouse pair in parentheses.} \hspace{6pt}\huxbpad{6pt}} \tabularnewline[-0.5pt]
+\multicolumn{5}{!{\huxvb{0, 0, 0}{0}}l!{\huxvb{0, 0, 0}{0}}}{\huxtpad{6pt + 1em}\raggedright \hspace{6pt} {\fontsize{10pt}{12pt}\selectfont *** p $<$ 0.001; ** p $<$ 0.01; * p $<$ 0.05; + p $<$ 0.1. Standard errors clustered by spouse pair in parentheses.} \hspace{6pt}\huxbpad{6pt}} \tabularnewline[-0.5pt]
 
 
 \hhline{}
@@ -7511,86 +7511,86 @@ maximum possible \(R^2\) in spouse matching.
 \arrayrulecolor{black}
 
 \multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright Birth order\huxbpad{6pt}}} &
-\multicolumn{1}{p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft $-$0.004 *\huxbpad{6pt}}} &
-\multicolumn{1}{p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft $-$0.001\hphantom{0}\hphantom{0}\hphantom{0}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+\multicolumn{1}{p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft $-$0.004 **\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft $-$0.001\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
 
 
 \hhline{}
 \arrayrulecolor{black}
 
 \multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright \huxbpad{6pt}}} &
-\multicolumn{1}{p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft (0.002)\hphantom{0}\huxbpad{6pt}}} &
-\multicolumn{1}{p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft (0.002)\hphantom{0}\hphantom{0}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+\multicolumn{1}{p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft (0.001)\hphantom{0}\hphantom{0}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft (0.002)\hphantom{0}\hphantom{0}\hphantom{0}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
 
 
 \hhline{}
 \arrayrulecolor{black}
 
 \multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright PSEA\huxbpad{6pt}}} &
-\multicolumn{1}{p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft $-$0.001 +\huxbpad{6pt}}} &
-\multicolumn{1}{p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft $-$0.001\hphantom{0}\hphantom{0}\hphantom{0}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+\multicolumn{1}{p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft $-$0.001\hphantom{0}\hphantom{0}\hphantom{0}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft $-$0.001\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
 
 
 \hhline{}
 \arrayrulecolor{black}
 
 \multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright \huxbpad{6pt}}} &
-\multicolumn{1}{p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft (0.001)\hphantom{0}\huxbpad{6pt}}} &
-\multicolumn{1}{p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft (0.001)\hphantom{0}\hphantom{0}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+\multicolumn{1}{p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft (0.001)\hphantom{0}\hphantom{0}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft (0.002)\hphantom{0}\hphantom{0}\hphantom{0}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
 
 
 \hhline{}
 \arrayrulecolor{black}
 
 \multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright Parents' age at birth\huxbpad{6pt}}} &
-\multicolumn{1}{p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft \hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\huxbpad{6pt}}} &
-\multicolumn{1}{p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft $-$0.002 **\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+\multicolumn{1}{p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft \hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft $-$0.002 ***\huxbpad{6pt}}} \tabularnewline[-0.5pt]
 
 
 \hhline{}
 \arrayrulecolor{black}
 
 \multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright \huxbpad{6pt}}} &
-\multicolumn{1}{p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft \hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\huxbpad{6pt}}} &
-\multicolumn{1}{p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft (0.001)\hphantom{0}\hphantom{0}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+\multicolumn{1}{p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft \hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft (0.000)\hphantom{0}\hphantom{0}\hphantom{0}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
 
 
 \hhline{>{\huxb{255, 255, 255}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
 \arrayrulecolor{black}
 
 \multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright N\huxbpad{6pt}}} &
-\multicolumn{1}{p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 187787\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\huxbpad{6pt}}} &
-\multicolumn{1}{p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 82264\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+\multicolumn{1}{p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 187781\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 82261\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
 
 
 \hhline{}
 \arrayrulecolor{black}
 
 \multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright R2\huxbpad{6pt}}} &
-\multicolumn{1}{p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 0.002\hphantom{0}\hphantom{0}\huxbpad{6pt}}} &
-\multicolumn{1}{p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 0.003\hphantom{0}\hphantom{0}\hphantom{0}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+\multicolumn{1}{p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 0.002\hphantom{0}\hphantom{0}\hphantom{0}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 0.003\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
 
 
 \hhline{}
 \arrayrulecolor{black}
 
 \multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright logLik\huxbpad{6pt}}} &
-\multicolumn{1}{p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft $-$110174.233\hphantom{0}\hphantom{0}\huxbpad{6pt}}} &
-\multicolumn{1}{p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft $-$47987.261\hphantom{0}\hphantom{0}\hphantom{0}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+\multicolumn{1}{p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft $-$110173.713\hphantom{0}\hphantom{0}\hphantom{0}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft $-$47987.011\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
 
 
 \hhline{}
 \arrayrulecolor{black}
 
 \multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright AIC\huxbpad{6pt}}} &
-\multicolumn{1}{p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 220484.467\hphantom{0}\hphantom{0}\huxbpad{6pt}}} &
-\multicolumn{1}{p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 96098.521\hphantom{0}\hphantom{0}\hphantom{0}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+\multicolumn{1}{p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 220471.426\hphantom{0}\hphantom{0}\hphantom{0}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.266666666666667\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.266666666666667\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 96092.021\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
 
 
 \hhline{>{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}-}
 \arrayrulecolor{black}
 
-\multicolumn{3}{!{\huxvb{0, 0, 0}{0}}p{0.8\textwidth+4\tabcolsep}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.8\textwidth+4\tabcolsep-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright  *** p $<$ 0.001;  ** p $<$ 0.01;  * p $<$ 0.05;  + p $<$ 0.1. Other controls: dummies for birth month, number of siblings, and own age\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+\multicolumn{3}{!{\huxvb{0, 0, 0}{0}}p{0.8\textwidth+4\tabcolsep}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.8\textwidth+4\tabcolsep-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright *** p $<$ 0.001; ** p $<$ 0.01; * p $<$ 0.05; + p $<$ 0.1. Other controls: dummies for birth month, number of siblings, and own age\huxbpad{6pt}}} \tabularnewline[-0.5pt]
 
 
 \hhline{}
@@ -7625,7 +7625,7 @@ It is still possible that some pairs in our data may not be actual
 spouses. These pairs might show a relationship between one partner's
 phenotype and the other's genotype. For example, maybe early-born
 children grow up to live in richer postcodes, along with people who have
-higher PSEA scores (Abdellaoui et al. 2019). This could then bias the
+higher PSEA scores ({Abdellaoui et al.} 2019). This could then bias the
 results. If the coefficient for ``fake pairs'' is absolutely larger
 (smaller) than for real pairs, then our results will be biased away from
 zero (towards zero).
@@ -7777,7 +7777,7 @@ results towards zero.
 \hhline{>{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}-}
 \arrayrulecolor{black}
 
-\multicolumn{4}{!{\huxvb{0, 0, 0}{0}}p{0.8\textwidth+6\tabcolsep}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.8\textwidth+6\tabcolsep-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright  *** p $<$ 0.001;  ** p $<$ 0.01;  * p $<$ 0.05;  + p $<$ 0.1. Standard errors clustered by spouse pair in parentheses.\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+\multicolumn{4}{!{\huxvb{0, 0, 0}{0}}p{0.8\textwidth+6\tabcolsep}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.8\textwidth+6\tabcolsep-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright *** p $<$ 0.001; ** p $<$ 0.01; * p $<$ 0.05; + p $<$ 0.1. Standard errors clustered by spouse pair in parentheses.\huxbpad{6pt}}} \tabularnewline[-0.5pt]
 
 
 \hhline{}
@@ -7854,19 +7854,19 @@ is the Aristocracy of the natural Talent of Beauty.
 \section*{References}\label{references}
 \addcontentsline{toc}{section}{References}
 
-\phantomsection\label{refs}
-\begin{CSLReferences}{1}{0}
+\protect\phantomsection\label{refs}
+\begin{CSLReferences}{1}{1}
 \bibitem[\citeproctext]{ref-abdellaoui2019genetic}
-Abdellaoui, Abdel, David Hugh-Jones, Loı̈c Yengo, Kathryn E Kemper, Michel G Nivard, Laura Veul, Yan Holtz, et al. 2019. {``Genetic Correlates of Social Stratification in Great Britain.''} \emph{Nature Human Behaviour} 3 (12): 1332--42.
+{Abdellaoui, Abdel, David Hugh-Jones, Loı̈c Yengo, et al.} 2019. {``Genetic Correlates of Social Stratification in Great Britain.''} \emph{Nature Human Behaviour} 3 (12): 1332--42.
 
 \bibitem[\citeproctext]{ref-abramitzky2011marrying}
 Abramitzky, Ran, Adeline Delavande, and Luis Vasconcelos. 2011. {``Marrying up: The Role of Sex Ratio in Assortative Matching.''} \emph{American Economic Journal: Applied Economics} 3 (3): 124--57.
 
 \bibitem[\citeproctext]{ref-alesina2020persistence}
-Alesina, Alberto, Marlon Seror, David Y Yang, Yang You, Weihong Zeng, et al. 2020. \emph{Persistence Through Revolutions}. National Bureau of Economic Research.
+{Alesina, Alberto, Marlon Seror, David Y Yang, Yang You, Weihong Zeng, et al.} 2020. \emph{Persistence Through Revolutions}. National Bureau of Economic Research.
 
 \bibitem[\citeproctext]{ref-vanalten2022reweighting}
-Alten, Sjoerd van, Benjamin W Domingue, Titus J Galama, and Andries T Marees. 2022. {``Reweighting the UK Biobank to Reflect Its Underlying Sampling Population Substantially Reduces Pervasive Selection Bias Due to Volunteering.''} \emph{medRxiv}. \url{https://doi.org/10.1101/2022.05.16.22275048}.
+Alten, Sjoerd van, Benjamin W Domingue, Titus J Galama, and Andries T Marees. 2022. {``Reweighting the UK Biobank to Reflect Its Underlying Sampling Population Substantially Reduces Pervasive Selection Bias Due to Volunteering.''} \emph{medRxiv}, ahead of print. \url{https://doi.org/10.1101/2022.05.16.22275048}.
 
 \bibitem[\citeproctext]{ref-amin2015schooling}
 Amin, Vikesh, Jere R Behrman, and Hans-Peter Kohler. 2015. {``Schooling Has Smaller or Insignificant Effects on Adult Health in the US Than Suggested by Cross-Sectional Associations: New Estimates Using Relatively Large Samples of Identical Twins.''} \emph{Social Science \& Medicine} 127: 181--89.
@@ -7878,16 +7878,16 @@ Banerjee, Abhijit, Esther Duflo, Maitreesh Ghatak, and Jeanne Lafortune. 2013. {
 Barone, Guglielmo, and Sauro Mocetti. 2021. {``Intergenerational Mobility in the Very Long Run: Florence 1427-2011.''} \emph{Review of Economic Studies} 88 (4): 1863--91.
 
 \bibitem[\citeproctext]{ref-barth2020genetic}
-Barth, Daniel, Nicholas W Papageorge, and Kevin Thom. 2020. {``Genetic Endowments and Wealth Inequality.''} \emph{Journal of Political Economy} 128 (4): 1474--1522.
+Barth, Daniel, Nicholas W Papageorge, and Kevin Thom. 2020. {``Genetic Endowments and Wealth Inequality.''} \emph{Journal of Political Economy} 128 (4): 1474--522.
 
 \bibitem[\citeproctext]{ref-belot2013dating}
 Belot, Michèle, and Marco Francesconi. 2013. {``Dating Preferences and Meeting Opportunities in Mate Choice Decisions.''} \emph{Journal of Human Resources} 48 (2): 474--508.
 
 \bibitem[\citeproctext]{ref-belsky2018genetic}
-Belsky, Daniel W, Benjamin W Domingue, Robbee Wedow, Louise Arseneault, Jason D Boardman, Avshalom Caspi, Dalton Conley, et al. 2018. {``Genetic Analysis of Social-Class Mobility in Five Longitudinal Studies.''} \emph{Proceedings of the National Academy of Sciences} 115 (31): E7275--84.
+{Belsky, Daniel W, Benjamin W Domingue, Robbee Wedow, et al.} 2018. {``Genetic Analysis of Social-Class Mobility in Five Longitudinal Studies.''} \emph{Proceedings of the National Academy of Sciences} 115 (31): E7275--84.
 
 \bibitem[\citeproctext]{ref-belsky2016genetics}
-Belsky, Daniel W, Terrie E Moffitt, David L Corcoran, Benjamin Domingue, HonaLee Harrington, Sean Hogan, Renate Houts, et al. 2016. {``The Genetics of Success: How Single-Nucleotide Polymorphisms Associated with Educational Attainment Relate to Life-Course Development.''} \emph{Psychological Science} 27 (7): 957--72.
+{Belsky, Daniel W, Terrie E Moffitt, David L Corcoran, et al.} 2016. {``The Genetics of Success: How Single-Nucleotide Polymorphisms Associated with Educational Attainment Relate to Life-Course Development.''} \emph{Psychological Science} 27 (7): 957--72.
 
 \bibitem[\citeproctext]{ref-bjorklund2006origins}
 Björklund, Anders, Mikael Lindahl, and Erik Plug. 2006. {``The Origins of Intergenerational Associations: Lessons from Swedish Adoption Data.''} \emph{The Quarterly Journal of Economics} 121 (3): 999--1028.
@@ -7896,7 +7896,7 @@ Björklund, Anders, Mikael Lindahl, and Erik Plug. 2006. {``The Origins of Inter
 Black, Sandra E, Paul J Devereux, and Kjell G Salvanes. 2005. {``The More the Merrier? The Effect of Family Size and Birth Order on Children's Education.''} \emph{The Quarterly Journal of Economics} 120 (2): 669--700.
 
 \bibitem[\citeproctext]{ref-black2011older}
----------. 2011. {``Older and Wiser? Birth Order and IQ of Young Men.''} \emph{CESifo Economic Studies} 57 (1): 103--20.
+Black, Sandra E, Paul J Devereux, and Kjell G Salvanes. 2011. {``Older and Wiser? Birth Order and IQ of Young Men.''} \emph{CESifo Economic Studies} 57 (1): 103--20.
 
 \bibitem[\citeproctext]{ref-boardman2015can}
 Boardman, Jason D, Benjamin W Domingue, and Jonathan Daw. 2015. {``What Can Genes Tell Us about the Relationship Between Education and Health?''} \emph{Social Science \& Medicine} 127: 171--80.
@@ -7917,7 +7917,7 @@ Buss, David M. 1989. {``Sex Differences in Human Mate Preferences: Evolutionary 
 Buss, David M, and Michael Barnes. 1986. {``Preferences in Human Mate Selection.''} \emph{Journal of Personality and Social Psychology} 50 (3): 559.
 
 \bibitem[\citeproctext]{ref-bycroft2018uk}
-Bycroft, Clare, Colin Freeman, Desislava Petkova, Gavin Band, Lloyd T Elliott, Kevin Sharp, Allan Motyer, et al. 2018. {``The UK Biobank Resource with Deep Phenotyping and Genomic Data.''} \emph{Nature} 562 (7726): 203--9.
+{Bycroft, Clare, Colin Freeman, Desislava Petkova, et al.} 2018. {``The UK Biobank Resource with Deep Phenotyping and Genomic Data.''} \emph{Nature} 562 (7726): 203--9.
 
 \bibitem[\citeproctext]{ref-chakravarti2003nature}
 Chakravarti, Aravinda, and Peter Little. 2003. {``Nature, Nurture and Human Disease.''} \emph{Nature} 421 (6921): 412--14.
@@ -7926,7 +7926,7 @@ Chakravarti, Aravinda, and Peter Little. 2003. {``Nature, Nurture and Human Dise
 Chetty, Raj, Nathaniel Hendren, and Lawrence F Katz. 2016. {``The Effects of Exposure to Better Neighborhoods on Children: New Evidence from the Moving to Opportunity Experiment.''} \emph{American Economic Review} 106 (4): 855--902.
 
 \bibitem[\citeproctext]{ref-chiappori2021analyzing}
-Chiappori, Pierre-André, Edoardo Ciscato, and Carla Guerriero. 2021. {``Analyzing Matching Patterns in Marriage: Theory and Application to Italian Data.''}
+Chiappori, Pierre-André, Edoardo Ciscato, and Carla Guerriero. 2021. \emph{Analyzing Matching Patterns in Marriage: Theory and Application to Italian Data}.
 
 \bibitem[\citeproctext]{ref-chiappori2012fatter}
 Chiappori, Pierre-André, Sonia Oreffice, and Climent Quintana-Domeque. 2012. {``Fatter Attraction: Anthropometric and Socioeconomic Matching on the Marriage Market.''} \emph{Journal of Political Economy} 120 (4): 659--95.
@@ -7947,7 +7947,7 @@ Cloninger, C Robert, John Rice, and Theodore Reich. 1979. {``Multifactorial Inhe
 Cochran, Gregory, and Henry Harpending. 2013. {``Paternal Age and Genetic Load.''} \emph{Human Biology} 85 (4): 515--28.
 
 \bibitem[\citeproctext]{ref-collado2023estimating}
-Collado, M Dolores, Ignacio Ortuño-Ortı́n, and Jan Stuhler. 2023. {``Estimating Intergenerational and Assortative Processes in Extended Family Data.''} \emph{The Review of Economic Studies} 90 (3): 1195--1227.
+Collado, M Dolores, Ignacio Ortuño-Ortı́n, and Jan Stuhler. 2023. {``Estimating Intergenerational and Assortative Processes in Extended Family Data.''} \emph{The Review of Economic Studies} 90 (3): 1195--227.
 
 \bibitem[\citeproctext]{ref-Davies_2018}
 Davies, Neil M., Matt Dickson, George Davey Smith, Gerard J. van den Berg, and Frank Windmeijer. 2018. {``The Causal Effects of Education on Health Outcomes in the {UK} Biobank.''} \emph{Nature Human Behaviour} 2 (2): 117--25. \url{https://doi.org/10.1038/s41562-017-0279-y}.
@@ -7956,10 +7956,10 @@ Davies, Neil M., Matt Dickson, George Davey Smith, Gerard J. van den Berg, and F
 De Haan, Monique. 2010. {``Birth Order, Family Size and Educational Attainment.''} \emph{Economics of Education Review} 29 (4): 576--88.
 
 \bibitem[\citeproctext]{ref-demange2021investigating}
-Demange, Perline A, Margherita Malanchini, Travis T Mallard, Pietro Biroli, Simon R Cox, Andrew D Grotzinger, Elliot M Tucker-Drob, et al. 2021. {``Investigating the Genetic Architecture of Noncognitive Skills Using GWAS-by-Subtraction.''} \emph{Nature Genetics} 53 (1): 35--44.
+{Demange, Perline A, Margherita Malanchini, Travis T Mallard, et al.} 2021. {``Investigating the Genetic Architecture of Noncognitive Skills Using GWAS-by-Subtraction.''} \emph{Nature Genetics} 53 (1): 35--44.
 
 \bibitem[\citeproctext]{ref-dupuy2014personality}
-Dupuy, Arnaud, and Alfred Galichon. 2014. {``Personality Traits and the Marriage Market.''} \emph{Journal of Political Economy} 122 (6): 1271--1319.
+Dupuy, Arnaud, and Alfred Galichon. 2014. {``Personality Traits and the Marriage Market.''} \emph{Journal of Political Economy} 122 (6): 1271--319.
 
 \bibitem[\citeproctext]{ref-fagereng2021wealthy}
 Fagereng, Andreas, Magne Mogstad, and Marte Rønning. 2021. {``Why Do Wealthy Parents Have Wealthy Children?''} \emph{Journal of Political Economy} 129 (3): 703--56.
@@ -7980,7 +7980,7 @@ Harden, Kathryn Paige. 2021. \emph{The Genetic Lottery: Why DNA Matters for Soci
 Hauser, Robert M, and William H Sewell. 1985. {``Birth Order and Educational Attainment in Full Sibships.''} \emph{American Educational Research Journal} 22 (1): 1--23.
 
 \bibitem[\citeproctext]{ref-Heath_1985}
-Heath, Andrew C, K Berg, L J Eaves, M H Solaas, L A Corey, J Sundet, P Magnus, and W E Nance. 1985. {``Education Policy and the Heritability of Educational Attainment.''} \emph{Nature} 314 (6013): 734--36. \url{https://doi.org/10.1038/314734a0}.
+Heath, Andrew C, K Berg, L J Eaves, et al. 1985. {``Education Policy and the Heritability of Educational Attainment.''} \emph{Nature} 314 (6013): 734--36. \url{https://doi.org/10.1038/314734a0}.
 
 \bibitem[\citeproctext]{ref-heath1985resolving}
 Heath, Andrew C, and Lindon J Eaves. 1985. {``Resolving the Effects of Phenotype and Social Background on Mate Selection.''} \emph{Behavior Genetics} 15 (1): 15--30.
@@ -7992,7 +7992,7 @@ Heckman, James, Rodrigo Pinto, and Peter Savelyev. 2013. {``Understanding the Me
 Hitsch, Gunter J, Ali Hortaçsu, and Dan Ariely. 2010. {``Matching and Sorting in Online Dating.''} \emph{American Economic Review} 100 (1): 130--63.
 
 \bibitem[\citeproctext]{ref-howe2022within}
-Howe, Laurence J, Michel G Nivard, Tim T Morris, Ailin F Hansen, Humaira Rasheed, Yoonsu Cho, Geetha Chittoor, et al. 2022. {``Within-Sibship Genome-Wide Association Analyses Decrease Bias in Estimates of Direct Genetic Effects.''} \emph{Nature Genetics} 54 (5): 581--92.
+{Howe, Laurence J, Michel G Nivard, Tim T Morris, et al.} 2022. {``Within-Sibship Genome-Wide Association Analyses Decrease Bias in Estimates of Direct Genetic Effects.''} \emph{Nature Genetics} 54 (5): 581--92.
 
 \bibitem[\citeproctext]{ref-hugh2016assortative}
 Hugh-Jones, David, Karin JH Verweij, Beate St Pourcain, and Abdel Abdellaoui. 2016. {``Assortative Mating on Educational Attainment Leads to Genetic Spousal Resemblance for Polygenic Scores.''} \emph{Intelligence} 59: 103--8.
@@ -8004,7 +8004,7 @@ Isungset, Martin Arstad, Jeremy Freese, Ole Andreassen, and Torkild Hovde Lyngst
 Kantarevic, Jasmin, and Stéphane Mechoulan. 2006. {``Birth Order, Educational Attainment, and Earnings an Investigation Using the PSID.''} \emph{Journal of Human Resources} 41 (4): 755--77.
 
 \bibitem[\citeproctext]{ref-kong2018nature}
-Kong, Augustine, Gudmar Thorleifsson, Michael L Frigge, Bjarni J Vilhjalmsson, Alexander I Young, Thorgeir E Thorgeirsson, Stefania Benonisdottir, et al. 2018. {``The Nature of Nurture: Effects of Parental Genotypes.''} \emph{Science} 359 (6374): 424--28.
+{Kong, Augustine, Gudmar Thorleifsson, Michael L Frigge, et al.} 2018. {``The Nature of Nurture: Effects of Parental Genotypes.''} \emph{Science} 359 (6374): 424--28.
 
 \bibitem[\citeproctext]{ref-kristensen2007explaining}
 Kristensen, Petter, and Tor Bjerkedal. 2007. {``Explaining the Relation Between Birth Order and Intelligence.''} \emph{Science} 316 (5832): 1717--17.
@@ -8013,16 +8013,16 @@ Kristensen, Petter, and Tor Bjerkedal. 2007. {``Explaining the Relation Between 
 Lawlor, Debbie A, Roger M Harbord, Jonathan AC Sterne, Nic Timpson, and George Davey Smith. 2008. {``Mendelian Randomization: Using Genes as Instruments for Making Causal Inferences in Epidemiology.''} \emph{Statistics in Medicine} 27 (8): 1133--63.
 
 \bibitem[\citeproctext]{ref-lee2018gene}
-Lee, James J, Robbee Wedow, Aysu Okbay, Edward Kong, Omeed Maghzian, Meghan Zacher, Tuan Anh Nguyen-Viet, et al. 2018. {``Gene Discovery and Polygenic Prediction from a Genome-Wide Association Study of Educational Attainment in 1.1 Million Individuals.''} \emph{Nature Genetics} 50 (8): 1112--21.
+{Lee, James J, Robbee Wedow, Aysu Okbay, et al.} 2018. {``Gene Discovery and Polygenic Prediction from a Genome-Wide Association Study of Educational Attainment in 1.1 Million Individuals.''} \emph{Nature Genetics} 50 (8): 1112--21.
 
 \bibitem[\citeproctext]{ref-Lindahl_2008}
 Lindahl, Lena. 2008. {``Do Birth Order and Family Size Matter for Intergenerational Income Mobility? Evidence from Sweden.''} \emph{Applied Economics} 40 (17): 2239--57. \url{https://doi.org/10.1080/00036840600949421}.
 
 \bibitem[\citeproctext]{ref-magnus2016cohort}
-Magnus, Per, Charlotte Birke, Kristine Vejrup, Anita Haugan, Elin Alsaker, Anne Kjersti Daltveit, Marte Handal, et al. 2016. {``Cohort Profile Update: The Norwegian Mother and Child Cohort Study (MoBa).''} \emph{International Journal of Epidemiology} 45 (2): 382--88.
+{Magnus, Per, Charlotte Birke, Kristine Vejrup, et al.} 2016. {``Cohort Profile Update: The Norwegian Mother and Child Cohort Study (MoBa).''} \emph{International Journal of Epidemiology} 45 (2): 382--88.
 
 \bibitem[\citeproctext]{ref-marees2021genetic}
-Marees, Andries T, Dirk JA Smit, Abdel Abdellaoui, Michel G Nivard, Wim Van Den Brink, Damiaan Denys, Titus J Galama, Karin JH Verweij, and Eske M Derks. 2021. {``Genetic Correlates of Socio-Economic Status Influence the Pattern of Shared Heritability Across Mental Health Traits.''} \emph{Nature Human Behaviour} 5 (8): 1065--73.
+Marees, Andries T, Dirk JA Smit, Abdel Abdellaoui, et al. 2021. {``Genetic Correlates of Socio-Economic Status Influence the Pattern of Shared Heritability Across Mental Health Traits.''} \emph{Nature Human Behaviour} 5 (8): 1065--73.
 
 \bibitem[\citeproctext]{ref-markovits2019meritocracy}
 Markovits, Daniel. 2019. \emph{The Meritocracy Trap}. Penguin UK.
@@ -8031,19 +8031,19 @@ Markovits, Daniel. 2019. \emph{The Meritocracy Trap}. Penguin UK.
 Marx, Karl. 1844. {``Economic and Philosophical Manuscripts.''} \emph{Early Writings} 333.
 
 \bibitem[\citeproctext]{ref-mendel1865experiments}
-Mendel, Gregor. 1865. {``Experiments in Plant Hybridization.''}
+Mendel, Gregor. 1865. \emph{Experiments in Plant Hybridization}.
 
 \bibitem[\citeproctext]{ref-muslimova2020dynamic}
-Muslimova, Dilnoza, Hans Van Kippersluis, Cornelius A Rietveld, Stephanie Von Hinke, and Fleur Meddens. 2020. {``Dynamic Complementarity in Skill Production: Evidence from Genetic Endowments and Birth Order.''}
+Muslimova, Dilnoza, Hans Van Kippersluis, Cornelius A Rietveld, Stephanie Von Hinke, and Fleur Meddens. 2020. \emph{Dynamic Complementarity in Skill Production: Evidence from Genetic Endowments and Birth Order}.
 
 \bibitem[\citeproctext]{ref-ONS2007ASHE}
-National Statistics, Office for. 2007. {``Annual Survey of Hours and Earnings.''} \url{https://webarchive.nationalarchives.gov.uk/20160108022706/http://www.ons.gov.uk/ons/rel/ashe/annual-survey-of-hours-and-earnings/2007-results/index.html}.
+National Statistics, Office for. 2007. \emph{Annual Survey of Hours and Earnings}. \url{https://webarchive.nationalarchives.gov.uk/20160108022706/http://www.ons.gov.uk/ons/rel/ashe/annual-survey-of-hours-and-earnings/2007-results/index.html}.
 
 \bibitem[\citeproctext]{ref-ons2011stepfamilies}
----------. 2014. {``Stepfamilies in 2011.''} 2014. \url{https://webarchive.nationalarchives.gov.uk/20160105222243/http://www.ons.gov.uk/ons/rel/family-demography/stepfamilies/2011/stepfamilies-rpt.html}.
+National Statistics, Office for. 2014. {``Stepfamilies in 2011.''} \url{https://webarchive.nationalarchives.gov.uk/20160105222243/http://www.ons.gov.uk/ons/rel/family-demography/stepfamilies/2011/stepfamilies-rpt.html}.
 
 \bibitem[\citeproctext]{ref-okbay2022polygenic}
-Okbay, A, Y Wu, N Wang, H Jayashankar, M Bennett, SM Nehzati, J Sidorenko, et al. 2022. {``Polygenic Prediction of Educational Attainment Within and Between Families from Genome-Wide Association Analyses in 3 Million Individuals.''} \emph{Nature Genetics}.
+{Okbay, A, Y Wu, N Wang, et al.} 2022. {``Polygenic Prediction of Educational Attainment Within and Between Families from Genome-Wide Association Analyses in 3 Million Individuals.''} \emph{Nature Genetics}.
 
 \bibitem[\citeproctext]{ref-oreffice2010anthropometry}
 Oreffice, Sonia, and Climent Quintana-Domeque. 2010. {``Anthropometry and Socioeconomics Among Couples: Evidence in the United States.''} \emph{Economics \& Human Biology} 8 (3): 373--84.
@@ -8055,7 +8055,7 @@ Oster, Emily. 2019. {``Unobservable Selection and Coefficient Stability: Theory 
 Otto, Sarah P, Freddy B Christiansen, and Marcus W Feldman. 1995. {``Genetic and Cultural Inheritance of Continuous Traits.''} \emph{Morrison Institute for Population and Resource Studies Paper Number} 64.
 
 \bibitem[\citeproctext]{ref-paltiel2014biobank}
-Paltiel, Liv, Haugan Anita, Trine Skjerden, Kari Harbak, Siri Bækken, Stensrud Nina Kristin, Gun Peggy Knudsen, and Per Magnus. 2014. {``The Biobank of the Norwegian Mother and Child Cohort Study--Present Status.''} \emph{Norsk Epidemiologi} 24 (1-2).
+Paltiel, Liv, Haugan Anita, Trine Skjerden, et al. 2014. {``The Biobank of the Norwegian Mother and Child Cohort Study--Present Status.''} \emph{Norsk Epidemiologi} 24 (1-2).
 
 \bibitem[\citeproctext]{ref-papageorge2020genes}
 Papageorge, Nicholas W, and Kevin Thom. 2020. {``Genes, Education, and Labor Market Outcomes: Evidence from the Health and Retirement Study.''} \emph{Journal of the European Economic Association} 18 (3): 1351--99.
@@ -8073,22 +8073,22 @@ Rao, DC, NE Morton, and CR Cloninger. 1979. {``Path Analysis Under Generalized A
 Rao, DC, Newton E Morton, and S Yee. 1976. {``Resolution of Cultural and Biological Inheritance by Path Analysis.''} \emph{American Journal of Human Genetics} 28 (3): 228.
 
 \bibitem[\citeproctext]{ref-Rimfeld_2018}
-Rimfeld, Kaili, Eva Krapohl, Maciej Trzaskowski, Jonathan R. I. Coleman, Saskia Selzam, Philip S. Dale, Tonu Esko, Andres Metspalu, and Robert Plomin. 2018. {``Genetic Influence on Social Outcomes During and After the Soviet Era in Estonia.''} \emph{Nature Human Behaviour} 2 (4): 269--75. \url{https://doi.org/10.1038/s41562-018-0332-5}.
+Rimfeld, Kaili, Eva Krapohl, Maciej Trzaskowski, et al. 2018. {``Genetic Influence on Social Outcomes During and After the Soviet Era in Estonia.''} \emph{Nature Human Behaviour} 2 (4): 269--75. \url{https://doi.org/10.1038/s41562-018-0332-5}.
 
 \bibitem[\citeproctext]{ref-robinson2017genetic}
-Robinson, Matthew R, Aaron Kleinman, Mariaelisa Graff, Anna AE Vinkhuyzen, David Couper, Michael B Miller, Wouter J Peyrot, et al. 2017. {``Genetic Evidence of Assortative Mating in Humans.''} \emph{Nature Human Behaviour} 1 (1): 1--13.
+{Robinson, Matthew R, Aaron Kleinman, Mariaelisa Graff, et al.} 2017. {``Genetic Evidence of Assortative Mating in Humans.''} \emph{Nature Human Behaviour} 1 (1): 1--13.
 
 \bibitem[\citeproctext]{ref-rustichini2023educational}
 Rustichini, Aldo, William G Iacono, James J Lee, and Matt McGue. 2023. {``Educational Attainment and Intergenerational Mobility: A Polygenic Score Analysis.''} \emph{Journal of Political Economy} 131 (10): 2724--79.
 
 \bibitem[\citeproctext]{ref-sacerdote2011nature}
-Sacerdote, Bruce. 2011. {``Nature and Nurture Effects on Children's Outcomes: What Have We Learned from Studies of Twins and Adoptees?''} In \emph{Handbook of Social Economics}, 1:1--30. Elsevier.
+Sacerdote, Bruce. 2011. {``Nature and Nurture Effects on Children's Outcomes: What Have We Learned from Studies of Twins and Adoptees?''} In \emph{Handbook of Social Economics}, vol. 1. Elsevier.
 
 \bibitem[\citeproctext]{ref-sanjak2018evidence}
 Sanjak, Jaleal S, Julia Sidorenko, Matthew R Robinson, Kevin R Thornton, and Peter M Visscher. 2018. {``Evidence of Directional and Stabilizing Selection in Contemporary Humans.''} \emph{Proceedings of the National Academy of Sciences} 115 (1): 151--56.
 
 \bibitem[\citeproctext]{ref-schmalhausen1949factors}
-Schmalhausen, Ivan Ivanovich. 1949. {``Factors of Evolution: The Theory of Stabilizing Selection.''}
+Schmalhausen, Ivan Ivanovich. 1949. \emph{Factors of Evolution: The Theory of Stabilizing Selection.}
 
 \bibitem[\citeproctext]{ref-schwartz2005trends}
 Schwartz, Christine R, and Robert D Mare. 2005. {``Trends in Educational Assortative Marriage from 1940 to 2003.''} \emph{Demography} 42 (4): 621--46.
@@ -8109,10 +8109,10 @@ Solon, Gary. 2018. {``What Do We Know so Far about Multigenerational Mobility?''
 Tambs, Kristian, Jon Martin Sundet, Per Magnus, and K�re Berg. 1989. {``Genetic and Environmental Contributions to the Covariance Between Occupational Status, Educational Attainment, and {IQ}: A Study of Twins.''} \emph{Behavior Genetics} 19 (2): 209--22. \url{https://doi.org/10.1007/bf01065905}.
 
 \bibitem[\citeproctext]{ref-torvik2022modeling}
-Torvik, Fartein Ask, Espen Moen Eilertsen, Laurie J Hannigan, Rosa Cheesman, Laurence J Howe, Per Magnus, Ted Reichborn-Kjennerud, et al. 2022. {``Modeling Assortative Mating and Genetic Similarities Between Partners, Siblings, and in-Laws.''} \emph{Nature Communications} 13 (1): 1108.
+{Torvik, Fartein Ask, Espen Moen Eilertsen, Laurie J Hannigan, et al.} 2022. {``Modeling Assortative Mating and Genetic Similarities Between Partners, Siblings, and in-Laws.''} \emph{Nature Communications} 13 (1): 1108.
 
 \bibitem[\citeproctext]{ref-Trzaskowski_2014}
-Trzaskowski, Maciej, Nicole Harlaar, Rosalind Arden, Eva Krapohl, Kaili Rimfeld, Andrew McMillan, Philip S. Dale, and Robert Plomin. 2014. {``Genetic Influence on Family Socioeconomic Status and Children{\textquotesingle}s Intelligence.''} \emph{Intelligence} 42 (January): 83--88. \url{https://doi.org/10.1016/j.intell.2013.11.002}.
+Trzaskowski, Maciej, Nicole Harlaar, Rosalind Arden, et al. 2014. {``Genetic Influence on Family Socioeconomic Status and Children{\textquotesingle{}}s Intelligence.''} \emph{Intelligence} 42 (January): 83--88. \url{https://doi.org/10.1016/j.intell.2013.11.002}.
 
 \bibitem[\citeproctext]{ref-vandenberg1972assortative}
 Vandenberg, Steven G. 1972. {``Assortative Mating, or Who Marries Whom?''} \emph{Behavior Genetics} 2 (2-3): 127--57.
@@ -8124,7 +8124,7 @@ White, Karl R. 1982. {``The Relation Between Socioeconomic Status and Academic A
 Young, Alexander Strudwick. 2023. {``Estimation of Indirect Genetic Effects and Heritability Under Assortative Mating.''} \emph{bioRxiv}, 2023--07.
 
 \bibitem[\citeproctext]{ref-young2022mendelian}
-Young, Alexander, Seyed Moeen Nehzati, Stefania Benonisdottir, Aysu Okbay, Hariharan Jayashankar, Chanwook Lee, David Cesarini, Daniel J Benjamin, Patrick Turley, and Augustine Kong. 2022. {``Mendelian Imputation of Parental Genotypes Improves Estimates of Direct Genetic Effects.''} \emph{Nature Genetics} 54 (6): 897--905.
+Young, Alexander, Seyed Moeen Nehzati, Stefania Benonisdottir, et al. 2022. {``Mendelian Imputation of Parental Genotypes Improves Estimates of Direct Genetic Effects.''} \emph{Nature Genetics} 54 (6): 897--905.
 
 \bibitem[\citeproctext]{ref-young1958rise}
 Young, M. 1958. \emph{The Rise of the Meritocracy}. Thames; Hudson.

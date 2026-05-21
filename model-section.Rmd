@@ -22,27 +22,13 @@ editor_options:
 
 ```{r set-echo-off, include = FALSE}
 knitr::opts_chunk$set(echo = FALSE)
-options(error = function() {
-  sink()
-  recover()
-})
-#options(rgl.useNULL = TRUE)
+
 
 invisible(loadNamespace("rootSolve"))
-invisible(loadNamespace("rgl"))
 library(ggplot2)
 library(dplyr)
 library(purrr)
 library(tidyr)
-
-options(rgl.useNULL = TRUE, rgl.printRglwidget = TRUE)
-
-
-rgl::setupKnitr(
-        autoprint = TRUE, 
-        rgl.newwindow = FALSE, 
-        rgl.closewindows = FALSE
-      )
 ```
 
 People in the marriage market have two characteristics: 
@@ -472,29 +458,20 @@ equilibrium_S <- function (theta, a) {
 ```
 
 
-```{r pic-asymptotic-corr, fig.align = "center", fig.cap = "Long-run squared correlation between genetics $x_1$ and SES $x_2$ (heritability of SES), by weight of genetics in spouse matching ($a$) and strength of direct transmission of SES ($\\theta$). $\\tau$ = 0.95.", dpi = 300, out.width="6in"}
+```{r pic-asymptotic-corr, fig.align = "center", fig.cap = "Long-run squared correlation between genetics $x_1$ and SES $x_2$ (heritability of SES), by weight of genetics in spouse matching ($a$) and strength of direct transmission of SES ($\\theta$). $\\tau$ = 0.95.", dpi = 300, out.width="6in", dev = "cairo_pdf"}
 
-invisible(rgl::open3d(
-              userMatrix = rgl::rotate3d(rgl::r3dDefaults$userMatrix, 
-                                           angle = pi/5, x = 0, y = 0, 
-                                           z = 1)
-            ))
-rgl::par3d(cex = 1.4)
-
-rgl::plot3d(
-             Vectorize(heritability),
-             xlim  = c(0, 0.95),
-             ylim  = c(0, 0.99), # 1 gives an error
-             zlab  = "",
-             xlab  = "θ", 
-             col   = "darkgreen",
-             front = "lines",
-             lwd   = 3,
-             n     = 40,
-             box   = FALSE
-           )
-rgl::mtext3d("Heritability", "z-+", line = 6)
-
+theta <- seq(0, 0.95, 0.025)
+a <- seq(0, 0.99, 0.015)
+h2 <- outer(theta, a, FUN = Vectorize(heritability))
+opar <- par(mar = rep(1, 4))
+persp(theta, a , h2, theta = 300, phi = 25,
+      xlim = c(0, 1), ylim = c(0, 1),
+      xlab = "θ", # theta
+      zlab = "h²",
+      border = "darkgreen", col = "grey75", ltheta = 90, lphi = 35,
+      ticktype = "detailed", nticks = 2, cex.axis = 0.8,
+      d = 2, r = 3)
+par(opar)
 ```
 
 
@@ -545,7 +522,7 @@ of parents' wealth on children's wealth exceeds $\theta$.
  reduces the mating value of previously high-SES individuals, and as a result, 
  their SES never recovers to its no-shock value.
  
-```{r pic-simulate-mao, fig.cap = "A simulated policy shock under GAM ($a$ = 1) and SGAM ($a$ = 0.3). Lines show mean SES in each quartile of families, grouped by SES in the generation before the shock. In generation 0 , $\\theta$ and $\\gamma$ are reduced to zero. Thereafter they return to their previous values ($\\theta = 0.8, \\gamma = 0.1$. Under GAM, family SES returns to the no-shock counterfactual (dashed lines). Under SGAM it never does so.", cache=TRUE}
+```{r pic-simulate-mao, fig.cap = "A simulated policy shock under GAM ($a$ = 1) and SGAM ($a$ = 0.3). Lines show mean SES in each quartile of families, grouped by SES in the generation before the shock. In generation 0 , $\\theta$ and $\\gamma$ are reduced to zero. Thereafter they return to their previous values ($\\theta = 0.8, \\gamma = 0.1$). Under GAM, family SES returns to the no-shock counterfactual (dashed lines). Under SGAM it never does so.", cache=TRUE}
 
 
 match_couples <- function (a, pop) {
@@ -670,7 +647,7 @@ res |>
   ggplot(aes(Generation, mean_x_2, group = interaction(qtile_gen_100, shock),
              colour = `Gen 100 quartile`, linetype = shock)) + 
     geom_line() + 
-    facet_wrap(vars(model)) +
+    facet_wrap(vars(model), axes = "all") +
     scale_linetype_manual(values = c("TRUE" = "solid", "FALSE" = "dashed"))  +
     theme_minimal() +
     theme(

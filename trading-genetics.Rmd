@@ -455,7 +455,7 @@ person's *birth order*. Earlier-born children receive higher parental
 investment and have better life outcomes, including measures of SES such
 as educational attainment and occupational status [@black2011older;
 @booth2009birth; @Lindahl_2008]. At the same time, the facts of biology,
-in particular the so-called "lottery of meiosis", guarantee that
+in particular the so-called "lottery of meiosis", make it likely that
 siblings' birth order is independent of their genetic endowments.[^2]
 Because birth order could affect partner choice through both SES and
 non-SES mechanisms, we run a mediation analysis similar to
@@ -468,8 +468,11 @@ measures of own socio-economic status, including university attendance
 and income. Under certain assumptions, these variables can be
 interpreted as mediating the effect of birth order on spouse genetics.
 
-[^2]: Although @muslimova2020dynamic find that PSEA and birth order
-    *interact* to produce human capital.
+[^2]: In meiosis, each child's DNA is drawn randomly and independently
+    from their parents' DNA. If parents choose to have children based on
+    existing children's genetics, that could threaten this independence
+    assumption: we test for this below. @muslimova2020dynamic find that
+    PSEA and birth order *interact* to produce human capital.
 
 In both Great Britain and Norway, later-born children have spouses with
 significantly lower PSEA in the reduced-form regressions. When we add
@@ -617,13 +620,14 @@ model where environment is shared between siblings but not across
 generations; while @clark2023inheritance argue for a purely genetic
 model with no cultural inheritance.
 
-In this context, we use a different approach. We cleanly identify
+This motivates us to use a different approach. We cleanly identify
 separate environmental and genetic contributions to assortative mating:
 environmental contributions using birth order, genetic contributions by
 comparing polygenic scores within siblings. This lets us rule out pure
 GAM, as well as pure mating on SES. In fact, we find large effects of
-birth order on spouse polygenic scores (equivalent to more than half a
-standard deviation of own polygenic score in both Britain and Norway).
+birth order on spouse polygenic scores, equivalent to more than half a
+standard-deviation shift in one's own polygenic score, in both Britain
+and Norway.
 
 ```{r literature-notes, eval = FALSE}
 
@@ -704,19 +708,18 @@ Others to look at:
 
 # Data and methods
 
-The central insight in our model is that higher SES and good genes
+The central insight in our model is that higher SES and "good genes"
 assort in the marriage market. We wish to test this directly, i.e. to
-test whether $0 < a < 1$ in the attractiveness equation $$
-i(x) = a x_1 + (1-a) x_2
-$$ where $x_2$ is social status and $x_1$ is genetic endowment. Consider
-the effect of a change in $x_2$ holding $x_1$ constant. If $a = 1$ then
-this will not change $i(x)$ and therefore will not change the expected
-characteristics of the spouse. So, if we regress spouse's $x_1$ on own
-$x_2$, and reject the null of no effect, we can reject $a = 1$.[^5] In
-other words, we set out to test the central assumption in our model that
-marriage markets weigh both SES and genetics, by testing its
-implication, i.e., that individuals with higher SES have spouses with
-higher genetic scores (PSEA).
+test whether $0 < a < 1$ in the attractiveness equation
+$$i(x) = a x_1 + (1-a) x_2$$ where $x_2$ is social status and $x_1$ is
+genetic endowment. Consider the effect of a change in $x_2$ holding
+$x_1$ constant. If $a = 1$ then this will not change $i(x)$ and
+therefore will not change the expected characteristics of the spouse.
+So, if we regress spouse's $x_1$ on own $x_2$, and reject the null of no
+effect, we can reject $a = 1$.[^5] In other words, we set out to test
+the central assumption in our model that marriage markets weigh both SES
+and genetics, by testing its implication, i.e., that individuals with
+higher SES have spouses with higher genetic scores (PSEA).
 
 [^5]: Conceivably, if $a = 0$ but there is a pre-existing correlation
     between $x_1$ and $x_2$ in the population, then an increase in own
@@ -927,16 +930,16 @@ individual's own PSEA correlates with both their educational attainment,
 and their income, both figures could be a result of genetic assortative
 mating (GAM) alone [@hugh2016assortative]. Indeed, recent studies show
 much higher levels of GAM than could be explained by matching on the
-observed education phenotype alone [@okbay2022polygenic]. So, to
-demonstrate SGAM, we need a source of social status which is exogenous
-to genetics. Also, the link between social status and spouse genetics is
-likely to be noisy, for three reasons: first, polygenic scores contain a
-large amount of error, as discussed above; second, causal mechanisms
-behind variation in social status are likely to be noisy; third, to
-paraphrase @shakespeare1595midsummer, the spouse matching process is
-highly unpredictable. So, we need a large N to give us sufficient power.
-This rules out time-limited shocks such as changes to the school leaving
-age [@Davies_2018].
+observed education phenotype alone [@okbay2022polygenic]. To demonstrate
+SGAM, we need a source of social status which is exogenous to genetics.
+Also, the link between social status and spouse genetics is likely to be
+noisy, for three reasons: first, polygenic scores contain a large amount
+of error, as discussed above; second, causal mechanisms behind variation
+in social status are likely to be noisy; third, to paraphrase
+@shakespeare1595midsummer, the spouse matching process is highly
+unpredictable. So, we need a large N to give us enough power. This rules
+out time-limited shocks such as changes to the school leaving age
+[@Davies_2018].
 
 We use *birth order*. It is known that earlier-born children receive
 more parental care and have better life outcomes, including measures of
@@ -944,11 +947,11 @@ SES such as educational attainment and occupational status
 [@Lindahl_2008; @booth2009birth; @black2011older].[^10] On the other
 hand, all full siblings have the same *ex ante* expected genetic
 endowment from their parents, irrespective of their birth order. This is
-guaranteed by the biological mechanism of meiosis, which ensures that
-any gene is transmitted from either the mother or the father to the
-child, with independent 50% probability [@mendel1865experiments;
+supported by the biological mechanism of meiosis, which ensures that any
+gene is transmitted from either the mother or the father to the child,
+with independent 50% probability [@mendel1865experiments;
 @lawlor2008mendelian]. For example, siblings' expected polygenic score
-is equal to the mean of their parents' polygenic scores.[^11] We can
+is equal to the mean of their parents' polygenic scores. We can
 therefore use birth order as a "shock" to social status. "Shock" is in
 quotes because we do not claim that birth order is exogenous to all
 other variables. For example, it naturally correlates with parental age,
@@ -970,13 +973,6 @@ only claim that birth order is exogenous to genetic variation.
     children as instruments for family size. They too typically find
     that birth order has large negative effects.
 
-[^11]: Although genetic variation is randomly assigned to children at
-    birth, genetics and birth order could be dependent if parents'
-    choice of whether to have more children is endogenous to the genetic
-    endowment of their earlier children. We check for this below.
-    @isungset2021birth also find that birth order differences in
-    education are not genetic.
-
 Although birth order within a given family is independent of genetics,
 birth order in the whole sample might be correlated with other
 environmental and genetic factors. In particular, birth order naturally
@@ -984,21 +980,19 @@ correlates with family size, i.e. the total number of siblings born,
 because e.g. third-born children must be in a family of at least three
 siblings. It also correlates with parental age, which may affect the
 income and maturity of the parents. There are also potential genetic
-effects from parental age, though recent research has rejected these in
-favour of “social” explanations [@kristensen2007explaining;
-@black2011older]. @cochran2013paternal report that mutational load is
-approximately linear in father’s age, while it is constant in mother’s
-age. To control for family size, we use dummies for each possible value
-of family size. In most regressions, we use only respondents with
-between 1 and 5 siblings, i.e. with a family size of 2-6: beyond that,
-estimation would get noisy because of small cell sizes. To control for
-parental age, we use father's and/or mother's age at the respondent's
-birth, because we often have data only for one parent. We use the mean
-if we have both parents. In the UK Biobank, this data is only available
-if the respondent's parent was still alive. For other controls we use
-respondent's month of birth, year of birth, and own PSEA. Our claim is
-that controlling for these variables, birth order is independent of
-genetic variation.
+effects from parental age [@cochran2013paternal], though recent research
+has rejected these in favour of “social” explanations
+[@kristensen2007explaining; @black2011older]. To control for family
+size, we use dummies for each possible value of family size. In most
+regressions, we use only respondents with between 1 and 5 siblings, i.e.
+with a family size of 2-6: beyond that, estimation would get noisy
+because of small cell sizes. To control for parental age, we use
+father's and/or mother's age at the respondent's birth, because we often
+have data only for one parent. We use the mean if we have both parents.
+In the UK Biobank, this data is only available if the respondent's
+parent was still alive. For other controls we use respondent's month of
+birth, year of birth, and own PSEA. Our claim is that controlling for
+these variables, birth order is independent of genetic variation.
 
 ## Decomposing the birth order effect on spouse genetics
 
@@ -1056,10 +1050,10 @@ $\tau_b = \kappa_b + \sum_{j \in J_u} \alpha_b^j E(m^j_b)$; and
 $\varepsilon_b = \tilde{\varepsilon}_b + \sum_{j \in J_u} (m^j_b - E(m^j_b))$.
 We simplify by assuming that $\beta_b = \beta$ and $\alpha_b = \alpha$
 for all $b$, i.e. that the effects of $\mathbf{X}$ and $m_B$ don't
-differ by birth order.[^12] We assume differences in unmeasured
+differ by birth order.[^11] We assume differences in unmeasured
 investments due to $b$ are independent of $\mathbf{X}$.
 
-[^12]: Under the assumption that measured and unmeasured mediators are
+[^11]: Under the assumption that measured and unmeasured mediators are
     uncorrelated, we can test these assumptions by running an OLS
     regression of an extended model \@ref(eq:model-to-estimate) where we
     interact the measured mediators and controls with the treatment $B$,
@@ -1233,14 +1227,14 @@ have more life experience and may have higher income, which may help
 later children. @kantarevic2006birth show that mother's age at
 childbirth indeed mechanically offsets the negative effect of birth
 order. Including parents' age means we can separate the effect of
-parental age from birth order.[^13] This reduces the N by a lot, since
+parental age from birth order.[^12] This reduces the N by a lot, since
 only respondents with a live parent reported the necessary data.
 However, the effect of birth order jumps in size and becomes significant
 at the 5 per cent level. Meanwhile, parents' age has a positive effect.
 This suggests that estimates in columns 1-2 mixed two opposite-signed
 effects: having older parents versus being later in birth order.
 
-[^13]: A possible critique is that later siblings by definition have
+[^12]: A possible critique is that later siblings by definition have
     older parents, so the parental age control is inappropriate. This
     may be true if we are estimating overall inequality between
     siblings. But here we are interested in using birth order as a
@@ -1308,9 +1302,9 @@ huxreg(mod_bo_psea_base,
 Having tested that birth order affects spouse's PSEA, we now look for
 potential mediators of this effect. Despite the lower N, we continue to
 control for respondents' parents' age, since this removes a confound
-which would bias our results towards zero.[^14]
+which would bias our results towards zero.[^13]
 
-[^14]: Table \@ref(tab:tbl-bo-psea-no-par-age) in the appendix reports
+[^13]: Table \@ref(tab:tbl-bo-psea-no-par-age) in the appendix reports
     results without controlling for parents' age.
 
 ```{r tbl-bo-psea}
@@ -1612,19 +1606,19 @@ huxreg(reg_list,
 Now we turn to the results from MoBa in Norway. Some of the variables
 are different from those for UK Biobank. Spouse PSEA is calculated using
 summary statistics from @okbay2022polygenic, aka "EA4", rather than
-"EA3".[^15] Income is from all sources, reported at age 30, converted to
+"EA3".[^14] Income is from all sources, reported at age 30, converted to
 a z score among respondents with the same gender, year of birth and year
 of reported income. In particular, some low-income individuals may be in
-continuing education or in relationships already.[^16] Data on IQ and
+continuing education or in relationships already.[^15] Data on IQ and
 self-reported health is unavailable. The sample is also younger than UK
 Biobank, spouse pairs are given rather than constructed, and all couples
 have at least one child.
 
-[^15]: The $R^2$ on own university attendance is
+[^14]: The $R^2$ on own university attendance is
     `r pretty(r2_own_psea_moba, 3)` for EA4 in MoBa, compared to
     `r pretty(r2_own_psea, 3)` for EA3 in UK Biobank.
 
-[^16]: We also tried income at age 25. This gave odd results, with a
+[^15]: We also tried income at age 25. This gave odd results, with a
     significant negative beta on spouse PSEA. A possible reason is that
     in Norway many potential high earners are still in higher education
     at age 25. Income at age 25 correlated only at 0.1 with income at
@@ -1659,7 +1653,7 @@ the same in both countries. But the effect of income in the Norwegian
 sample is much smaller and very close to zero.
 
 Table \@ref(tab:tbl-bo-subsets-moba) runs our regressions separately for
-males and females.[^17] As in Britain, coefficients look very similar
+males and females.[^16] As in Britain, coefficients look very similar
 across the sexes. The effects of birth order are highly significant in
 either sex, and adding the mediators significantly reduces them.
 Interestingly, the effect of women's BMI on their spouses' PSEA is about
@@ -1668,7 +1662,7 @@ difference is significant. On the other hand, in Norway, there is no
 difference between the male and female coefficients on university
 attendance.
 
-[^17]: We don't run separate regressions for families with children,
+[^16]: We don't run separate regressions for families with children,
     since MoBa only includes families with children by design.
 
 Overall, the Norway results show two things. First, they clearly confirm
@@ -1834,7 +1828,7 @@ As noted earlier, our results could conceivably be explained by spouses
 correlation between SES and PSEA in the population. That said, existing
 work strongly suggests that own PSEA affects spouse's education
 [@robinson2017genetic; @torvik2022modeling]. To confirm this we use a
-sample of siblings from the MoBa data[^18], and regress spouse's
+sample of siblings from the MoBa data[^17], and regress spouse's
 university attendance and income z-score on own PSEA, including sibling
 group fixed effects. Again, this uses the lottery of meiosis to
 guarantee that between-sibling differences in PSEA are exogenous to
@@ -1849,7 +1843,7 @@ results allow us to reject that $a = 0$ (even if the effect of PSEA on
 spouse SES could be *mediated* by own SES, cf. the extended model of
 meritocracy in equation \ref{eqn-gamma}).
 
-[^18]: The UK Biobank sample has too few siblings with spouses for this
+[^17]: The UK Biobank sample has too few siblings with spouses for this
     analysis to be informative.
 
 ```{r tbl-reversed-moba}
@@ -1988,7 +1982,7 @@ stopifnot(pval_own_psea_3 > 0.05)
 ```
 
 To check for the latter two problems, we run balance tests on 33
-different polygenic scores in the UK Biobank sample.[^19] We regress
+different polygenic scores in the UK Biobank sample.[^18] We regress
 each score on own birth order, controlling for family size.\
 Four scores were significant at $p < 0.10$, all with effect sizes of
 less than 0.02 per standard deviation. Table \@ref(tab:tbl-bo-psea-pgs)
@@ -2007,9 +2001,9 @@ excluded. Results are substantially unchanged. Of course, there could
 still be unmeasured genetic variants which correlate with birth order in
 our sample. Nevertheless, a wide set of polygenic scores shows no large
 or significant correlation. This makes us more confident that birth
-order is indeed exogenous to genetics.
+order is indeed exogenous to genetics (as @isungset2022birth also find).
 
-[^19]: Polygenic scores were residualized on the first 100 principal
+[^18]: Polygenic scores were residualized on the first 100 principal
     components of the genetic data. Scores were for: ADHD, age at
     menarche, age at menopause, agreeableness, age at smoking
     initiation, alcohol use, Alzheimer's, autism, bipolarity, BMI, body
@@ -2125,10 +2119,10 @@ has been far more limited in most societies throughout history
 be a cultural universal [@buss1989sex]. Thus, SGAM predicts that
 genes-SES gradients should exist in all stratified societies. In fact,
 people in many societies have believed that innate traits do vary by
-social status.[^20] In future, it may be possible to directly test for
+social status.[^19] In future, it may be possible to directly test for
 genetic differences across social status in ancient DNA samples.
 
-[^20]: The appendix has a selection of relevant historical quotations.
+[^19]: The appendix has a selection of relevant historical quotations.
 
 Under SGAM, the association between SES and genetic variation depends on
 economic and social institutions. Institutions that make wealth more
@@ -2394,10 +2388,10 @@ $\delta^*$ of about 1 is considered a reasonable threshold for
 robustness, if we assume that measured control variables ought to be at
 least as important as unmeasured ones.
 
-In UK Biobank, we calculate the maximum $R^2$ as `r R2max`.[^21] For
+In UK Biobank, we calculate the maximum $R^2$ as `r R2max`.[^20] For
 university attendance, $\delta^*$ is `r delta_uni`, and for income in
 first job $\delta^*$ is `r delta_fjp`. In MoBa, we calculate the maximum
-$R^2$ as `r R2max_moba`.[^22] For university attendance, $\delta^*$ is
+$R^2$ as `r R2max_moba`.[^21] For university attendance, $\delta^*$ is
 `r delta_uni_moba`, and for income at age 30, $\delta^*$ is
 `r delta_inc_moba`. These results confirm that the results on university
 attendance are relatively robust, except for results on income in MoBa.
@@ -2405,10 +2399,10 @@ Of course, this technique depends crucially on the input assumptions,
 especially about noise in measured PSEA, the true heritability, and the
 maximum possible $R^2$ in spouse matching.
 
-[^21]: In other regressions of spouse traits on PSEA, $R^2$ are indeed
+[^20]: In other regressions of spouse traits on PSEA, $R^2$ are indeed
     below this value [@hugh2016assortative; @okbay2022polygenic].
 
-[^22]: The MoBa number is larger because the $R^2$ of EA4 on education
+[^21]: The MoBa number is larger because the $R^2$ of EA4 on education
     is higher than for EA3.
 
 \FloatBarrier
