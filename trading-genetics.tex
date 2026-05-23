@@ -151,7 +151,7 @@ Fartein Ask Torvik\thanks{Norwegian Institute of Public Health, Oslo.
   Email: f.a.torvik@psykologi.uio.no} \&
 Eivind Ystrøm\thanks{Norwegian Institute of Public Health, Oslo. 
   Email: eivind.ystrom@psykologi.uio.no}}
-\date{2026-05-21}
+\date{2026-05-23}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}
@@ -269,9 +269,12 @@ to SES which is independent of own genetics. Specifically, we use a
 person's \emph{birth order}. Earlier-born children receive higher parental
 investment and have better life outcomes, including measures of SES such
 as educational attainment and occupational status (Black et al. 2011; Booth and Kee 2009; Lindahl 2008). At the same time, the facts of biology,
-in particular the so-called ``lottery of meiosis'', guarantee that
-siblings' birth order is independent of their genetic endowments.\footnote{Although Muslimova et al. (2020) find that PSEA and birth order
-  \emph{interact} to produce human capital.}
+in particular the so-called ``lottery of meiosis'', make it likely that
+siblings' birth order is independent of their genetic endowments.\footnote{In meiosis, each child's DNA is drawn randomly and independently
+  from their parents' DNA. If parents choose to have children based on
+  existing children's genetics, that could threaten this independence
+  assumption: we test for this below. Muslimova et al. (2020) find that
+  PSEA and birth order \emph{interact} to produce human capital.}
 Because birth order could affect partner choice through both SES and
 non-SES mechanisms, we run a mediation analysis similar to
 Heckman et al. (2013), decomposing the treatment effect into effects
@@ -288,19 +291,23 @@ significantly lower PSEA in the reduced-form regressions. When we add
 mediators, including university attendance and/or income, the effect of
 birth order shrinks substantially, becoming insignificant in Great
 Britain, while the SES mediators significantly increase the spouse's
-PSEA. The results are robust to the inclusion of several controls,
-including non-SES mediators, and a rich set of own genetic traits.
-Moreover, within-siblings estimates in the Norwegian sample show that
-own PSEA significantly affects spouse's education net of family
-environment and SES. Thus, SES appears to mediate the effect of birth
-order on spouse genetics. The effects of individual mediators differ
-between the two countries. While university attendance explains more
-than a third of the effects of birth order in both Britain and Norway,
-income explains about 10\% of the effects in Britain but has little or no
-independent effect in Norway. Although our main focus is on testing the
-basic mechanism of SGAM, this is suggestive evidence that in a more
-egalitarian society, some forms of SES are less important to the
-marriage market, with long-run implications for genes-SES gradients.
+PSEA. To interpret this as causal mediation, there must be no unobserved
+mediators that confound the effect of education. We check this by
+including several controls, including non-SES mediators, and a rich set
+of own genetic traits. Also, within-siblings estimates in the Norwegian
+sample show that own PSEA significantly affects spouse's education net
+of family environment and SES. Thus, though it is always possible that
+an unobserved mediator exists, we believe it is highly plausible that
+SES is mediating the effect of birth order on spouse genetics.
+
+The effects of individual mediators differ between the two countries.
+While university attendance explains more than a third of the effects of
+birth order in both Britain and Norway, income explains about 10\% of the
+effects in Britain but has little or no independent effect in Norway.
+Although our main focus is on testing the basic mechanism of SGAM, this
+is suggestive evidence that in a more egalitarian society, some forms of
+SES are less important to the marriage market, with long-run
+implications for genes-SES gradients.
 
 \section{Literature review}\label{literature-review}
 
@@ -423,13 +430,14 @@ model where environment is shared between siblings but not across
 generations; while Clark (2023) argue for a purely genetic
 model with no cultural inheritance.
 
-In this context, we use a different approach. We cleanly identify
+This motivates us to use a different approach. We cleanly identify
 separate environmental and genetic contributions to assortative mating:
 environmental contributions using birth order, genetic contributions by
 comparing polygenic scores within siblings. This lets us rule out pure
 GAM, as well as pure mating on SES. In fact, we find large effects of
-birth order on spouse polygenic scores (equivalent to more than half a
-standard deviation of own polygenic score in both Britain and Norway).
+birth order on spouse polygenic scores, equivalent to more than half a
+standard-deviation shift in one's own polygenic score, in both Britain
+and Norway.
 
 \section{Model}\label{model}
 
@@ -767,8 +775,8 @@ their SES never recovers to its no-shock value.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={\label{fig:pic-simulate-mao}A simulated policy shock under GAM (a = 1) and SGAM (a = 0.3). Lines show mean SES in each quartile of families, grouped by SES in the generation before the shock. In generation 0 , \textbackslash theta and \textbackslash gamma are reduced to zero. Thereafter they return to their previous values (\textbackslash theta = 0.8, \textbackslash gamma = 0.1. Under GAM, family SES returns to the no-shock counterfactual (dashed lines). Under SGAM it never does so.}]{trading-genetics_files/trading-genetics_files/figure-latex/pic-simulate-mao-1.pdf}}
-\caption{\label{fig:pic-simulate-mao}A simulated policy shock under GAM (\(a\) = 1) and SGAM (\(a\) = 0.3). Lines show mean SES in each quartile of families, grouped by SES in the generation before the shock. In generation 0 , \(\theta\) and \(\gamma\) are reduced to zero. Thereafter they return to their previous values (\(\theta = 0.8, \gamma = 0.1\). Under GAM, family SES returns to the no-shock counterfactual (dashed lines). Under SGAM it never does so.}
+\pandocbounded{\includegraphics[keepaspectratio,alt={\label{fig:pic-simulate-mao}A simulated policy shock under GAM (a = 1) and SGAM (a = 0.3). Lines show mean SES in each quartile of families, grouped by SES in the generation before the shock. In generation 0 , \textbackslash theta and \textbackslash gamma are reduced to zero. Thereafter they return to their previous values (\textbackslash theta = 0.8, \textbackslash gamma = 0.1). Under GAM, family SES returns to the no-shock counterfactual (dashed lines). Under SGAM it never does so.}]{trading-genetics_files/trading-genetics_files/figure-latex/pic-simulate-mao-1.pdf}}
+\caption{\label{fig:pic-simulate-mao}A simulated policy shock under GAM (\(a\) = 1) and SGAM (\(a\) = 0.3). Lines show mean SES in each quartile of families, grouped by SES in the generation before the shock. In generation 0 , \(\theta\) and \(\gamma\) are reduced to zero. Thereafter they return to their previous values (\(\theta = 0.8, \gamma = 0.1\)). Under GAM, family SES returns to the no-shock counterfactual (dashed lines). Under SGAM it never does so.}
 \end{figure}
 
 In the Appendix we consider further extensions. We allow men
@@ -843,7 +851,7 @@ may be self-limiting or even self-undermining.
 
 \section{Data and methods}\label{data-and-methods}
 
-The central insight in our model is that higher SES and good genes
+The central insight in our model is that higher SES and ``good genes''
 assort in the marriage market. We wish to test this directly, i.e.~to
 test whether \(0 < a < 1\) in the attractiveness equation
 \[i(x) = a x_1 + (1-a) x_2\] where \(x_2\) is social status and \(x_1\) is
@@ -984,16 +992,16 @@ individual's own PSEA correlates with both their educational attainment,
 and their income, both figures could be a result of genetic assortative
 mating (GAM) alone (Hugh-Jones et al. 2016). Indeed, recent studies show
 much higher levels of GAM than could be explained by matching on the
-observed education phenotype alone ({Okbay et al.} 2022). So, to
-demonstrate SGAM, we need a source of social status which is exogenous
-to genetics. Also, the link between social status and spouse genetics is
-likely to be noisy, for three reasons: first, polygenic scores contain a
-large amount of error, as discussed above; second, causal mechanisms
-behind variation in social status are likely to be noisy; third, to
-paraphrase Shakespeare (1595), the spouse matching process is
-highly unpredictable. So, we need a large N to give us sufficient power.
-This rules out time-limited shocks such as changes to the school leaving
-age (Davies et al. 2018).
+observed education phenotype alone ({Okbay et al.} 2022). To demonstrate
+SGAM, we need a source of social status which is exogenous to genetics.
+Also, the link between social status and spouse genetics is likely to be
+noisy, for three reasons: first, polygenic scores contain a large amount
+of error, as discussed above; second, causal mechanisms behind variation
+in social status are likely to be noisy; third, to paraphrase
+Shakespeare (1595), the spouse matching process is highly
+unpredictable. So, we need a large N to give us enough power. This rules
+out time-limited shocks such as changes to the school leaving age
+(Davies et al. 2018).
 
 We use \emph{birth order}. It is known that earlier-born children receive
 more parental care and have better life outcomes, including measures of
@@ -1012,15 +1020,10 @@ SES such as educational attainment and occupational status
   that birth order has large negative effects.} On the other
 hand, all full siblings have the same \emph{ex ante} expected genetic
 endowment from their parents, irrespective of their birth order. This is
-guaranteed by the biological mechanism of meiosis, which ensures that
-any gene is transmitted from either the mother or the father to the
-child, with independent 50\% probability (Mendel 1865; Lawlor et al. 2008). For example, siblings' expected polygenic score
-is equal to the mean of their parents' polygenic scores.\footnote{Although genetic variation is randomly assigned to children at
-  birth, genetics and birth order could be dependent if parents'
-  choice of whether to have more children is endogenous to the genetic
-  endowment of their earlier children. We check for this below.
-  Isungset et al. (2021) also find that birth order differences in
-  education are not genetic.} We can
+supported by the biological mechanism of meiosis, which ensures that any
+gene is transmitted from either the mother or the father to the child,
+with independent 50\% probability (Mendel 1865; Lawlor et al. 2008). For example, siblings' expected polygenic score
+is equal to the mean of their parents' polygenic scores. We can
 therefore use birth order as a ``shock'' to social status. ``Shock'' is in
 quotes because we do not claim that birth order is exogenous to all
 other variables. For example, it naturally correlates with parental age,
@@ -1034,20 +1037,19 @@ correlates with family size, i.e.~the total number of siblings born,
 because e.g.~third-born children must be in a family of at least three
 siblings. It also correlates with parental age, which may affect the
 income and maturity of the parents. There are also potential genetic
-effects from parental age, though recent research has rejected these in
-favour of ``social'' explanations (Kristensen and Bjerkedal 2007; Black et al. 2011). Cochran and Harpending (2013) report that mutational load is
-approximately linear in father's age, while it is constant in mother's
-age. To control for family size, we use dummies for each possible value
-of family size. In most regressions, we use only respondents with
-between 1 and 5 siblings, i.e.~with a family size of 2-6: beyond that,
-estimation would get noisy because of small cell sizes. To control for
-parental age, we use father's and/or mother's age at the respondent's
-birth, because we often have data only for one parent. We use the mean
-if we have both parents. In the UK Biobank, this data is only available
-if the respondent's parent was still alive. For other controls we use
-respondent's month of birth, year of birth, and own PSEA. Our claim is
-that controlling for these variables, birth order is independent of
-genetic variation.
+effects from parental age (Cochran and Harpending 2013), though recent research
+has rejected these in favour of ``social'' explanations
+(Kristensen and Bjerkedal 2007; Black et al. 2011). To control for family
+size, we use dummies for each possible value of family size. In most
+regressions, we use only respondents with between 1 and 5 siblings, i.e.
+with a family size of 2-6: beyond that, estimation would get noisy
+because of small cell sizes. To control for parental age, we use
+father's and/or mother's age at the respondent's birth, because we often
+have data only for one parent. We use the mean if we have both parents.
+In the UK Biobank, this data is only available if the respondent's
+parent was still alive. For other controls we use respondent's month of
+birth, year of birth, and own PSEA. Our claim is that controlling for
+these variables, birth order is independent of genetic variation.
 
 \subsection{Decomposing the birth order effect on spouse genetics}\label{decomposing-the-birth-order-effect-on-spouse-genetics}
 
@@ -3056,7 +3058,7 @@ excluded. Results are substantially unchanged. Of course, there could
 still be unmeasured genetic variants which correlate with birth order in
 our sample. Nevertheless, a wide set of polygenic scores shows no large
 or significant correlation. This makes us more confident that birth
-order is indeed exogenous to genetics.
+order is indeed exogenous to genetics (as Isungset et al. (2022) also find).
 
 Another concern is that our chosen SES mediators might not be exogenous.
 We have already seen that birth order affects intelligence, height, BMI
@@ -7997,8 +7999,8 @@ Hitsch, Gunter J, Ali Hortaçsu, and Dan Ariely. 2010. {``Matching and Sorting i
 \bibitem[\citeproctext]{ref-hugh2016assortative}
 Hugh-Jones, David, Karin JH Verweij, Beate St Pourcain, and Abdel Abdellaoui. 2016. {``Assortative Mating on Educational Attainment Leads to Genetic Spousal Resemblance for Polygenic Scores.''} \emph{Intelligence} 59: 103--8.
 
-\bibitem[\citeproctext]{ref-isungset2021birth}
-Isungset, Martin Arstad, Jeremy Freese, Ole Andreassen, and Torkild Hovde Lyngstad. 2021. {``Birth Order Differences in Education Are Environmental in Origin.''} \emph{bioRxiv}.
+\bibitem[\citeproctext]{ref-isungset2022birth}
+Isungset, Martin Arstad, Jeremy Freese, Ole A Andreassen, and Torkild Hovde Lyngstad. 2022. {``Birth Order Differences in Education Originate in Postnatal Environments.''} \emph{PNAS Nexus} 1 (2): pgac051.
 
 \bibitem[\citeproctext]{ref-kantarevic2006birth}
 Kantarevic, Jasmin, and Stéphane Mechoulan. 2006. {``Birth Order, Educational Attainment, and Earnings an Investigation Using the PSID.''} \emph{Journal of Human Resources} 41 (4): 755--77.

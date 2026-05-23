@@ -479,19 +479,23 @@ significantly lower PSEA in the reduced-form regressions. When we add
 mediators, including university attendance and/or income, the effect of
 birth order shrinks substantially, becoming insignificant in Great
 Britain, while the SES mediators significantly increase the spouse’s
-PSEA. The results are robust to the inclusion of several controls,
-including non-SES mediators, and a rich set of own genetic traits.
-Moreover, within-siblings estimates in the Norwegian sample show that
-own PSEA significantly affects spouse’s education net of family
-environment and SES. Thus, SES appears to mediate the effect of birth
-order on spouse genetics. The effects of individual mediators differ
-between the two countries. While university attendance explains more
-than a third of the effects of birth order in both Britain and Norway,
-income explains about 10% of the effects in Britain but has little or no
-independent effect in Norway. Although our main focus is on testing the
-basic mechanism of SGAM, this is suggestive evidence that in a more
-egalitarian society, some forms of SES are less important to the
-marriage market, with long-run implications for genes-SES gradients.
+PSEA. To interpret this as causal mediation, there must be no unobserved
+mediators that confound the effect of education. We check this by
+including several controls, including non-SES mediators, and a rich set
+of own genetic traits. Also, within-siblings estimates in the Norwegian
+sample show that own PSEA significantly affects spouse’s education net
+of family environment and SES. Thus, though it is always possible that
+an unobserved mediator exists, we believe it is highly plausible that
+SES is mediating the effect of birth order on spouse genetics.
+
+The effects of individual mediators differ between the two countries.
+While university attendance explains more than a third of the effects of
+birth order in both Britain and Norway, income explains about 10% of the
+effects in Britain but has little or no independent effect in Norway.
+Although our main focus is on testing the basic mechanism of SGAM, this
+is suggestive evidence that in a more egalitarian society, some forms of
+SES are less important to the marriage market, with long-run
+implications for genes-SES gradients.
 
 # Literature review
 
