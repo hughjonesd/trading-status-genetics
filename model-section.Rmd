@@ -646,7 +646,10 @@ res |>
   ) |> 
   ggplot(aes(Generation, mean_x_2, group = interaction(qtile_gen_100, shock),
              colour = `Gen 100 quartile`, linetype = shock)) + 
+    geom_point(data = function (x) x[x$shock,], 
+               aes(shape = factor(`Gen 100 quartile`)), size = 0.9) +  
     geom_line() + 
+    
     facet_wrap(vars(model), axes = "all") +
     scale_linetype_manual(values = c("TRUE" = "solid", "FALSE" = "dashed"))  +
     theme_minimal() +
@@ -657,7 +660,10 @@ res |>
       legend.position = "none"
     ) + 
     labs(y = "Mean SES") + 
-    scale_color_continuous(na.value = "grey50")
+    scale_shape_manual(values = c("4" = "circle", "3" = "square", 
+                                  "2" = "diamond", "1" = "triangle")) +
+    scale_color_viridis_c(option = "B", na.value = "grey50",
+                          direction = -1,  end = 0.75)
   
 ```
  
