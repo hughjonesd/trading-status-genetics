@@ -420,13 +420,23 @@ and low-SES people [@belsky2018genetic; @Rimfeld_2018;
 gradients is meritocratic social mobility: if a genetic variant predicts
 success in the labour market, then it will become associated with high
 SES and will be inherited in high-SES families. While under meritocracy,
-genes causes SES, under SGAM causality goes both ways, from genes to SES
-and vice versa. Also, the size of genes-SES gradients depends on
-economic institutions. Under institutions which increase
-intergenerational mobility, like high inheritance tax rates, genes-SES
-gradients become weaker. On the other hand, an increase in meritocracy
-can make them stronger. SGAM also interacts with economic institutions
-to determine the level of socioeconomic inequality.
+genes cause SES, under SGAM causality also goes from SES to genes.
+
+SGAM also affects patterns of long-run inequality. SES differences
+between families are much more persistent in the long-run than would be
+expected from simple parent-child regressions
+[@clark2015intergenerational; @barone2021intergenerational;
+@solon2018we]. One possible explanation for this is that couples match
+on an underlying variable, which SES is a noisy measure for.
+@clark2023inheritance argues that the data mostly fits a model where
+this variable is genetic. We show that while SGAM and pure genetic
+assortative mating (GAM) can both explain persistent inequality, they
+have different consequences for how inequality responds to policy
+shocks. Under GAM temporary policy shocks have no long-term effects on
+inequality, since the underlying genetic variable remains stable within
+families across generations. But under SGAM, shocks affect the
+distribution of attractiveness in marriage markets and therefore of
+genetics in the next generation, with lasting effects on inequality.
 
 Next, using data on spouse pairs from two large genetically-informed
 surveys in Great Britain and Norway, we test the hypothesis that a
@@ -446,27 +456,26 @@ The endogeneity of socio-economic status is the main challenge in
 identifying the effect of SES on the spouse’s genetic endowment. For
 instance, people with high educational qualifications tend to also have
 high PSEA, and as mentioned above, they may take partners based on
-genetic similarity. Indeed, recent studies show strong assortative
-mating on PSEA, much more than we would expect if spouses matched only
-on observed measures of educational attainment [@okbay2022polygenic]. To
-isolate the causal link from own SES to partner's genes, we use a shock
-to SES which is independent of own genetics. Specifically, we use a
-person's *birth order*. Earlier-born children receive higher parental
-investment and have better life outcomes, including measures of SES such
-as educational attainment and occupational status [@black2011older;
-@booth2009birth; @Lindahl_2008]. At the same time, the facts of biology,
-in particular the so-called "lottery of meiosis", make it likely that
-siblings' birth order is independent of their genetic endowments.[^2]
-Because birth order could affect partner choice through both SES and
-non-SES mechanisms, we run a mediation analysis similar to
-@heckman2013understanding, decomposing the treatment effect into effects
-of measured and unmeasured mediating variables. Specifically, we
-estimate a reduced-form model with spouse polygenic scores for
-educational attainment (PSEA) as the dependent variable, and own birth
-order as the main independent variable. We then add in to the model
-measures of own socio-economic status, including university attendance
-and income. Under certain assumptions, these variables can be
-interpreted as mediating the effect of birth order on spouse genetics.
+genetic similarity. Indeed, recent studies show much more assortative
+mating on PSEA than we would expect if spouses matched only on observed
+measures of educational attainment [@okbay2022polygenic]. To isolate the
+causal link from own SES to partner's genes, we use a shock to SES which
+is independent of own genetics. Specifically, we use a person's *birth
+order*. Earlier-born children receive higher parental investment and
+have better life outcomes, including measures of SES such as educational
+attainment and occupational status [@black2011older; @booth2009birth;
+@Lindahl_2008]. At the same time, the facts of biology, in particular
+the so-called "lottery of meiosis", make it likely that siblings' birth
+order is independent of their genetic endowments.[^2] Because birth
+order could affect partner choice through both SES and non-SES
+mechanisms, we run a mediation analysis similar to
+@heckman2013understanding: we estimate a reduced-form model with spouse
+polygenic scores for educational attainment (PSEA) as the dependent
+variable, and own birth order as the main independent variable. We then
+add in to the model measures of own socio-economic status, including
+university attendance and income. Under certain assumptions, these
+variables can be interpreted as mediating the effect of birth order on
+spouse genetics.
 
 [^2]: In meiosis, each child's DNA is drawn randomly and independently
     from their parents' DNA. If parents choose to have children based on
@@ -905,18 +914,17 @@ mf_pairs %>%
         labs(x = "Female spouse university attendance", y = "Male spouse PSEA")
 
 
-pic_ss <- stat_summary(
+pic_ss2 <- stat_summary(
             fun.data = mean_se, 
             fun.args = list(mult = 1.96), 
             na.rm = TRUE
           )
-pic_cc <- coord_cartesian(ylim = c(-0.15, 0.25))
 
 mf_pairs %>% 
       filter(! is.na(first_job_pay.m)) %>% 
       mutate(Income = santoku::chop_deciles(first_job_pay.m, labels = 1:10)) %>% 
       ggplot(aes(Income, EA3.f)) + 
-        pic_ss + 
+        pic_ss2 + 
         pic_theme +
         labs(x = "Male spouse income decile", y = "Female spouse PSEA")
 
@@ -924,7 +932,7 @@ mf_pairs %>%
       filter(! is.na(first_job_pay.f)) %>% 
       mutate(Income = santoku::chop_deciles(first_job_pay.f, labels = 1:10)) %>% 
       ggplot(aes(Income, EA3.m)) + 
-        pic_ss + 
+        pic_ss2 + 
         pic_theme +
         labs(x = "Female spouse income decile", y = "Male spouse PSEA")
 ```
@@ -1514,13 +1522,13 @@ Our next regressions split up the data into subsets. Cultural
 stereotypes often assume that the link between status and genes is not
 symmetric across the genders, for example, that males with high SES are
 particularly likely to marry attractive spouses. Claim
-\@ref(claim-men-women-different) showed that these differences would
-strengthen the effects of SGAM. To test for this, we separately regress
-female spouses' PSEA on male birth order, and male spouses' PSEA on
-female birth order. We also rerun regressions among the subset of
-individuals who had children. A significant result here will confirm
-that the association between status and genetics is carried over into
-the next generation.
+\@ref(claim-men-women-different) in the appendix shows that these
+differences would strengthen the effects of SGAM. To test for this, we
+separately regress female spouses' PSEA on male birth order, and male
+spouses' PSEA on female birth order. We also rerun regressions among the
+subset of individuals who had children. A significant result here will
+confirm that the association between status and genetics is carried over
+into the next generation.
 
 Table \@ref(tab:tbl-bo-subsets) shows the results. Columns 1 and 2
 present results using birth order of male respondents to predict female
@@ -1845,7 +1853,7 @@ that income is not an important form of SES in Norwegian marriage
 markets. By leveraging random PSEA variation between siblings, these
 results allow us to reject that $a = 0$ (even if the effect of PSEA on
 spouse SES could be *mediated* by own SES, cf. the extended model of
-meritocracy in equation \ref{eqn-gamma}).
+meritocracy in appendix equation \ref{eqn-gamma}).
 
 [^17]: The UK Biobank sample has too few siblings with spouses for this
     analysis to be informative.
@@ -2111,7 +2119,8 @@ may help to solve this puzzle. Persistence will be increased if, in
 addition to genetic assortative mating, high SES itself attracts "good
 genes". At the same time, SGAM changes the interpretation of genetics.
 Genetic variation is not an exogenous input into the social system, but
-an endogenous outcome.
+an endogenous outcome. Policy changes redistributing SES will also, over
+generations, change the distribution of genetics in the population.
 
 SGAM also provides a new explanation for genes-SES gradients -- observed
 associations of genes with SES -- which is an important cause of
@@ -2123,8 +2132,8 @@ has been far more limited in most societies throughout history
 be a cultural universal [@buss1989sex]. Thus, SGAM predicts that
 genes-SES gradients should exist in all stratified societies. In fact,
 people in many societies have believed that innate traits do vary by
-social status.[^19] In future, it may be possible to directly test for
-genetic differences across social status in ancient DNA samples.
+social status.[^19] It may be possible to directly test for genetic
+differences across social status in ancient DNA samples.
 
 [^19]: The appendix has a selection of relevant historical quotations.
 
