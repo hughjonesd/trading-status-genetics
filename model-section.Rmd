@@ -226,10 +226,12 @@ markets.
 
 Regarding point 1, we compute the expected genetic characteristic of the
 child, conditional on parental wealth:
-\[
+
+\begin{equation}
 \mathbb{E}\left[ \frac{\tau }{2}\left( x_{1}+y_{1}\right) +\varepsilon \mid
-x_{2}=v,y_{2}=w\right] 
-\]
+x_{2}=v,y_{2}=w\right]  \label{E-x1-given-x2-y2}
+\end{equation}
+
 Given the symmetry of the model, this conditional
 expectation only depends on the parents' total wealth, i.e. $v+w$.
 
@@ -238,8 +240,8 @@ expectation only depends on the parents' total wealth, i.e. $v+w$.
 \begin{claim}\label{claim-E-children-SGAM}
 Under SGAM, if $\sigma = 0$ (i.e. genetics and
 SES are uncorrelated for the parents), then the expected genetic endowment of
-the children is linearly increasing in parental SES. The relationship
-increases with the ratio of genetic variance to SES variance, is zero for 
+the children ($\ref{E-x1-given-x2-y2}$) is linearly increasing in parental SES. The relationship
+increases with the ratio of genetic variance to SES variance ($s^2/S^2$), is zero for 
 $a = 0$ or $a = 1$, and is highest for intermediate values of $a$.
 \end{claim}
 

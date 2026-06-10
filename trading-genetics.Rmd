@@ -501,10 +501,11 @@ The effects of individual mediators differ between the two countries.
 While university attendance explains more than a third of the effects of
 birth order in both Britain and Norway, income explains about 10% of the
 effects in Britain but has little or no independent effect in Norway.
-Although our main focus is on testing the basic mechanism of SGAM, this
-is suggestive evidence that in a more egalitarian society, some forms of
-SES are less important to the marriage market, with long-run
-implications for genes-SES gradients.
+Although our main focus is on testing the basic mechanism of SGAM, and
+our Norwegian and British data have different samples and measures,
+making direct comparisons hard, this is suggestive evidence that in a
+more egalitarian society, some forms of SES are less important to the
+marriage market, with long-run implications for genes-SES gradients.
 
 # Literature review
 
