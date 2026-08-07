@@ -211,7 +211,15 @@ moba_reg_coefs <- c(
           "Parents' age at birth" = "parentalage"
         )
 # load moba results
-load("moba-results/tradinggenetics_moba_v04.Rdata")
+# we load the revised results first, because we want the old 4-column
+# version of export_table3dummy_tidyse; the old version overwrites just
+# that variable.
+#load("moba-results/tradinggenetics2026_v1.Rdata")
+#load("moba-results/tradinggenetics_moba_v04.Rdata")
+load("moba-results/tradinggenetics2026_v02.Rdata")
+#load("moba-results/tradinggenetics_moba_revised_2026_v02.Rdata")
+#load("moba-results/tradinggenetics_moba_sibs_revised_2026_v02.Rdata")
+
 ```
 
 ```{r TODO-NOTES, eval = FALSE}
@@ -1699,13 +1707,10 @@ endogenous to economic institutions.
 #   - In the end we might want Abdel to replicate Norway v. closely...
 # - Can we get a subset of actual siblings? Would be so coool....
 
-
-# Robustness checks todo:
-# - balance tests on some pgs?
-# - birth order dummies
-# - education (can already)
-mod_bo_psea_moba <- purrr::map2(export_table3_tidyse,
-                                  export_table3_glance,
+# columns 2 and 6 added a "scl" variable as a robustness check
+# this is from the revised version 2026
+mod_bo_psea_moba <- purrr::map2(export_table3_tidyse[c(1, 3:5)],
+                                  export_table3_glance[c(1, 3:5)],
                                   convert_moba_for_huxreg)
 names(mod_bo_psea_moba) <- NULL
 
@@ -1744,13 +1749,13 @@ huxreg(mod_bo_psea_moba,
 
 ```{r tbl-mediation-moba}
 
-mediator_effect_bo <- purrr::map_dbl(export_table1_tidyse, 
+mediator_effect_bo <- purrr::map_dbl(export_table1_tidyse[1:4], 
                                      function (x) {
                                        x$estimate[x$term == "parity"]
                                      })
 
 mediators <- c("university", "incomez", "height", "bmi")
-psea_effect_mediators <- purrr::map(export_table3_tidyse[2:4],
+psea_effect_mediators <- purrr::map(export_table3_tidyse[3:5],
                                         function (x){
                                           rows <- match(mediators, x$term)
                                           x$estimate[rows]
@@ -1861,37 +1866,13 @@ meritocracy in appendix equation \ref{eqn-gamma}).
 
 ```{r tbl-reversed-moba}
 
-# "exported" by literally pasting in coefficients for now :-)
-# see Fartein's email of 4 oct
-
-tidy_uni_psea_moba <- tibble(
-  term      = c("eapgsresid"),
-  estimate  = c(0.04768),
-  std.error = c(0.009798),
-  statistic = c(4.86618),
-  p.value   = c(1.1743e-6)
-)
-
-glance_uni_psea_moba <- tibble(
-  adj.r.squared = 0.182223,
-  nobs          = 9729L
-)
-
-tidy_inc_psea_moba <- tibble(
-  term      = c("eapgsresid"),
-  estimate  = c(-0.000734),
-  std.error = c(0.017402),
-  statistic = c(-0.042185),
-  p.value   = c(0.96635)
-)
-
-glance_inc_psea_moba <- tibble(
-  adj.r.squared = 0.083474,
-  nobs          = 9755L
-)
-
+tidy_uni_psea_moba <- sibresults_2023_tidyse[[2]]
+glance_uni_psea_moba <- sibresults_2023_glance[[2]]
 tidy_uni_psea_moba <- convert_moba_for_huxreg(tidy_uni_psea_moba,
                                               glance_uni_psea_moba)
+
+tidy_inc_psea_moba <- sibresults_2023_tidyse[[6]]
+glance_inc_psea_moba <- sibresults_2023_glance[[6]]
 tidy_inc_psea_moba <- convert_moba_for_huxreg(tidy_inc_psea_moba,
                                               glance_inc_psea_moba)
 
@@ -2288,11 +2269,12 @@ coefficients are generally negative, and adding mediators always causes
 them to increase towards zero or to change sign.
 
 We also ran a specification with separate birth order dummies within
-each family size. Figure \@ref(fig:pic-bo-psea-interactions) shows 95%
-confidence intervals for the birth order coefficients, from the column 2
-specification including height and IQ controls but no mediators. Not
-surprisingly, coefficients are imprecisely estimated. But most birth
-order coefficients are negative compared to the baseline for firstborns.
+each family size. Figures \@ref(fig:pic-bo-psea-interactions) and
+\@ref(fig:pic-bo-psea-interactions-moba) show 95% confidence intervals
+for the birth order coefficients, from a regression including
+IQ/height/BMI/health controls but no mediators. Not surprisingly,
+coefficients are imprecisely estimated. But most birth order
+coefficients are negative compared to the baseline for firstborns.
 
 Table \@ref(tab:tbl-bo-psea-weights) re-estimates Table
 \@ref(tab:tbl-bo-psea) using weights from @vanalten2022reweighting.
@@ -2477,8 +2459,8 @@ pic_data_norway_income %>%
 
 ```{r tbl-bo-first-stage-moba}
 
-mod_bo_1st_moba <- purrr::map2(export_table1_tidyse,
-                                     export_table1_glance, 
+mod_bo_1st_moba <- purrr::map2(export_table1_tidyse[1:4],
+                                     export_table1_glance[1:4], 
                                      convert_moba_for_huxreg)
 
 names(mod_bo_1st_moba) <- c("University", "Income", "Height", "BMI")
@@ -2704,6 +2686,35 @@ huxreg(mod_bo_no_yob,
 
 ```
 
+```{r tbl-bo-psea-no-yob-moba, eval = FALSE}
+
+# the first column doesn't have controls for height/bmi so the
+# difference with the other columns will include the effect of these.
+# leave it unless we're asked.
+
+mod_bo_no_yob_moba <- purrr::map2(export_table3_nobirthadjust_tidyse,
+                                       export_table3_nobirthadjust_glance, 
+                                       convert_moba_for_huxreg)
+
+# columns 2 and 6 added scl
+huxreg(unname(mod_bo_no_yob_moba[c(1, 3:5)]), 
+       coefs     = moba_reg_coefs,
+       note      = my_note,
+       stars     = my_stars,
+       tidy_args = tidy_args
+) %>% 
+  insert_row(after = 15, "Family size dummies", rep("Yes", 4)) %>%
+  insert_row(after = 16, "Birth month dummies", rep("No", 4)) %>%
+  insert_row(after = 17, "Birth year dummies", rep("No", 4)) %>%
+  set_bottom_border(16:17, everywhere, 0) %>%
+  set_align(16:17, -1, "center") %>%
+  set_number_format(2:15, -1, 4) %>%
+  set_font_size(11) %>%
+  set_caption("Regressions of spouse PSEA, without controls for respondents'
+                   year or month of birth (Norway)")
+
+```
+
 ```{r tbl-bo-psea-only-educ}
 fml_bo_only_educ <- lapply(fml_bo_psea, update, 
                      . ~ . - fluid_iq.x - height.x - bmi.x - health.x, 
@@ -2804,8 +2815,10 @@ ht
 ```
 
 ```{r tbl-bo-psea-dummies-moba}
-mod_bo_psea_moba_dummies <- purrr::map2(export_table3dummy_tidyse,
-                                  export_table3dummy_glance,
+
+# columns 2 and 6 added scl
+mod_bo_psea_moba_dummies <- purrr::map2(export_table3dummy_tidyse[c(1, 3:5)],
+                                  export_table3dummy_glance[c(1, 3:5)],
                                   convert_moba_for_huxreg)
 names(mod_bo_psea_moba_dummies) <- NULL
 
@@ -2903,6 +2916,28 @@ suppressWarnings({
   print(gg) # captures the warnings inside the suppressWarnings() call
 })
 
+```
+
+```{r pic-bo-psea-interactions-moba, fig.align = "center", fig.cap = "Regressions of spouse PSEA: birth order dummies within different family sizes (Norway). Labels show birth order. Lines are 95 per cent confidence intervals. The omitted category is birth order 1."}
+
+famsize_moba <- bind_rows(famsizestratified_tidyse, .id = "famsize")
+famsize_moba |> 
+  filter(grepl("parity", term)) |> 
+  mutate(
+    `Family size` = as.numeric(sub("famsize", "", famsize)),
+    `Birth order` = as.numeric(sub("factor(parity)", "", term, fixed = TRUE)),
+    conf.low = estimate - 1.96 * std.error,
+    conf.high = estimate + 1.96 * std.error,
+  ) |> 
+  ggplot(aes(estimate, `Family size`, colour = `Birth order`)) + 
+    scale_color_continuous(type = "viridis", name = "Birth order") + 
+    geom_vline(xintercept = 0, linetype = 2) +
+    geom_pointrange(aes(xmin = conf.low, xmax = conf.high), 
+                    alpha = 0.7, size = 1.15, fatten = 1,
+                    position = position_dodge2(width = 0.15)) + 
+    geom_text(aes(label = `Birth order`), nudge_y = 0.2, size = 5) + 
+    guides(colour = "none") +
+    xlab("Estimate")
 ```
 
 ```{r tbl-bo-psea-weights}
@@ -3016,8 +3051,8 @@ huxreg(mod_bo_psea_age_fte,
 
 ```{r tbl-bo-psea-age-fte-moba}
 
-mod_bo_psea_age_fte_moba <- purrr::map2(export_table3eduyears_tidyse[c(1, 2, 4)],
-                                  export_table3eduyears_glance[c(1, 2, 4)],
+mod_bo_psea_age_fte_moba <- purrr::map2(export_table3eduyears_tidyse[c(1, 3, 5)],
+                                  export_table3eduyears_glance[c(1, 3, 5)],
                                   convert_moba_for_huxreg)
 names(mod_bo_psea_age_fte_moba) <- NULL
 
