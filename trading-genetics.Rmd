@@ -633,15 +633,15 @@ As @okbay2022polygenic put it: "Because the parameters of a general
 biometric model cannot be separately identified from a small number of
 phenotypic correlations among different types of relatives, researchers
 typically have to assume that some of the parameters equal zero in order
-to estimate other parameters." For example, @collado2023estimating
-derive extremely low estimates for heritability of education, within a
-model in which all genetic similarity between spouses is driven by
-matching either on the measured phenotype, or on a shared cultural
-factor; @torvik2022modeling estimate partner correlation between "true"
-polygenic scores for education of 0.37, and heritability above 50%, in a
-model where environment is shared between siblings but not across
-generations; while @clark2023inheritance argue for a purely genetic
-model with no cultural inheritance.
+to estimate other parameters." (See also @sunde2025understanding.) For
+example, @collado2023estimating derive extremely low estimates for
+heritability of education, within a model in which all genetic
+similarity between spouses is driven by matching either on the measured
+phenotype, or on a shared cultural factor; @torvik2022modeling estimate
+partner correlation between "true" polygenic scores for education of
+0.37, and heritability above 50%, in a model where environment is shared
+between siblings but not across generations; while @clark2023inheritance
+argue for a purely genetic model with no cultural inheritance.
 
 This motivates us to use a different approach. We cleanly identify
 separate environmental and genetic contributions to assortative mating:

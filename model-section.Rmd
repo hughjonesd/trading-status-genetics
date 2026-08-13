@@ -31,7 +31,8 @@ library(purrr)
 library(tidyr)
 ```
 
-People in the marriage market have two characteristics: 
+We write down a simple model of marriage and inheritance to frame our empirical
+work. People in the marriage market have two characteristics: 
 $x=\left( x_{1},x_{2}\right)$, drawn from a normal distribution 
 \[
 \mathcal{N}

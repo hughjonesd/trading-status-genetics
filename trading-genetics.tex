@@ -430,15 +430,15 @@ As {Okbay et al.} (2022) put it: ``Because the parameters of a general
 biometric model cannot be separately identified from a small number of
 phenotypic correlations among different types of relatives, researchers
 typically have to assume that some of the parameters equal zero in order
-to estimate other parameters.'' For example, Collado et al. (2023)
-derive extremely low estimates for heritability of education, within a
-model in which all genetic similarity between spouses is driven by
-matching either on the measured phenotype, or on a shared cultural
-factor; {Torvik et al.} (2022) estimate partner correlation between ``true''
-polygenic scores for education of 0.37, and heritability above 50\%, in a
-model where environment is shared between siblings but not across
-generations; while Clark (2023) argue for a purely genetic
-model with no cultural inheritance.
+to estimate other parameters.'' (See also Sunde et al. (2025).) For
+example, Collado et al. (2023) derive extremely low estimates for
+heritability of education, within a model in which all genetic
+similarity between spouses is driven by matching either on the measured
+phenotype, or on a shared cultural factor; {Torvik et al.} (2022) estimate
+partner correlation between ``true'' polygenic scores for education of
+0.37, and heritability above 50\%, in a model where environment is shared
+between siblings but not across generations; while Clark (2023)
+argue for a purely genetic model with no cultural inheritance.
 
 This motivates us to use a different approach. We cleanly identify
 separate environmental and genetic contributions to assortative mating:
@@ -451,7 +451,8 @@ and Norway.
 
 \section{Model}\label{model}
 
-People in the marriage market have two characteristics:
+We write down a simple model of marriage and inheritance to frame our empirical
+work. People in the marriage market have two characteristics:
 \(x=\left( x_{1},x_{2}\right)\), drawn from a normal distribution
 \[
 \mathcal{N}
@@ -3037,19 +3038,8 @@ Then within the subset of two-child families, first children would have
 higher-than-average PSEA, while second children would not.
 
 To check for the latter two problems, we run balance tests on 33
-different polygenic scores in the UK Biobank sample.\footnote{Polygenic scores were residualized on the first 100 principal
-  components of the genetic data. Scores were for: ADHD, age at
-  menarche, age at menopause, agreeableness, age at smoking
-  initiation, alcohol use, Alzheimer's, autism, bipolarity, BMI, body
-  fat, caffeine consumption, cannabis (ever vs.~never), cognitive
-  ability, conscientiousness, coronary artery disease, smoking
-  (cigarettes per day), type II diabetes, drinks per week, educational
-  attainment (EA2 and EA3), anorexia, extraversion, height, hip
-  circumference, major depressive disorder, neuroticism, openness,
-  smoking cessation, schizophrenia, smoking initiation, waist
-  circumference, and waist-to-hip ratio. For full details of score
-  construction, see {Abdellaoui et al.} (2019).} We regress
-each score on own birth order, controlling for family size.\\
+different polygenic scores in the UK Biobank sample. We regress each
+score on own birth order, controlling for family size.\\
 Four scores were significant at \(p < 0.10\), all with effect sizes of
 less than 0.02 per standard deviation. Table \ref{tab:tbl-bo-psea-pgs}
 in the appendix reports regressions controlling for these scores.
@@ -3070,7 +3060,19 @@ were significant at \(p < 0.05\). Of course, there could still be
 unmeasured genetic variants which correlate with birth order in our
 sample. Nevertheless, a wide set of polygenic scores shows no large or
 significant correlation. This makes us more confident that birth order
-is indeed exogenous to genetics (as Isungset et al. (2022) also find).
+is indeed exogenous to genetics (as Isungset et al. (2022) also find).\footnote{UKBB polygenic scores were residualized on the first 100
+  principal components of the genetic data. Scores were for: ADHD, age
+  at menarche, age at menopause, agreeableness, age at smoking
+  initiation, alcohol use, Alzheimer's, autism, bipolarity, BMI, body
+  fat, caffeine consumption, cannabis (ever vs.~never), cognitive
+  ability, conscientiousness, coronary artery disease, smoking
+  (cigarettes per day), type II diabetes, drinks per week, educational
+  attainment (EA2 and EA3), anorexia, extraversion, height, hip
+  circumference, major depressive disorder, neuroticism, openness,
+  smoking cessation, schizophrenia, smoking initiation, waist
+  circumference, and waist-to-hip ratio. For full details of score
+  construction, see {Abdellaoui et al.} (2019). MoBa polygenic scores were
+  for EA4, height, smoking, BMI and depression.}
 
 Another concern is that our chosen SES mediators might not be exogenous.
 We have already seen that birth order affects intelligence, height, BMI
@@ -3115,12 +3117,12 @@ order. The pattern that birth order coefficients shrink after
 controlling for SES mediators holds robustly across all birth orders in
 both Britain and Norway.
 
-UK Biobank is not a representative sample of the population. Table
-\ref{tab:tbl-bo-psea-weights} in the appendix weights cases to match
-the Biobank's sampling frame. Results are similar to those in the main
-text. Although this is still not representative of the population as a
-whole, it provides some assurance that our results are not driven by
-volunteering bias.
+Biobank participants are not randomly sampled from their populations.
+Table \ref{tab:tbl-bo-psea-weights} in the appendix weights cases to
+match the Biobank's sampling frame. Results are similar to those in the
+main text. Although this is still not representative of the population
+as a whole, it provides some assurance that our results are not driven
+by volunteering bias.
 
 As well as affecting spouse characteristics, birth order and own PSEA
 might affect whether people marry at all. Though this would not
@@ -3131,9 +3133,9 @@ birth order or PSEA affect one's probability of having a partner (Table
 
 The appendix reports other robustness checks, including replacing
 university attendance with age of leaving full-time education. Overall,
-while significance sometimes varies, the pattern of results is
-remarkably consistent. Birth order is always negatively associated with
-spouse PSEA, and this effect is always reduced in magnitude after adding
+while significance sometimes varies, the pattern of results is very
+consistent. Birth order is always negatively associated with spouse
+PSEA, and this effect is always reduced in magnitude after adding
 education as a mediator. Effect sizes are also consistent, with the
 exception that they are smaller if we do not control for parental age
 (just as in Table \ref{tab:tbl-bo-psea-basic}).
@@ -3165,7 +3167,7 @@ an endogenous outcome. Policy changes redistributing SES will also, over
 generations, change the distribution of genetics in the population.
 
 SGAM also provides a new explanation for genes-SES gradients -- observed
-associations of genes with SES -- which is an important cause of
+associations of genes with SES -- which are important causes of
 educational and occupational inequality, and perhaps also of health
 inequalities. The leading alternative explanation is meritocratic social
 mobility. Whilst meritocracy exists in modern capitalist economies, it
@@ -3186,14 +3188,14 @@ be hysteresis, with initial social differences cumulating over time via
 their effect on genetic inequality. On the other hand, while lowering
 the intergenerational transmission of wealth may eventually flatten the
 genes-SES gradient, increases in the level of meritocracy paradoxically
-make it steeper, suggesting a deep conflict between meritocracy and
+make it steeper, suggesting a conflict between meritocracy and
 egalitarianism (Young 1958; Markovits 2019). Lastly, the
-structure of marriage markets also affects the gradient. Our empirical
-analysis suggests that in relatively egalitarian Norway, income plays a
-less important role in assortative mating than it does in the UK.
-However, this is a loose comparison, and we see careful tests of
-comparative statics across different contexts as an important challenge
-for future work.
+structure of marriage markets also affects the gradient. Our empirics
+suggest that in relatively egalitarian Norway, income plays a less
+important role in assortative mating than it does in the UK. However,
+this is a loose comparison, and we see careful tests of comparative
+statics across different contexts as an important challenge for future
+work.
 
 The broadest message of this paper is that genetics are a social
 outcome. Both popular and scientific discourse often parse genetics as
@@ -8129,6 +8131,9 @@ Smelser, Neil J, and Seymour Martin Lipset. 1966. \emph{Social Structure and Mob
 
 \bibitem[\citeproctext]{ref-solon2018we}
 Solon, Gary. 2018. {``What Do We Know so Far about Multigenerational Mobility?''} \emph{The Economic Journal} 128 (612): F340--52.
+
+\bibitem[\citeproctext]{ref-sunde2025understanding}
+Sunde, Hans Fredrik, Espen Moen Eilertsen, and Fartein Ask Torvik. 2025. {``Understanding Indirect Assortative Mating and Its Intergenerational Consequences for Educational Attainment.''} \emph{Nature Communications} 16 (1): 5264.
 
 \bibitem[\citeproctext]{ref-Tambs_1989}
 Tambs, Kristian, Jon Martin Sundet, Per Magnus, and K�re Berg. 1989. {``Genetic and Environmental Contributions to the Covariance Between Occupational Status, Educational Attainment, and {IQ}: A Study of Twins.''} \emph{Behavior Genetics} 19 (2): 209--22. \url{https://doi.org/10.1007/bf01065905}.
