@@ -24,8 +24,9 @@ abstract: |
   Britain and Norway. Spouses of earlier-born siblings have genetics predicting 
   more education. This effect is mediated by individuals' own education and 
   income. Under SGAM, shocks to SES are reflected in the DNA of subsequent
-  generations, and the distribution of genetic variants in society is endogenous
-  to economic institutions. 
+  generations, the distribution of genetic variants in society is endogenous
+  to economic institutions, and short-run policy regime changes can have
+  lasting effects on inequality.
   \par\textbf{Keywords:} Assortative mating, MoBa, UK Biobank.
 date: "`r Sys.Date()`"
 output: 
@@ -1799,15 +1800,19 @@ as_hux(mediated_effects_pct, add_colnames = TRUE, add_rownames = "") %>%
 
 ```{r tbl-bo-subsets-moba}
 
-mod_bo_subsets_moba <- purrr::map2(export_table5_tidyse,
-                                     export_table5_glance, 
-                                     convert_moba_for_huxreg)
+moba_subset_cols <- c("column1male", "column4male",
+                      "column1female", "column4female")
+
+mod_bo_subsets_moba <- purrr::map2(
+  export_table5_tidyse[moba_subset_cols],
+  export_table5_glance[moba_subset_cols],
+  convert_moba_for_huxreg)
 
 names(mod_bo_subsets_moba) <- rep(c("Male respondents", "Female respondents"), 
                                     each = 2)
 
 tbl_note <- paste("Estimates from OLS regressions corresponding to",
-"columns 1 and 2 in Table \\ref{{tab:tbl-bo-psea-moba}}, separately",
+"columns 1 and 4 in Table \\ref{{tab:tbl-bo-psea-moba}}, separately",
 "for males and females. Spouse PSEA is the dependent variable, and own",
 "birth order and university attendance are the main independent variables. PSEA",
 "is the polygenic score for educational attainment, which is normalized with",
@@ -1975,9 +1980,20 @@ stopifnot(pval_own_psea_3 > 0.05)
 
 ```
 
+```{r calc-placebo-moba}
+balance_moba <- dplyr::bind_rows(balancedescriptives_tidyse, .id = "dep_var") |> 
+  filter(grepl("self", dep_var)) 
+
+n_sig_moba <- sum(balance_moba$p.value < 0.05)
+n_tests_moba <- nrow(balance_moba)
+n_pgis_moba <- n_distinct(balance_moba$dep_var)
+
+stopifnot(n_sig_moba/n_tests_moba < 0.05)
+```
+
 To check for the latter two problems, we run balance tests on 33
-different polygenic scores in the UK Biobank sample.[^18] We regress
-each score on own birth order, controlling for family size.\
+different polygenic scores in the UK Biobank sample. We regress each
+score on own birth order, controlling for family size.\
 Four scores were significant at $p < 0.10$, all with effect sizes of
 less than 0.02 per standard deviation. Table \@ref(tab:tbl-bo-psea-pgs)
 in the appendix reports regressions controlling for these scores.
@@ -1991,15 +2007,18 @@ a marginally significant positive correlation of birth order with own
 PSEA (effect size `r pretty(coef_own_psea_3, 3)`,
 $p = `r pretty(pval_own_psea_3, 2)`$). Table \@ref(tab:tbl-bo-psea-no3)
 in the appendix therefore reports regressions with families of size 3
-excluded. Results are substantially unchanged. Of course, there could
-still be unmeasured genetic variants which correlate with birth order in
-our sample. Nevertheless, a wide set of polygenic scores shows no large
-or significant correlation. This makes us more confident that birth
-order is indeed exogenous to genetics (as @isungset2022birth also find).
+excluded. Results are substantially unchanged. We also ran similar tests
+on MoBa data. In regressions of `r n_pgis_moba` polygenic scores on
+birth order dummies, `r n_sig_moba` out of `r n_tests_moba` coefficients
+were significant at $p < 0.05$. Of course, there could still be
+unmeasured genetic variants which correlate with birth order in our
+sample. Nevertheless, a wide set of polygenic scores shows no large or
+significant correlation. This makes us more confident that birth order
+is indeed exogenous to genetics (as @isungset2022birth also find).[^18]
 
-[^18]: Polygenic scores were residualized on the first 100 principal
-    components of the genetic data. Scores were for: ADHD, age at
-    menarche, age at menopause, agreeableness, age at smoking
+[^18]: UKBB polygenic scores were residualized on the first 100
+    principal components of the genetic data. Scores were for: ADHD, age
+    at menarche, age at menopause, agreeableness, age at smoking
     initiation, alcohol use, Alzheimer's, autism, bipolarity, BMI, body
     fat, caffeine consumption, cannabis (ever vs. never), cognitive
     ability, conscientiousness, coronary artery disease, smoking
@@ -2008,9 +2027,8 @@ order is indeed exogenous to genetics (as @isungset2022birth also find).
     circumference, major depressive disorder, neuroticism, openness,
     smoking cessation, schizophrenia, smoking initiation, waist
     circumference, and waist-to-hip ratio. For full details of score
-    construction, see @abdellaoui2019genetic. We also ran similar tests
-    on MoBa data, and found no significant associations between birth
-    order and polygenic scores.
+    construction, see @abdellaoui2019genetic. MoBa polygenic scores were
+    for EA4, height, smoking, BMI and depression.
 
 Another concern is that our chosen SES mediators might not be exogenous.
 We have already seen that birth order affects intelligence, height, BMI
@@ -2055,12 +2073,12 @@ order. The pattern that birth order coefficients shrink after
 controlling for SES mediators holds robustly across all birth orders in
 both Britain and Norway.
 
-UK Biobank is not a representative sample of the population. Table
-\@ref(tab:tbl-bo-psea-weights) in the appendix weights cases to match
-the Biobank's sampling frame. Results are similar to those in the main
-text. Although this is still not representative of the population as a
-whole, it provides some assurance that our results are not driven by
-volunteering bias.
+Biobank participants are not randomly sampled from their populations.
+Table \@ref(tab:tbl-bo-psea-weights) in the appendix weights cases to
+match the Biobank's sampling frame. Results are similar to those in the
+main text. Although this is still not representative of the population
+as a whole, it provides some assurance that our results are not driven
+by volunteering bias.
 
 As well as affecting spouse characteristics, birth order and own PSEA
 might affect whether people marry at all. Though this would not
@@ -2071,9 +2089,9 @@ birth order or PSEA affect one's probability of having a partner (Table
 
 The appendix reports other robustness checks, including replacing
 university attendance with age of leaving full-time education. Overall,
-while significance sometimes varies, the pattern of results is
-remarkably consistent. Birth order is always negatively associated with
-spouse PSEA, and this effect is always reduced in magnitude after adding
+while significance sometimes varies, the pattern of results is very
+consistent. Birth order is always negatively associated with spouse
+PSEA, and this effect is always reduced in magnitude after adding
 education as a mediator. Effect sizes are also consistent, with the
 exception that they are smaller if we do not control for parental age
 (just as in Table \@ref(tab:tbl-bo-psea-basic)).
@@ -2105,7 +2123,7 @@ an endogenous outcome. Policy changes redistributing SES will also, over
 generations, change the distribution of genetics in the population.
 
 SGAM also provides a new explanation for genes-SES gradients -- observed
-associations of genes with SES -- which is an important cause of
+associations of genes with SES -- which are important causes of
 educational and occupational inequality, and perhaps also of health
 inequalities. The leading alternative explanation is meritocratic social
 mobility. Whilst meritocracy exists in modern capitalist economies, it
@@ -2128,14 +2146,14 @@ be hysteresis, with initial social differences cumulating over time via
 their effect on genetic inequality. On the other hand, while lowering
 the intergenerational transmission of wealth may eventually flatten the
 genes-SES gradient, increases in the level of meritocracy paradoxically
-make it steeper, suggesting a deep conflict between meritocracy and
+make it steeper, suggesting a conflict between meritocracy and
 egalitarianism [@young1958rise; @markovits2019meritocracy]. Lastly, the
-structure of marriage markets also affects the gradient. Our empirical
-analysis suggests that in relatively egalitarian Norway, income plays a
-less important role in assortative mating than it does in the UK.
-However, this is a loose comparison, and we see careful tests of
-comparative statics across different contexts as an important challenge
-for future work.
+structure of marriage markets also affects the gradient. Our empirics
+suggest that in relatively egalitarian Norway, income plays a less
+important role in assortative mating than it does in the UK. However,
+this is a loose comparison, and we see careful tests of comparative
+statics across different contexts as an important challenge for future
+work.
 
 The broadest message of this paper is that genetics are a social
 outcome. Both popular and scientific discourse often parse genetics as

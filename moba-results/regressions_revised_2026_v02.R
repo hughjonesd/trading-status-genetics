@@ -213,8 +213,8 @@ results_for_table3eduyears = lapply(formulas_for_table3eduyears, feols, dd, clus
 lapply(results_for_table3eduyears, summary)
 
 # results for table 5
-results_for_table5male          = lapply(formulas_for_table3[c(1,6)], feols, dd %>% filter(male==0), cluster='PREGID')
-results_for_table5female        = lapply(formulas_for_table3[c(1,6)], feols, dd %>% filter(male==1), cluster='PREGID')
+results_for_table5male          = lapply(formulas_for_table3[c(1:6)], feols, dd %>% filter(male==0), cluster='PREGID')
+results_for_table5female        = lapply(formulas_for_table3[c(1:6)], feols, dd %>% filter(male==1), cluster='PREGID')
 names(results_for_table5male)   = paste0(names(results_for_table5male),'male')
 names(results_for_table5female) = paste0(names(results_for_table5female),'female')
 results_for_table5=c(results_for_table5male, results_for_table5female)
