@@ -80,7 +80,7 @@ distributed $N(0,\sigma_{I}^{2})$, where
 [^a-interpretation]: Note that since the variance of the shocks to $x_1$ and $x_2$
 (see below) has been normalized to 1, $a$ also reflects this variance. That
 is, a large variance of SES shocks (compared to genetic shocks) translates into 
-$a$ being large. 
+$a$ being small. 
 
 People form matches with transferable utility, where the surplus for a match
 between $x$ and $y$ is $S(i(x), i(y))$ such that $\partial^{2}S/\partial
@@ -688,7 +688,7 @@ income is valued differently in Norwegian and British marriage markets. Finally,
 if different individuals have varying matching preferences
 (values of $a$), the model becomes hard to work with because there is no
 agreed-upon ranking of men and women, but computations using the
-Gale-Shapley matching algorithm shows that the basic insights of SGAM still hold.[^gale-shapley] 
+Gale-Shapley matching algorithm show that the basic insights of SGAM still hold.[^gale-shapley] 
 
 [^gale-shapley]: See https://github.com/hughjonesd/trading-status-genetics/blob/main/gale-shapley-multiple-a.R.
 

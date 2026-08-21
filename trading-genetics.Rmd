@@ -7,7 +7,7 @@ author: |
   of Amsterdam, Amsterdam, The Netherlands. Email: a.abdellaoui@amsterdamumc.nl},
   Oana Borcan\thanks{School of Economics, University of East Anglia, Norwich, 
   UK. Email: O.Borcan@uea.ac.uk}, 
-  Pierre-André Chiappori\thanks{Department of Economics, University of Columbia, 
+  Pierre-André Chiappori\thanks{Department of Economics, Columbia University, 
     New York. Email: pc2167@columbia.edu},\
   David Hugh-Jones\thanks{Corresponding author. Email: davidhughjones@gmail.com},
   Fartein Ask Torvik\thanks{Norwegian Institute of Public Health, Oslo. 
@@ -22,7 +22,7 @@ abstract: |
   "genes-SES gradients" -- observed genetic differences between high- and
   low-SES people. We model SGAM and test for it in two large surveys from Great 
   Britain and Norway. Spouses of earlier-born siblings have genetics predicting 
-  more education. This effect is mediated by individuals' own education and 
+  more education. We find evidence that this effect is mediated by individuals' own education and 
   income. Under SGAM, shocks to SES are reflected in the DNA of subsequent
   generations, the distribution of genetic variants in society is endogenous
   to economic institutions, and short-run policy regime changes can have
@@ -423,8 +423,8 @@ market is a function of both socio-economic status (SES) and genetic
 variants. We show that social-genetic assortative mating in one
 generation increases the correlation between SES and genetic variants in
 the offspring generation. This result provides a new explanation of
-*genes-SES gradients* -- systematic genetic differences between high-
-and low-SES people [@belsky2018genetic; @Rimfeld_2018;
+*genes-SES gradients* -- systematic genetic differences between people
+with high and low SES [@belsky2018genetic; @Rimfeld_2018;
 @bjorklund2006origins]. The dominant existing explanation for these
 gradients is meritocratic social mobility: if a genetic variant predicts
 success in the labour market, then it will become associated with high
@@ -892,7 +892,7 @@ socio-economic status: university attendance or income. The Y axis plots
 the other partner's mean PSEA. Both males and females who went to
 university had spouses with higher PSEA. So did males and females with
 higher income in their first job. Since DNA is inherited, these people's
-children will also have higher PSEA.[^9]
+children will also have higher PSEA on average.[^9]
 
 [^9]: Figure \@ref(fig:pic-basic-corr-moba) in the appendix shows the
     same plot for the MoBa sample.
@@ -969,16 +969,16 @@ SES such as educational attainment and occupational status
 [@Lindahl_2008; @booth2009birth; @black2011older].[^10] On the other
 hand, all full siblings have the same *ex ante* expected genetic
 endowment from their parents, irrespective of their birth order. This is
-supported by the biological mechanism of meiosis, which ensures that any
-gene is transmitted from either the mother or the father to the child,
-with independent 50% probability [@mendel1865experiments;
-@lawlor2008mendelian]. For example, siblings' expected polygenic score
-is equal to the mean of their parents' polygenic scores. We can
-therefore use birth order as a "shock" to social status. "Shock" is in
-quotes because we do not claim that birth order is exogenous to all
-other variables. For example, it naturally correlates with parental age,
-and it may also correlate with household SES at the time of birth. We
-only claim that birth order is exogenous to genetic variation.
+supported by the biological mechanism of meiosis, which ensures that at
+a given autosomal locus, each parent transmits one of their two alleles
+with 50% probability [@mendel1865experiments; @lawlor2008mendelian]. For
+example, siblings' expected polygenic score is equal to the mean of
+their parents' polygenic scores. We can therefore use birth order as a
+"shock" to social status. "Shock" is in quotes because we do not claim
+that birth order is exogenous to all other variables. For example, it
+naturally correlates with parental age, and it may also correlate with
+household SES at the time of birth. We only claim that birth order is
+exogenous to genetic variation.
 
 [^10]: Earlier work was ambiguous on the effects of birth order [e.g.
     @hauser1985birth; @hanushek1992trade]. However, this work often used
@@ -1145,7 +1145,7 @@ and self-reported general health. With respect to assumption (b), we use
 further controls, such as parental age, year of birth, and own PSEA, to
 reduce unobserved variation in the error term.
 
-By running a least square regression of \@ref(eq:model-to-estimate), we
+By running a least squares regression of \@ref(eq:model-to-estimate), we
 can estimate $\tau$ and $\alpha^j$. If the assumptions above hold and
 the estimated αj is significantly different from zero, we have evidence
 that the parameter $a$ in the attractiveness equation is different
@@ -1486,7 +1486,7 @@ rownames(med_matrix) <- c("University", "Income", "Fluid IQ", "Height", "BMI",
 colnames(med_matrix) <- paste("Model", 2:4, " (%)")
 
 tbl_note <- paste("Percentage of the effects of birth order in Table", 
-"\\ref{tab:tbl-bo-psea}, columns 2 to 4, explained by by each mediating variable.")
+"\\ref{tab:tbl-bo-psea}, columns 2 to 4, explained by each mediating variable.")
 
 as_huxtable(med_matrix, add_colnames = TRUE, add_rownames = "") %>% 
       theme_article() %>% 
@@ -1549,7 +1549,7 @@ Columns 3 and 4 repeat the exercise for female respondents, using their
 birth order to predict male spouses' PSEA. The effect of birth order is
 imprecisely estimated in these subsets due to the lower sample size.
 However, the pattern of coefficient sizes is the same as in the main
-regression: the coefficient of birth order is about -0.3 (and very
+regression: the coefficient of birth order is about -0.03 (and very
 similar between the sexes), and adding university attendance reduces the
 absolute size of the birth order effect. Columns 5 and 6 show results
 from regressions on the subsample of couples with children. Here, birth
@@ -1779,7 +1779,7 @@ rownames(mediated_effects_pct) <- c("University", "Income", "Height", "BMI")
 
 
 tbl_note <- paste("Percentage of the effects of birth order in Table", 
-"\\ref{tab:tbl-bo-psea-moba}, columns 2 to 4, explained by by each mediating variable.")
+"\\ref{tab:tbl-bo-psea-moba}, columns 2 to 4, explained by each mediating variable.")
 
 as_hux(mediated_effects_pct, add_colnames = TRUE, add_rownames = "") %>%
       theme_article() %>% 
@@ -1864,7 +1864,7 @@ that income is not an important form of SES in Norwegian marriage
 markets. By leveraging random PSEA variation between siblings, these
 results allow us to reject that $a = 0$ (even if the effect of PSEA on
 spouse SES could be *mediated* by own SES, cf. the extended model of
-meritocracy in appendix equation \ref{eqn-gamma}).
+meritocracy in equation (\ref{eqn-gamma})).
 
 [^17]: The UK Biobank sample has too few siblings with spouses for this
     analysis to be informative.
